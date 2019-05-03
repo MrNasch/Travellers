@@ -39,19 +39,22 @@
                                                 <rect key="frame" x="0.0" y="38" width="374" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                                                <connections>
+                                                    <action selector="emailChanged:" destination="BYZ-38-t0r" eventType="editingChanged" id="C96-2f-PeJ"/>
+                                                </connections>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="748" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rlJ-SK-Xbi">
                                                 <rect key="frame" x="0.0" y="78" width="374" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                             </textField>
                                             <textField hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Itl-5u-TlR">
                                                 <rect key="frame" x="0.0" y="113" width="374" height="0.0"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aFI-69-pgc">
                                                 <rect key="frame" x="0.0" y="118" width="374" height="50"/>
@@ -64,6 +67,7 @@
                                                 </state>
                                                 <connections>
                                                     <action selector="didTapConnectButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mYC-4C-tUw"/>
+                                                    <segue destination="XLA-Kt-DVx" kind="show" identifier="SignIn" id="QyT-73-DS4"/>
                                                 </connections>
                                             </button>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="zkU-ie-995">
@@ -162,6 +166,8 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="LoginView" destination="hyz-T4-vzi" id="fsN-Kj-NYO"/>
+                        <outlet property="centerViewConstraint" destination="KWP-JL-euA" id="wfs-uW-jro"/>
                         <outlet property="connectButton" destination="aFI-69-pgc" id="x3C-Ce-VVz"/>
                         <outlet property="emailTextField" destination="4Hm-wy-LFA" id="x5e-QJ-vRJ"/>
                         <outlet property="forgotButton" destination="nGI-qc-BsI" id="Tg4-JO-pv2"/>
@@ -173,7 +179,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="37.681159420289859" y="18.75"/>
+            <point key="canvasLocation" x="-193" y="15"/>
+        </scene>
+        <!--Profile View Controller-->
+        <scene sceneID="Y3P-6c-1s7">
+            <objects>
+                <viewController id="XLA-Kt-DVx" customClass="ProfileViewController" customModule="Travellers" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Bp4-ED-ZzV">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" name="systemYellowColor" catalog="System" colorSpace="catalog"/>
+                        <viewLayoutGuide key="safeArea" id="ELD-hg-Vzv"/>
+                    </view>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="Log" id="3Nh-HQ-SrW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iCP-Cr-0bd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="940" y="15"/>
         </scene>
     </scenes>
 </document>
