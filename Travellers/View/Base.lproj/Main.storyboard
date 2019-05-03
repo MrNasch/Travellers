@@ -162,12 +162,12 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="Segmented" destination="yol-UU-2Nj" id="f7o-7q-ivc"/>
                         <outlet property="connectButton" destination="aFI-69-pgc" id="x3C-Ce-VVz"/>
                         <outlet property="emailTextField" destination="4Hm-wy-LFA" id="x5e-QJ-vRJ"/>
                         <outlet property="forgotButton" destination="nGI-qc-BsI" id="Tg4-JO-pv2"/>
                         <outlet property="passwordTextField" destination="rlJ-SK-Xbi" id="2lc-5m-lld"/>
                         <outlet property="rememberCheckBox" destination="KGM-dz-iui" id="YGV-OH-OLx"/>
+                        <outlet property="segmented" destination="yol-UU-2Nj" id="t4F-VL-ZbH"/>
                         <outlet property="usernameTextField" destination="Itl-5u-TlR" id="7gv-Vi-oDw"/>
                     </connections>
                 </viewController>

@@ -6,3 +6,4 @@ pod 'Alamofire', '~> 5.0.0-beta.5'
 end
 pod 'Firebase/Core'
 pod 'BEMCheckBox'
+pod 'Firebase/Auth'

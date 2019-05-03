@@ -8,6 +8,7 @@
 
 import UIKit
 import BEMCheckBox
+import Firebase
 
 class LoginViewController: UIViewController {
 
@@ -21,7 +22,7 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
     }
     // hide username if Sign in segmented selected
     @IBAction func didTapSegmented(_ sender: UISegmentedControl) {
