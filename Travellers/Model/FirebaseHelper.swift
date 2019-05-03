@@ -16,4 +16,8 @@ class FirebaseHelper {
     func connected() -> String? {
         return Auth.auth().currentUser?.uid
     }
+    
+    // authentification
+    
+    
 }

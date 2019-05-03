@@ -173,6 +173,7 @@
                         <outlet property="forgotButton" destination="nGI-qc-BsI" id="Tg4-JO-pv2"/>
                         <outlet property="passwordTextField" destination="rlJ-SK-Xbi" id="2lc-5m-lld"/>
                         <outlet property="rememberCheckBox" destination="KGM-dz-iui" id="YGV-OH-OLx"/>
+                        <outlet property="rememberLabel" destination="MU5-J8-JDG" id="sD0-Qh-vxk"/>
                         <outlet property="segmented" destination="yol-UU-2Nj" id="t4F-VL-ZbH"/>
                         <outlet property="usernameTextField" destination="Itl-5u-TlR" id="7gv-Vi-oDw"/>
                     </connections>

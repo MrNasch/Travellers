@@ -21,6 +21,7 @@ class LoginViewController: KeyboardManagementViewController {
     @IBOutlet weak var forgotButton: UIButton!
     @IBOutlet weak var LoginView: UIStackView!
     @IBOutlet weak var centerViewConstraint: NSLayoutConstraint!
+    @IBOutlet weak var rememberLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,10 +42,16 @@ class LoginViewController: KeyboardManagementViewController {
         // Sign in selected
         case 0:
             usernameTextField.isHidden = true
+            rememberCheckBox.isHidden = false
+            forgotButton.isHidden = false
+            rememberLabel.isHidden = false
             connectButton.setTitle("Sign In", for: .normal)
         // Sign up selected
         case 1:
             usernameTextField.isHidden = false
+            rememberCheckBox.isHidden = true
+            forgotButton.isHidden = true
+            rememberLabel.isHidden = true
             connectButton.setTitle("Sign Up", for: .normal)
         default:
             break
