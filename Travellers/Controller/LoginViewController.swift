@@ -22,7 +22,6 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
     // hide username if Sign in segmented selected
     @IBAction func didTapSegmented(_ sender: UISegmentedControl) {
