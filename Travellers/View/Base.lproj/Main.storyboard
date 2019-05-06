@@ -182,7 +182,7 @@
             </objects>
             <point key="canvasLocation" x="-1833" y="880"/>
         </scene>
-        <!--Profile-->
+        <!--Profile View Controller-->
         <scene sceneID="Y3P-6c-1s7">
             <objects>
                 <viewController id="XLA-Kt-DVx" customClass="ProfileViewController" customModule="Travellers" customModuleProvider="target" sceneMemberID="viewController">
@@ -192,7 +192,10 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="ELD-hg-Vzv"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Profile" id="4xy-QR-0ih"/>
+                    <tabBarItem key="tabBarItem" title="" image="icons8-contacts-51" id="4xy-QR-0ih">
+                        <inset key="imageInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="-15"/>
+                        <color key="badgeColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBarItem>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="Log" id="3Nh-HQ-SrW"/>
                     </connections>
@@ -207,9 +210,12 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="4dP-Fh-xQI" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="jZO-2D-H27">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="barTintColor" red="1" green="0.80000000000000004" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="selectedImageTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
                         <segue destination="XLA-Kt-DVx" kind="relationship" relationship="viewControllers" id="lft-d9-qRr"/>
@@ -222,7 +228,7 @@
             </objects>
             <point key="canvasLocation" x="-797" y="880"/>
         </scene>
-        <!--Countries-->
+        <!--View Controller-->
         <scene sceneID="n2x-G2-a93">
             <objects>
                 <viewController id="HIO-9A-P2d" sceneMemberID="viewController">
@@ -232,13 +238,15 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="372-fc-F6F"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Countries" id="8lI-Ie-U5O"/>
+                    <tabBarItem key="tabBarItem" title="" image="icons8-europe-filled-51" id="8lI-Ie-U5O">
+                        <inset key="imageInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="-15"/>
+                    </tabBarItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S86-Mo-5Jz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="771" y="663"/>
         </scene>
-        <!--Changes-->
+        <!--View Controller-->
         <scene sceneID="PY1-Ca-Q4c">
             <objects>
                 <viewController id="gds-AJ-1iR" sceneMemberID="viewController">
@@ -248,13 +256,15 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="sP9-WX-WYh"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Changes" id="peH-yf-Amv"/>
+                    <tabBarItem key="tabBarItem" title="" image="icons8-échange-de-devises-50 (1)" id="peH-yf-Amv">
+                        <inset key="imageInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="-15"/>
+                    </tabBarItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qgv-cN-68B" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1543" y="931"/>
         </scene>
-        <!--Setup-->
+        <!--View Controller-->
         <scene sceneID="02R-Z7-nZr">
             <objects>
                 <viewController id="5Pq-Eu-U8O" sceneMemberID="viewController">
@@ -264,11 +274,19 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="zty-2c-BJb"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Setup" id="zC7-tz-7QE"/>
+                    <tabBarItem key="tabBarItem" title="" image="icons8-paramètres-50 (1)" id="zC7-tz-7QE">
+                        <inset key="imageInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="-15"/>
+                    </tabBarItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mwY-9N-Sc8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2335" y="1312"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="icons8-contacts-51" width="25" height="25"/>
+        <image name="icons8-europe-filled-51" width="25" height="25"/>
+        <image name="icons8-échange-de-devises-50 (1)" width="25" height="25"/>
+        <image name="icons8-paramètres-50 (1)" width="25" height="25"/>
+    </resources>
 </document>
