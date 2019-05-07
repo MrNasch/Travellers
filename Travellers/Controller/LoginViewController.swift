@@ -61,6 +61,15 @@ class LoginViewController: KeyboardManagementViewController {
         // veirfy is email exist
     }
     @IBAction func didTapConnectButton(_ sender: UIButton) {
+        connectUsers()
+    }
+    @IBAction func didTapFacebookConnectButton(_ sender: UIButton) {
+    }
+    @IBAction func didTapRememberMeButton(_ sender: BEMCheckBox) {
+        saveConnexion()
+    }
+    // Users creation or connexion
+    func connectUsers() {
         // create user or connect user
         // if Sign in selected
         if segmented.selectedSegmentIndex == 0 {
@@ -81,11 +90,6 @@ class LoginViewController: KeyboardManagementViewController {
                 }
             }
         }
-    }
-    @IBAction func didTapFacebookConnectButton(_ sender: UIButton) {
-    }
-    @IBAction func didTapRememberMeButton(_ sender: BEMCheckBox) {
-        saveConnexion()
     }
     func saveConnexion() {
         if rememberCheckBox.on == true {
