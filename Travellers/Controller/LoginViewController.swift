@@ -62,6 +62,25 @@ class LoginViewController: KeyboardManagementViewController {
     }
     @IBAction func didTapConnectButton(_ sender: UIButton) {
         // create user or connect user
+        // if Sign in selected
+        if segmented.selectedSegmentIndex == 0 {
+            guard let email = emailTextField.text, let password = passwordTextField.text, email.count > 0, password.count > 0 else {
+                return
+            }
+            Auth.auth().signIn(withEmail: email, password: password) { user, error in
+                if let _ = error, user == nil {
+                    self.alerts(title: "Sing In failed", message: "This email Or/And password doesn't exist")
+                }
+            }
+            // if Sign Up selected
+        } else {
+            Auth.auth().createUser(withEmail: emailTextField.text!, password: passwordTextField.text!) {
+                user, error in
+                if error == nil {
+                    Auth.auth().signIn(withEmail: self.emailTextField.text!, password: self.passwordTextField.text!)
+                }
+            }
+        }
     }
     @IBAction func didTapFacebookConnectButton(_ sender: UIButton) {
     }
@@ -74,5 +93,12 @@ class LoginViewController: KeyboardManagementViewController {
         } else {
             return
         }
+    }
+    
+    // alerts
+    func alerts(title: String, message: String) {
+        let alertVC = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alertVC.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+        self.present(alertVC, animated: true, completion: nil)
     }
 }
