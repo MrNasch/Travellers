@@ -22,6 +22,7 @@ class LoginViewController: KeyboardManagementViewController {
     @IBOutlet weak var LoginView: UIStackView!
     @IBOutlet weak var centerViewConstraint: NSLayoutConstraint!
     @IBOutlet weak var rememberLabel: UILabel!
+    @IBOutlet weak var facebookButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,6 +47,7 @@ class LoginViewController: KeyboardManagementViewController {
             forgotButton.isHidden = false
             rememberLabel.isHidden = false
             connectButton.setTitle("Sign In", for: .normal)
+            facebookButton.setTitle("Sign In with Facebook", for: .normal)
         // Sign up selected
         case 1:
             usernameTextField.isHidden = false
@@ -53,6 +55,7 @@ class LoginViewController: KeyboardManagementViewController {
             forgotButton.isHidden = true
             rememberLabel.isHidden = true
             connectButton.setTitle("Sign Up", for: .normal)
+            facebookButton.setTitle("Sign Up with Facebook", for: .normal)
         default:
             break
         }

@@ -170,6 +170,7 @@
                         <outlet property="centerViewConstraint" destination="KWP-JL-euA" id="wfs-uW-jro"/>
                         <outlet property="connectButton" destination="aFI-69-pgc" id="x3C-Ce-VVz"/>
                         <outlet property="emailTextField" destination="4Hm-wy-LFA" id="x5e-QJ-vRJ"/>
+                        <outlet property="facebookButton" destination="cFY-rU-EQf" id="7t4-1s-shE"/>
                         <outlet property="forgotButton" destination="nGI-qc-BsI" id="Tg4-JO-pv2"/>
                         <outlet property="passwordTextField" destination="rlJ-SK-Xbi" id="2lc-5m-lld"/>
                         <outlet property="rememberCheckBox" destination="KGM-dz-iui" id="YGV-OH-OLx"/>
