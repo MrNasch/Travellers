@@ -12,6 +12,7 @@ import Firebase
 
 class LoginViewController: KeyboardManagementViewController {
 
+    var user: User?
     @IBOutlet weak var segmented: UISegmentedControl!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
@@ -27,6 +28,14 @@ class LoginViewController: KeyboardManagementViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         addTap()
+        
+//        Auth.auth().addStateDidChangeListener { (auth, user) in
+//            if user != nil {
+//                self.performSegue(withIdentifier: "segueToProfil", sender: nil)
+//                self.emailTextField.text = nil
+//                self.passwordTextField.text = nil
+//            }
+//        }
     }
     override func showKeyboard(notification: Notification) {
         super.showKeyboard(notification: notification)
@@ -60,6 +69,14 @@ class LoginViewController: KeyboardManagementViewController {
             break
         }
     }
+    // Segue to profil
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "segueToProfil" {
+            let tabCtrl = segue.destination as! UITabBarController
+            let profilVC = tabCtrl.viewControllers![0] as! ProfileViewController
+            profilVC.user = self.user
+        }
+    }
     @IBAction func emailChanged(_ sender: UITextField) {
         // veirfy is email exist
     }
@@ -77,19 +94,21 @@ class LoginViewController: KeyboardManagementViewController {
         // if Sign in selected
         if segmented.selectedSegmentIndex == 0 {
             guard let email = emailTextField.text, let password = passwordTextField.text, email.count > 0, password.count > 0 else {
-                return
+                return 
             }
             Auth.auth().signIn(withEmail: email, password: password) { user, error in
-                if let _ = error, user == nil {
-                    self.alerts(title: "Sing In failed", message: "This email Or/And password doesn't exist")
+                if let error = error, user == nil {
+                    self.alerts(title: "Sing In failed", message: error.localizedDescription)
                 }
             }
             // if Sign Up selected
         } else {
-            Auth.auth().createUser(withEmail: emailTextField.text!, password: passwordTextField.text!) {
-                user, error in
+            Auth.auth().createUser(withEmail: emailTextField.text!, password: passwordTextField.text!) { user, error in
                 if error == nil {
                     Auth.auth().signIn(withEmail: self.emailTextField.text!, password: self.passwordTextField.text!)
+                // Throw error if email already exist
+                } else {
+                    self.alerts(title: "Sign Up Failed", message: error!.localizedDescription)
                 }
             }
         }

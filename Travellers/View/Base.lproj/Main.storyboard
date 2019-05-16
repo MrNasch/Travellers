@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="67" translatesAutoresizingMaskIntoConstraints="NO" id="hyz-T4-vzi">
-                                <rect key="frame" x="20" y="309.5" width="374" height="277"/>
+                                <rect key="frame" x="20" y="353" width="374" height="190"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="hHa-c2-5a7">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="190"/>
@@ -67,7 +67,6 @@
                                                 </state>
                                                 <connections>
                                                     <action selector="didTapConnectButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mYC-4C-tUw"/>
-                                                    <segue destination="4dP-Fh-xQI" kind="show" identifier="SignIn" id="QyT-73-DS4"/>
                                                 </connections>
                                             </button>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="zkU-ie-995">
@@ -112,8 +111,8 @@
                                             </stackView>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="hdI-QW-uwf">
-                                        <rect key="frame" x="0.0" y="257" width="374" height="20"/>
+                                    <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="hdI-QW-uwf">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="20"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7kO-Xb-Bfc">
                                                 <rect key="frame" x="176" y="0.0" width="22" height="19"/>
@@ -139,8 +138,8 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cFY-rU-EQf">
-                                <rect key="frame" x="20" y="596.5" width="374" height="50"/>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cFY-rU-EQf">
+                                <rect key="frame" x="20" y="553" width="374" height="50"/>
                                 <color key="backgroundColor" red="0.0" green="0.30267949108274905" blue="0.54324635152284262" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="Peh-wJ-dQO"/>
@@ -177,6 +176,7 @@
                         <outlet property="rememberLabel" destination="MU5-J8-JDG" id="sD0-Qh-vxk"/>
                         <outlet property="segmented" destination="yol-UU-2Nj" id="t4F-VL-ZbH"/>
                         <outlet property="usernameTextField" destination="Itl-5u-TlR" id="7gv-Vi-oDw"/>
+                        <segue destination="4dP-Fh-xQI" kind="show" identifier="segueToProfil" id="7DV-xD-ZjM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -287,6 +287,17 @@
                                     <constraint firstAttribute="height" constant="21" id="gPb-oZ-DoE"/>
                                 </constraints>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I55-f4-DZA">
+                                <rect key="frame" x="339" y="64" width="55" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="J7Z-6U-1XI"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                <state key="normal" title="Disconnect"/>
+                                <connections>
+                                    <action selector="disconnectButton:" destination="XLA-Kt-DVx" eventType="touchUpInside" id="YEr-lz-O73"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -299,6 +310,8 @@
                             <constraint firstItem="aeY-IT-W3D" firstAttribute="top" secondItem="142-ZS-5y8" secondAttribute="bottom" constant="10" id="Ifx-uK-0ZD"/>
                             <constraint firstAttribute="trailing" secondItem="XsL-Ch-ol4" secondAttribute="trailing" id="Jyu-7i-WUb"/>
                             <constraint firstItem="fM0-gI-eyj" firstAttribute="leading" secondItem="ELD-hg-Vzv" secondAttribute="leading" id="KEW-WB-in8"/>
+                            <constraint firstItem="I55-f4-DZA" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="142-ZS-5y8" secondAttribute="trailing" constant="8" symbolic="YES" id="R7z-hK-Qdv"/>
+                            <constraint firstItem="I55-f4-DZA" firstAttribute="top" secondItem="ELD-hg-Vzv" secondAttribute="top" constant="20" id="RdG-yA-rPu"/>
                             <constraint firstItem="wjj-nw-cNu" firstAttribute="leading" secondItem="ELD-hg-Vzv" secondAttribute="leading" constant="20" id="XuD-u3-ggN"/>
                             <constraint firstItem="ELD-hg-Vzv" firstAttribute="trailing" secondItem="6bF-19-KWb" secondAttribute="trailing" constant="20" id="aJU-Uv-TYg"/>
                             <constraint firstItem="aeY-IT-W3D" firstAttribute="leading" secondItem="ELD-hg-Vzv" secondAttribute="leading" constant="20" id="aWD-h3-A8d"/>
@@ -311,6 +324,7 @@
                             <constraint firstItem="wjj-nw-cNu" firstAttribute="top" secondItem="fM0-gI-eyj" secondAttribute="bottom" constant="8" id="mvl-gx-9LL"/>
                             <constraint firstItem="XsL-Ch-ol4" firstAttribute="leading" secondItem="Bp4-ED-ZzV" secondAttribute="leading" id="n0f-3P-Bym"/>
                             <constraint firstItem="aeY-IT-W3D" firstAttribute="centerX" secondItem="Bp4-ED-ZzV" secondAttribute="centerX" id="qFW-CN-lmM"/>
+                            <constraint firstItem="ELD-hg-Vzv" firstAttribute="trailing" secondItem="I55-f4-DZA" secondAttribute="trailing" constant="20" id="rOy-z8-dvh"/>
                             <constraint firstItem="B7g-2f-zzn" firstAttribute="leading" secondItem="ELD-hg-Vzv" secondAttribute="leading" constant="20" id="sbW-IA-8gM"/>
                             <constraint firstItem="4Ip-fL-9Wt" firstAttribute="top" secondItem="wjj-nw-cNu" secondAttribute="bottom" constant="2" id="tTb-Gx-MQD"/>
                             <constraint firstItem="XsL-Ch-ol4" firstAttribute="top" secondItem="wjj-nw-cNu" secondAttribute="bottom" constant="60" id="thr-na-m0j"/>
