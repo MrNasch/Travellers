@@ -337,6 +337,10 @@
                         <color key="badgeColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBarItem>
                     <connections>
+                        <outlet property="country" destination="PgZ-A1-caa" id="nRj-G9-07r"/>
+                        <outlet property="firstName" destination="7Qp-dA-mxg" id="YaX-se-9aT"/>
+                        <outlet property="lastName" destination="dGs-Nu-AaU" id="Dev-eq-VeA"/>
+                        <outlet property="profilePicture" destination="142-ZS-5y8" id="AxJ-6v-SNW"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="Log" id="3Nh-HQ-SrW"/>
                     </connections>
                 </viewController>

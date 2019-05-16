@@ -13,6 +13,7 @@ import Firebase
 class LoginViewController: KeyboardManagementViewController {
 
     var docRef: DocumentReference!
+    var collection: CollectionReference!
     var user: User?
     @IBOutlet weak var segmented: UISegmentedControl!
     @IBOutlet weak var emailTextField: UITextField!
@@ -29,7 +30,7 @@ class LoginViewController: KeyboardManagementViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         addTap()
-        docRef = Firestore.firestore().document("users/profile/")
+        docRef = Firestore.firestore().document("users/profile")
         Auth.auth().addStateDidChangeListener { (auth, user) in
             if user != nil {
                 self.performSegue(withIdentifier: "segueToProfil", sender: nil)
