@@ -20,6 +20,8 @@
 		</dict>
 		<key>BoringSSL-GRPC.xcscheme</key>
 		<dict>
+			<key>isShown</key>
+			<false/>
 			<key>orderHint</key>
 			<integer>2</integer>
 		</dict>
@@ -67,6 +69,8 @@
 		</dict>
 		<key>FirebaseFirestore.xcscheme</key>
 		<dict>
+			<key>isShown</key>
+			<false/>
 			<key>orderHint</key>
 			<integer>9</integer>
 		</dict>
@@ -114,21 +118,29 @@
 		</dict>
 		<key>Protobuf.xcscheme</key>
 		<dict>
+			<key>isShown</key>
+			<false/>
 			<key>orderHint</key>
 			<integer>21</integer>
 		</dict>
 		<key>gRPC-C++-gRPCCertificates.xcscheme</key>
 		<dict>
+			<key>isShown</key>
+			<false/>
 			<key>orderHint</key>
 			<integer>15</integer>
 		</dict>
 		<key>gRPC-C++.xcscheme</key>
 		<dict>
+			<key>isShown</key>
+			<false/>
 			<key>orderHint</key>
 			<integer>14</integer>
 		</dict>
 		<key>gRPC-Core.xcscheme</key>
 		<dict>
+			<key>isShown</key>
+			<false/>
 			<key>orderHint</key>
 			<integer>16</integer>
 		</dict>
