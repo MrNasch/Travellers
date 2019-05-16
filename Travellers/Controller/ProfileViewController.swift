@@ -29,14 +29,14 @@ class ProfileViewController: UIViewController {
             performSegue(withIdentifier: "Log", sender: nil)
         }
     }
+    // Disconnect user
     @IBAction func disconnectButton(_ sender: UIButton) {
         let user = Auth.auth()
-            
             do {
                 try user.signOut()
                 self.dismiss(animated: true, completion: nil)
-            } catch (let error) {
-                print("sign out failed")
+            } catch let error {
+                print("sign out failed", error.localizedDescription)
             }
     }
 }
