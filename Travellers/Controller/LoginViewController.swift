@@ -12,6 +12,7 @@ import Firebase
 
 class LoginViewController: KeyboardManagementViewController {
 
+    var docRef: DocumentReference!
     var user: User?
     @IBOutlet weak var segmented: UISegmentedControl!
     @IBOutlet weak var emailTextField: UITextField!
@@ -28,14 +29,15 @@ class LoginViewController: KeyboardManagementViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         addTap()
-        
-//        Auth.auth().addStateDidChangeListener { (auth, user) in
-//            if user != nil {
-//                self.performSegue(withIdentifier: "segueToProfil", sender: nil)
-//                self.emailTextField.text = nil
-//                self.passwordTextField.text = nil
-//            }
-//        }
+        docRef = Firestore.firestore().document("users/profile/")
+        Auth.auth().addStateDidChangeListener { (auth, user) in
+            if user != nil {
+                self.performSegue(withIdentifier: "segueToProfil", sender: nil)
+                self.emailTextField.text = nil
+                self.passwordTextField.text = nil
+                self.usernameTextField.text = nil
+            }
+        }
     }
     override func showKeyboard(notification: Notification) {
         super.showKeyboard(notification: notification)
@@ -81,7 +83,13 @@ class LoginViewController: KeyboardManagementViewController {
         // veirfy is email exist
     }
     @IBAction func didTapConnectButton(_ sender: UIButton) {
-        connectUsers()
+        if emailTextField.text!.isEmpty  {
+            self.alerts(title: "Connection Failed", message: "Please enter your email adress")
+        } else if passwordTextField.text!.isEmpty {
+            self.alerts(title: "Connection Failed", message: "Please enter your password")
+        } else {
+            connectUsers()
+        }
     }
     @IBAction func didTapFacebookConnectButton(_ sender: UIButton) {
     }
@@ -94,11 +102,13 @@ class LoginViewController: KeyboardManagementViewController {
         // if Sign in selected
         if segmented.selectedSegmentIndex == 0 {
             guard let email = emailTextField.text, let password = passwordTextField.text, email.count > 0, password.count > 0 else {
-                return 
+                return
             }
             Auth.auth().signIn(withEmail: email, password: password) { user, error in
                 if let error = error, user == nil {
                     self.alerts(title: "Sing In failed", message: error.localizedDescription)
+                } else {
+                    self.performSegue(withIdentifier: "segueToProfil", sender: nil)
                 }
             }
             // if Sign Up selected
@@ -106,10 +116,24 @@ class LoginViewController: KeyboardManagementViewController {
             Auth.auth().createUser(withEmail: emailTextField.text!, password: passwordTextField.text!) { user, error in
                 if error == nil {
                     Auth.auth().signIn(withEmail: self.emailTextField.text!, password: self.passwordTextField.text!)
+                    guard let emailText = self.emailTextField.text, !emailText.isEmpty else { return }
+                    guard let passwordText = self.passwordTextField.text, !passwordText.isEmpty else { return }
+                    guard let nameText = self.usernameTextField.text, !nameText.isEmpty else { return }
+                    let dataToSave: [String: Any] = ["Email": emailText, "Paswword": passwordText, "Username": nameText]
+                    self.docRef.setData(dataToSave, completion: { (error) in
+                        if let error = error {
+                            print("noooooooo \(error.localizedDescription)")
+                        } else {
+                            print("OK")
+                        }
+                    })
+                    
+                    self.performSegue(withIdentifier: "segueToProfil", sender: nil)
+                    
                 // Throw error if email already exist
                 } else {
                     self.alerts(title: "Sign Up Failed", message: error!.localizedDescription)
-                }
+                } 
             }
         }
     }

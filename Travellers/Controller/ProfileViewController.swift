@@ -10,28 +10,8 @@ import UIKit
 import Firebase
 
 class ProfileViewController: UIViewController {
-    
     var user: User?
-    
-    @IBAction func disconnectButton(_ sender: UIButton) {
-        let user = Auth.auth().currentUser!
-        let onlineRef = Database.database().reference(withPath: "online/\(user.uid)")
-        
-        onlineRef.removeValue() { (error, _) in
-            
-            if let error = error {
-                print("removing failed")
-                return
-            }
-            
-            do {
-                try Auth.auth().signOut()
-                self.dismiss(animated: true, completion: nil)
-            } catch (let error) {
-                print("sign out failed")
-            }
-        }
-    }
+    let ref = Database.database().reference(withPath: "users")
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,5 +28,15 @@ class ProfileViewController: UIViewController {
             // no user connected, send back to LoginViewController
             performSegue(withIdentifier: "Log", sender: nil)
         }
+    }
+    @IBAction func disconnectButton(_ sender: UIButton) {
+        let user = Auth.auth()
+            
+            do {
+                try user.signOut()
+                self.dismiss(animated: true, completion: nil)
+            } catch (let error) {
+                print("sign out failed")
+            }
     }
 }
