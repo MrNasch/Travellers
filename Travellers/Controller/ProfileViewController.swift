@@ -22,7 +22,7 @@ class ProfileViewController: UIViewController {
         
     }
     override func viewWillAppear(_ animated: Bool) {
-        if let id = FirebaseHelper().connected() {
+        if FirebaseHelper().connected() != nil {
             // user is connected get user
         } else {
             // no user connected, send back to LoginViewController
