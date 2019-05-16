@@ -13,7 +13,6 @@ import Firebase
 class LoginViewController: KeyboardManagementViewController {
 
     var docRef: DocumentReference!
-    var collection: CollectionReference!
     var user: User?
     @IBOutlet weak var segmented: UISegmentedControl!
     @IBOutlet weak var emailTextField: UITextField!
