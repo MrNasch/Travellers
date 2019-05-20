@@ -12,8 +12,9 @@ import Firebase
 
 class LoginViewController: KeyboardManagementViewController {
 
-    var docRef: DocumentReference!
+
     var user: User?
+    let db = Firestore.firestore()
     @IBOutlet weak var segmented: UISegmentedControl!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
@@ -29,7 +30,6 @@ class LoginViewController: KeyboardManagementViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         addTap()
-        docRef = Firestore.firestore().document("users/profile")
         Auth.auth().addStateDidChangeListener { (auth, user) in
             if user != nil {
                 self.performSegue(withIdentifier: "segueToProfil", sender: nil)
@@ -120,7 +120,7 @@ class LoginViewController: KeyboardManagementViewController {
                     guard let passwordText = self.passwordTextField.text, !passwordText.isEmpty else { return }
                     guard let nameText = self.usernameTextField.text, !nameText.isEmpty else { return }
                     let dataToSave: [String: Any] = ["Email": emailText, "Paswword": passwordText, "Username": nameText]
-                    self.docRef.setData(dataToSave, completion: { (error) in
+                    self.db.collection("users").document("\(String(describing: Auth.auth().currentUser?.uid))").setData(dataToSave, completion: { (error) in
                         if let error = error {
                             print("noooooooo \(error.localizedDescription)")
                         } else {
