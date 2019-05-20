@@ -14,7 +14,8 @@ class LoginViewController: KeyboardManagementViewController {
 
 
     var user: User?
-    let db = Firestore.firestore()
+    var db: Firestore!
+
     @IBOutlet weak var segmented: UISegmentedControl!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
@@ -29,6 +30,7 @@ class LoginViewController: KeyboardManagementViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        db = Firestore.firestore()
         addTap()
         Auth.auth().addStateDidChangeListener { (auth, user) in
             if user != nil {
@@ -36,6 +38,18 @@ class LoginViewController: KeyboardManagementViewController {
                 self.emailTextField.text = nil
                 self.passwordTextField.text = nil
                 self.usernameTextField.text = nil
+                // Add a new document in collection "users"
+                self.db.collection("users").document("\(String(describing: user?.uid))").setData([
+                    "username": "Los Angeles",
+                    "password": "CA",
+                    "email": "USA"
+                ]) { err in
+                    if let err = err {
+                        print("Error writing document: \(err)")
+                    } else {
+                        print("Document successfully written!")
+                    }
+                }
             }
         }
     }
