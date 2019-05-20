@@ -32,26 +32,14 @@ class LoginViewController: KeyboardManagementViewController {
         super.viewDidLoad()
         db = Firestore.firestore()
         addTap()
-        Auth.auth().addStateDidChangeListener { (auth, user) in
-            if user != nil {
-                self.performSegue(withIdentifier: "segueToProfil", sender: nil)
-                self.emailTextField.text = nil
-                self.passwordTextField.text = nil
-                self.usernameTextField.text = nil
-                // Add a new document in collection "users"
-                self.db.collection("users").document("\(String(describing: user?.uid))").setData([
-                    "username": "Los Angeles",
-                    "password": "CA",
-                    "email": "USA"
-                ]) { err in
-                    if let err = err {
-                        print("Error writing document: \(err)")
-                    } else {
-                        print("Document successfully written!")
-                    }
-                }
-            }
-        }
+//        Auth.auth().addStateDidChangeListener { (auth, user) in
+//            if user != nil {
+//                self.performSegue(withIdentifier: "segueToProfil", sender: nil)
+//                self.emailTextField.text = nil
+//                self.passwordTextField.text = nil
+//                self.usernameTextField.text = nil
+//            }
+//        }
     }
     override func showKeyboard(notification: Notification) {
         super.showKeyboard(notification: notification)
