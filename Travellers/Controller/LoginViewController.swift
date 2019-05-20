@@ -81,6 +81,9 @@ class LoginViewController: KeyboardManagementViewController {
             profilVC.user = self.user
         }
     }
+    @IBAction func emailChanged(_ sender: UITextField) {
+        // veirfy is email exist
+    }
     @IBAction func didTapConnectButton(_ sender: UIButton) {
         if emailTextField.text!.isEmpty  {
             self.alerts(title: "Connection Failed", message: "Please enter your email adress")
