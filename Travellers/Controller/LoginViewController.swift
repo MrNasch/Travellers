@@ -32,14 +32,11 @@ class LoginViewController: KeyboardManagementViewController {
         super.viewDidLoad()
         db = Firestore.firestore()
         addTap()
-//        Auth.auth().addStateDidChangeListener { (auth, user) in
-//            if user != nil {
-//                self.performSegue(withIdentifier: "segueToProfil", sender: nil)
-//                self.emailTextField.text = nil
-//                self.passwordTextField.text = nil
-//                self.usernameTextField.text = nil
-//            }
-//        }
+        Auth.auth().addStateDidChangeListener { (auth, user) in
+            if user != nil {
+                self.performSegue(withIdentifier: "segueToProfil", sender: nil)
+            }
+        }
     }
     override func showKeyboard(notification: Notification) {
         super.showKeyboard(notification: notification)
@@ -95,9 +92,6 @@ class LoginViewController: KeyboardManagementViewController {
     }
     @IBAction func didTapFacebookConnectButton(_ sender: UIButton) {
     }
-    @IBAction func didTapRememberMeButton(_ sender: BEMCheckBox) {
-        saveConnexion()
-    }
     // Users creation or connexion
     func connectUsers() {
         // create user or connect user
@@ -139,14 +133,6 @@ class LoginViewController: KeyboardManagementViewController {
             }
         }
     }
-    func saveConnexion() {
-        if rememberCheckBox.on == true {
-            print("enregister")
-        } else {
-            return
-        }
-    }
-    
     // alerts
     func alerts(title: String, message: String) {
         let alertVC = UIAlertController(title: title, message: message, preferredStyle: .alert)

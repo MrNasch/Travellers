@@ -4,7 +4,6 @@ use_frameworks!
 target 'Travellers' do 
 pod 'Alamofire', '~> 5.0.0-beta.5'
 pod 'Firebase/Core'
-pod 'BEMCheckBox'
 pod 'Firebase/Auth'
 pod 'Firebase/Database'
 pod 'Firebase/Storage'
