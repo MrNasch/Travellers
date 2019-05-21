@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import BEMCheckBox
 import Firebase
 
 class LoginViewController: KeyboardManagementViewController {
@@ -21,7 +20,6 @@ class LoginViewController: KeyboardManagementViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var connectButton: UIButton!
-    @IBOutlet weak var rememberCheckBox: BEMCheckBox!
     @IBOutlet weak var forgotButton: UIButton!
     @IBOutlet weak var LoginView: UIStackView!
     @IBOutlet weak var centerViewConstraint: NSLayoutConstraint!
@@ -53,17 +51,13 @@ class LoginViewController: KeyboardManagementViewController {
         // Sign in selected
         case 0:
             usernameTextField.isHidden = true
-            rememberCheckBox.isHidden = false
             forgotButton.isHidden = false
-            rememberLabel.isHidden = false
             connectButton.setTitle("Sign In", for: .normal)
             facebookButton.setTitle("Sign In with Facebook", for: .normal)
         // Sign up selected
         case 1:
             usernameTextField.isHidden = false
-            rememberCheckBox.isHidden = true
             forgotButton.isHidden = true
-            rememberLabel.isHidden = true
             connectButton.setTitle("Sign Up", for: .normal)
             facebookButton.setTitle("Sign Up with Facebook", for: .normal)
         default:
