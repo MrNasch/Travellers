@@ -342,14 +342,27 @@
             </objects>
             <point key="canvasLocation" x="-797" y="880"/>
         </scene>
-        <!--View Controller-->
+        <!--Countries View Controller-->
         <scene sceneID="n2x-G2-a93">
             <objects>
-                <viewController id="HIO-9A-P2d" sceneMemberID="viewController">
+                <viewController id="HIO-9A-P2d" customClass="CountriesViewController" customModule="Travellers" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xy4-5g-b7z">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icons8-europe-filled-51" translatesAutoresizingMaskIntoConstraints="NO" id="Nhg-vI-LTz">
+                                <rect key="frame" x="87" y="64" width="240" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Nhg-vI-LTz" secondAttribute="height" multiplier="15:8" id="scr-iU-Sid"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Nhg-vI-LTz" firstAttribute="top" secondItem="372-fc-F6F" secondAttribute="top" constant="20" id="ADc-qz-L6e"/>
+                            <constraint firstItem="Nhg-vI-LTz" firstAttribute="leading" secondItem="372-fc-F6F" secondAttribute="leading" constant="87" id="bsi-4k-lBN"/>
+                            <constraint firstItem="372-fc-F6F" firstAttribute="trailing" secondItem="Nhg-vI-LTz" secondAttribute="trailing" constant="87" id="onr-T8-QMg"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="372-fc-F6F"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="icons8-europe-filled-51" id="8lI-Ie-U5O">

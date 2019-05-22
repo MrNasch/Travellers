@@ -20,6 +20,9 @@
 		34309E8A227B5A0800D714EF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 34309E87227B5A0800D714EF /* GoogleService-Info.plist */; };
 		34309E8C227B5E6800D714EF /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34309E8B227B5E6800D714EF /* User.swift */; };
 		34309E8E227B5EA200D714EF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34309E8D227B5EA200D714EF /* LoginViewController.swift */; };
+		3431D6582295BC0800681F45 /* Countries.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3431D6572295BC0800681F45 /* Countries.swift */; };
+		3431D65A2295BC2D00681F45 /* CountriesServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3431D6592295BC2D00681F45 /* CountriesServices.swift */; };
+		3431D65C2295BC7900681F45 /* CountriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3431D65B2295BC7900681F45 /* CountriesViewController.swift */; };
 		346CE375227C6B2300AC49F5 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346CE374227C6B2300AC49F5 /* ProfileViewController.swift */; };
 		346CE377227C719800AC49F5 /* FirebaseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346CE376227C719800AC49F5 /* FirebaseHelper.swift */; };
 		346CE379227C804300AC49F5 /* KeyboardManagementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346CE378227C804300AC49F5 /* KeyboardManagementViewController.swift */; };
@@ -61,6 +64,9 @@
 		34309E8B227B5E6800D714EF /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		34309E8D227B5EA200D714EF /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		34309E8F227B5EDA00D714EF /* Travellers.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Travellers.entitlements; sourceTree = "<group>"; };
+		3431D6572295BC0800681F45 /* Countries.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Countries.swift; sourceTree = "<group>"; };
+		3431D6592295BC2D00681F45 /* CountriesServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesServices.swift; sourceTree = "<group>"; };
+		3431D65B2295BC7900681F45 /* CountriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesViewController.swift; sourceTree = "<group>"; };
 		346CE374227C6B2300AC49F5 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		346CE376227C719800AC49F5 /* FirebaseHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseHelper.swift; sourceTree = "<group>"; };
 		346CE378227C804300AC49F5 /* KeyboardManagementViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardManagementViewController.swift; sourceTree = "<group>"; };
@@ -156,6 +162,8 @@
 			children = (
 				34309E8B227B5E6800D714EF /* User.swift */,
 				346CE376227C719800AC49F5 /* FirebaseHelper.swift */,
+				3431D6572295BC0800681F45 /* Countries.swift */,
+				3431D6592295BC2D00681F45 /* CountriesServices.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -174,6 +182,7 @@
 				34309E8D227B5EA200D714EF /* LoginViewController.swift */,
 				346CE374227C6B2300AC49F5 /* ProfileViewController.swift */,
 				346CE378227C804300AC49F5 /* KeyboardManagementViewController.swift */,
+				3431D65B2295BC7900681F45 /* CountriesViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -402,9 +411,12 @@
 				34309E8C227B5E6800D714EF /* User.swift in Sources */,
 				34309E54227AED0100D714EF /* AppDelegate.swift in Sources */,
 				346CE375227C6B2300AC49F5 /* ProfileViewController.swift in Sources */,
+				3431D65C2295BC7900681F45 /* CountriesViewController.swift in Sources */,
 				34309E8E227B5EA200D714EF /* LoginViewController.swift in Sources */,
 				346CE379227C804300AC49F5 /* KeyboardManagementViewController.swift in Sources */,
 				346CE377227C719800AC49F5 /* FirebaseHelper.swift in Sources */,
+				3431D65A2295BC2D00681F45 /* CountriesServices.swift in Sources */,
+				3431D6582295BC0800681F45 /* Countries.swift in Sources */,
 				34309E5C227AED0100D714EF /* Travellers.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
