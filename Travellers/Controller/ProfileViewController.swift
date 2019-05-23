@@ -24,6 +24,7 @@ class ProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         db = Firestore.firestore()
+        // checking user info
         Auth.auth().addStateDidChangeListener { (auth, user) in
             guard let user = user else { return }
             self.user = User(authData: user)
@@ -32,11 +33,9 @@ class ProfileViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         if FirebaseHelper().connected() != nil {
             // user is connected get user
-            
             let user = Auth.auth().currentUser
+            // Get document in DB
             if let user = user {
-                print("\(String(describing: user.uid))")
-                
                 let docRef = db.collection("users").document("\(user.uid)")
                 docRef.getDocument { (document, error) in
                     guard let document = document, document.exists else { return }
