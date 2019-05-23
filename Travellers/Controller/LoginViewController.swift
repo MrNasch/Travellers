@@ -10,11 +10,11 @@ import UIKit
 import Firebase
 
 class LoginViewController: KeyboardManagementViewController {
-
-
+    
+    
     var user: User?
     var db: Firestore!
-
+    
     @IBOutlet weak var segmented: UISegmentedControl!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
@@ -105,22 +105,26 @@ class LoginViewController: KeyboardManagementViewController {
         } else {
             Auth.auth().createUser(withEmail: emailTextField.text!, password: passwordTextField.text!) { user, error in
                 if error == nil {
-                    Auth.auth().signIn(withEmail: self.emailTextField.text!, password: self.passwordTextField.text!)
-                    guard let emailText = self.emailTextField.text, !emailText.isEmpty else { return }
-                    guard let passwordText = self.passwordTextField.text, !passwordText.isEmpty else { return }
-                    guard let nameText = self.usernameTextField.text, !nameText.isEmpty else { return }
-                    let dataToSave: [String: Any] = ["Email": emailText, "Paswword": passwordText, "Username": nameText]
-                    self.db.collection("users").document("\(String(describing: Auth.auth().currentUser?.uid))").setData(dataToSave, completion: { (error) in
-                        if let error = error {
-                            print("noooooooo \(error.localizedDescription)")
-                        } else {
-                            print("OK")
-                        }
-                    })
-                    
-                    self.performSegue(withIdentifier: "segueToProfil", sender: nil)
-                    
-                // Throw error if email already exist
+                    let userId = Auth.auth().currentUser?.uid
+                    if let userId = userId {
+                        
+                        Auth.auth().signIn(withEmail: self.emailTextField.text!, password: self.passwordTextField.text!)
+                        guard let emailText = self.emailTextField.text, !emailText.isEmpty else { return }
+                        guard let passwordText = self.passwordTextField.text, !passwordText.isEmpty else { return }
+                        guard let nameText = self.usernameTextField.text, !nameText.isEmpty else { return }
+                        let dataToSave: [String: Any] = ["Email": emailText, "Paswword": passwordText, "Username": nameText]
+                        self.db.collection("users").document("\(userId)").setData(dataToSave, completion: { (error) in
+                            if let error = error {
+                                print("noooooooo \(error.localizedDescription)")
+                            } else {
+                                print("OK")
+                            }
+                        })
+                        
+                        self.performSegue(withIdentifier: "segueToProfil", sender: nil)
+                        
+                        // Throw error if email already exist
+                    }
                 } else {
                     self.alerts(title: "Sign Up Failed", message: error!.localizedDescription)
                 } 

@@ -356,12 +356,21 @@
                                     <constraint firstAttribute="width" secondItem="Nhg-vI-LTz" secondAttribute="height" multiplier="15:8" id="scr-iU-Sid"/>
                                 </constraints>
                             </imageView>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iJr-NA-8WH">
+                                <rect key="frame" x="0.0" y="200" width="414" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="kFo-dh-Sad"/>
+                                </constraints>
+                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="iJr-NA-8WH" firstAttribute="trailing" secondItem="372-fc-F6F" secondAttribute="trailing" id="5g6-v2-kae"/>
                             <constraint firstItem="Nhg-vI-LTz" firstAttribute="top" secondItem="372-fc-F6F" secondAttribute="top" constant="20" id="ADc-qz-L6e"/>
                             <constraint firstItem="Nhg-vI-LTz" firstAttribute="leading" secondItem="372-fc-F6F" secondAttribute="leading" constant="87" id="bsi-4k-lBN"/>
+                            <constraint firstItem="iJr-NA-8WH" firstAttribute="leading" secondItem="372-fc-F6F" secondAttribute="leading" id="oAI-mx-Wad"/>
                             <constraint firstItem="372-fc-F6F" firstAttribute="trailing" secondItem="Nhg-vI-LTz" secondAttribute="trailing" constant="87" id="onr-T8-QMg"/>
+                            <constraint firstItem="iJr-NA-8WH" firstAttribute="top" secondItem="Nhg-vI-LTz" secondAttribute="bottom" constant="8" id="ynl-cN-RI3"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="372-fc-F6F"/>
                     </view>
@@ -371,7 +380,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S86-Mo-5Jz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="771" y="663"/>
+            <point key="canvasLocation" x="769.56521739130437" y="662.94642857142856"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="PY1-Ca-Q4c">
