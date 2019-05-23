@@ -357,10 +357,14 @@
                                 </constraints>
                             </imageView>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iJr-NA-8WH">
-                                <rect key="frame" x="0.0" y="200" width="414" height="40"/>
+                                <rect key="frame" x="0.0" y="200" width="414" height="60"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="kFo-dh-Sad"/>
+                                    <constraint firstAttribute="height" constant="60" id="kFo-dh-Sad"/>
                                 </constraints>
+                                <connections>
+                                    <outlet property="dataSource" destination="HIO-9A-P2d" id="aYF-wW-AzO"/>
+                                    <outlet property="delegate" destination="HIO-9A-P2d" id="r1i-bW-clE"/>
+                                </connections>
                             </pickerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -377,6 +381,10 @@
                     <tabBarItem key="tabBarItem" title="" image="icons8-europe-filled-51" id="8lI-Ie-U5O">
                         <inset key="imageInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="-15"/>
                     </tabBarItem>
+                    <connections>
+                        <outlet property="countryFlag" destination="Nhg-vI-LTz" id="xyQ-o9-gac"/>
+                        <outlet property="countryPicker" destination="iJr-NA-8WH" id="ubI-3d-LCh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S86-Mo-5Jz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

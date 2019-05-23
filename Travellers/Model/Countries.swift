@@ -8,6 +8,7 @@
 
 import Foundation
 
-class Countries {
-    
+struct Countries: Codable {
+    let country = ["Belgique","France","Pays-Bas"]
+    var name: String
 }
