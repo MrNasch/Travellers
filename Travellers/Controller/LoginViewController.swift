@@ -18,12 +18,12 @@ class LoginViewController: KeyboardManagementViewController {
     @IBOutlet weak var segmented: UISegmentedControl!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
-    @IBOutlet weak var usernameTextField: UITextField!
+    @IBOutlet weak var firstnameTextField: UITextField!
+    @IBOutlet weak var lastnameTextField: UITextField!
     @IBOutlet weak var connectButton: UIButton!
     @IBOutlet weak var forgotButton: UIButton!
     @IBOutlet weak var LoginView: UIStackView!
     @IBOutlet weak var centerViewConstraint: NSLayoutConstraint!
-    @IBOutlet weak var rememberLabel: UILabel!
     @IBOutlet weak var facebookButton: UIButton!
     
     override func viewDidLoad() {
@@ -50,13 +50,15 @@ class LoginViewController: KeyboardManagementViewController {
         switch segmented.selectedSegmentIndex {
         // Sign in selected
         case 0:
-            usernameTextField.isHidden = true
+            firstnameTextField.isHidden = true
+            lastnameTextField.isHidden = true
             forgotButton.isHidden = false
             connectButton.setTitle("Sign In", for: .normal)
             facebookButton.setTitle("Sign In with Facebook", for: .normal)
         // Sign up selected
         case 1:
-            usernameTextField.isHidden = false
+            firstnameTextField.isHidden = false
+            lastnameTextField.isHidden = false
             forgotButton.isHidden = true
             connectButton.setTitle("Sign Up", for: .normal)
             facebookButton.setTitle("Sign Up with Facebook", for: .normal)
@@ -111,8 +113,9 @@ class LoginViewController: KeyboardManagementViewController {
                         Auth.auth().signIn(withEmail: self.emailTextField.text!, password: self.passwordTextField.text!)
                         guard let emailText = self.emailTextField.text, !emailText.isEmpty else { return }
                         guard let passwordText = self.passwordTextField.text, !passwordText.isEmpty else { return }
-                        guard let nameText = self.usernameTextField.text, !nameText.isEmpty else { return }
-                        let dataToSave: [String: Any] = ["Email": emailText, "Paswword": passwordText, "Username": nameText]
+                        guard let firstnameText = self.firstnameTextField.text, !firstnameText.isEmpty else { return }
+                        guard let lastnameText = self.lastnameTextField.text, !lastnameText.isEmpty else { return }
+                        let dataToSave: [String: Any] = ["Email": emailText, "Paswword": passwordText, "Firstname": firstnameText, "Lastname": lastnameText]
                         self.db.collection("users").document("\(userId)").setData(dataToSave, completion: { (error) in
                             if let error = error {
                                 print("noooooooo \(error.localizedDescription)")

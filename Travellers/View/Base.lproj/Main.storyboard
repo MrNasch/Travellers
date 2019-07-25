@@ -50,7 +50,13 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                             </textField>
-                                            <textField hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Itl-5u-TlR">
+                                            <textField hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Firstname" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bDt-6Y-SNJ">
+                                                <rect key="frame" x="0.0" y="113" width="374" height="0.0"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no"/>
+                                            </textField>
+                                            <textField hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Lastname" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Itl-5u-TlR">
                                                 <rect key="frame" x="0.0" y="113" width="374" height="0.0"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -142,10 +148,11 @@
                         <outlet property="connectButton" destination="aFI-69-pgc" id="x3C-Ce-VVz"/>
                         <outlet property="emailTextField" destination="4Hm-wy-LFA" id="x5e-QJ-vRJ"/>
                         <outlet property="facebookButton" destination="cFY-rU-EQf" id="7t4-1s-shE"/>
+                        <outlet property="firstnameTextField" destination="bDt-6Y-SNJ" id="uPE-0t-kw5"/>
                         <outlet property="forgotButton" destination="nGI-qc-BsI" id="Tg4-JO-pv2"/>
+                        <outlet property="lastnameTextField" destination="Itl-5u-TlR" id="7gv-Vi-oDw"/>
                         <outlet property="passwordTextField" destination="rlJ-SK-Xbi" id="2lc-5m-lld"/>
                         <outlet property="segmented" destination="yol-UU-2Nj" id="t4F-VL-ZbH"/>
-                        <outlet property="usernameTextField" destination="Itl-5u-TlR" id="7gv-Vi-oDw"/>
                         <segue destination="4dP-Fh-xQI" kind="show" identifier="segueToProfil" id="7DV-xD-ZjM"/>
                     </connections>
                 </viewController>
@@ -228,7 +235,35 @@
                             </textView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B7g-2f-zzn">
                                 <rect key="frame" x="20" y="413" width="374" height="400"/>
+                                <subviews>
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="h8w-c5-TU8">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="400"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="HrW-7j-irS">
+                                            <size key="itemSize" width="50" height="50"/>
+                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        </collectionViewFlowLayout>
+                                        <cells>
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="pny-T6-s0v">
+                                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                </view>
+                                            </collectionViewCell>
+                                        </cells>
+                                    </collectionView>
+                                </subviews>
                                 <color key="backgroundColor" red="1" green="0.80000000000000004" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="h8w-c5-TU8" secondAttribute="bottom" id="AGq-T2-Qo0"/>
+                                    <constraint firstAttribute="trailing" secondItem="h8w-c5-TU8" secondAttribute="trailing" id="hPh-VE-IdV"/>
+                                    <constraint firstItem="h8w-c5-TU8" firstAttribute="leading" secondItem="B7g-2f-zzn" secondAttribute="leading" id="wXF-hS-Bag"/>
+                                    <constraint firstItem="h8w-c5-TU8" firstAttribute="top" secondItem="B7g-2f-zzn" secondAttribute="top" id="ybb-Ct-dxT"/>
+                                </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" alignment="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="6bF-19-KWb">
                                 <rect key="frame" x="20" y="382" width="374" height="21"/>
@@ -308,8 +343,8 @@
                     </tabBarItem>
                     <connections>
                         <outlet property="country" destination="PgZ-A1-caa" id="nRj-G9-07r"/>
-                        <outlet property="firstName" destination="7Qp-dA-mxg" id="YaX-se-9aT"/>
-                        <outlet property="lastName" destination="dGs-Nu-AaU" id="Dev-eq-VeA"/>
+                        <outlet property="firstname" destination="7Qp-dA-mxg" id="YaX-se-9aT"/>
+                        <outlet property="lastname" destination="dGs-Nu-AaU" id="Dev-eq-VeA"/>
                         <outlet property="profilePicture" destination="142-ZS-5y8" id="AxJ-6v-SNW"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="Log" id="3Nh-HQ-SrW"/>
                     </connections>
