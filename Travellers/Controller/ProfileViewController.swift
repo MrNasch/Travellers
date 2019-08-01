@@ -113,21 +113,16 @@ class ProfileViewController: UIViewController {
         
         // Upload the file to the path "images/rivers.jpg"
         let uploadTask = profileImageRef.putData(data, metadata: nil) { (metadata, error) in
-            //.putFile(from: localFile, metadata: nil) { metadata, error in
-            guard let metadata = metadata else { return }
-            // Metadata contains file metadata such as size, content-type.
-            let size = metadata.size
             // You can also access to download URL after upload.
             profileImageRef.downloadURL { (url, error) in
                 guard let downloadURL = url else { return }
-                
-                //        let dataToSave: [String: Any] = ["Profil": "downloadURL"]
-                //        guard let user = user else { return }
-                //        self.db.collection("users").document("\(user.uid)").setData(dataToSave, merge: true, completion: { (error) in
-                //            if let error = error {
-                //                print("noooooooo \(error.localizedDescription)")
-                //            }
-                //        })
+                let dataToSave: [String: Any] = ["Profil": "\(downloadURL)"]
+                guard let user = self.user else { return }
+                self.db.collection("users").document("\(user.uid)").setData(dataToSave, merge: true, completion: { (error) in
+                    if let error = error {
+                        print("noooooooo \(error.localizedDescription)")
+                    }
+                })
             }
         }
         
@@ -160,14 +155,8 @@ extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationCo
         
         let imageChoose = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
         
-        
-        
         profilePicture.image = imageChoose
-        
-        
         uploadImageProfile()
-        
-        
         picker.dismiss(animated: true, completion: nil)
     }
 }
