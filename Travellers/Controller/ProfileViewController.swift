@@ -8,14 +8,15 @@
 
 import UIKit
 import Firebase
-//KINGFISHER
+import Kingfisher
 
 
 class ProfileViewController: UIViewController {
+    
     var user: User?
     var db: Firestore!
     let storageRef = Storage.storage().reference()
-    
+    let reuseIdentifier = "imageCell"
     
     @IBOutlet weak var firstname: UILabel!
     @IBOutlet weak var lastname: UILabel!
@@ -23,6 +24,11 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var profilePicture: UIImageView!
     @IBOutlet weak var bioText: UITextView!
     
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        displayUser()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,7 +43,9 @@ class ProfileViewController: UIViewController {
         }
     }
     
-    override func viewWillAppear(_ animated: Bool) {
+    
+    // check user and update infos
+    func displayUser() {
         if FirebaseHelper().connected() != nil {
             // user is connected get user
             let user = Auth.auth().currentUser
@@ -50,11 +58,12 @@ class ProfileViewController: UIViewController {
                     let firstname = dataDescription!["Firstname"] as? String ?? ""
                     let lastname = dataDescription!["Lastname"] as? String ?? ""
                     let bioText = dataDescription!["Bio"] as? String ?? ""
-                    //let profile = dataDescription!["Profil"] as? String ?? ""
+                    let profile = dataDescription!["Profil"] as? String ?? ""
                     self.firstname.text = firstname.capitalized
                     self.lastname.text = lastname.capitalized
                     self.bioText.text = bioText
-                    //self.profile = setImage
+                    let urlImage = URL(string: "\(profile)")
+                    self.profilePicture.kf.setImage(with: urlImage)
                     print("Document data: \(String(describing: dataDescription))")
                 }
             }
@@ -63,7 +72,6 @@ class ProfileViewController: UIViewController {
             performSegue(withIdentifier: "Log", sender: nil)
         }
     }
-    
     // modify bio text and save it to firebase
     func modifyBioText() {
         bioText.delegate?.textViewDidEndEditing?(bioText)
@@ -101,6 +109,8 @@ class ProfileViewController: UIViewController {
         actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         self.present(actionSheet, animated: true, completion: nil)
     }
+    
+    // Upload Image to storage and create reference to document
     func uploadImageProfile() {
         // Reference to folder of profile image
         guard let userId = user?.uid else { return }
@@ -112,7 +122,7 @@ class ProfileViewController: UIViewController {
         }
         
         // Upload the file to the path "images/rivers.jpg"
-        let uploadTask = profileImageRef.putData(data, metadata: nil) { (metadata, error) in
+        profileImageRef.putData(data, metadata: nil) { (metadata, error) in
             // You can also access to download URL after upload.
             profileImageRef.downloadURL { (url, error) in
                 guard let downloadURL = url else { return }
@@ -122,14 +132,17 @@ class ProfileViewController: UIViewController {
                     if let error = error {
                         print("noooooooo \(error.localizedDescription)")
                     }
+                    let url = URL(string: "\(downloadURL)")
+                    self.profilePicture.kf.setImage(with: url)
                 })
             }
         }
-        
-        
     }
     
-    
+    // add photos
+    @IBAction func addPhotosTapped(_ sender: UIButton) {
+        addPhoto()
+    }
     
     // Disconnect user
     @IBAction func disconnectButton(_ sender: UIButton) {
@@ -158,5 +171,38 @@ extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationCo
         profilePicture.image = imageChoose
         uploadImageProfile()
         picker.dismiss(animated: true, completion: nil)
+    }
+}
+
+
+extension ProfileViewController: UICollectionViewDataSource, UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        // image.count
+        return 15
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as? ImageCellCollectionViewCell else {
+            return UICollectionViewCell()
+        }
+        
+        cell.backgroundColor = UIColor.green
+        cell.layer.cornerRadius = 5
+//        let url = URL(string: "\(imageUrl)")
+//        cell.imageCell.kf.setImage(with: url)
+        
+        return cell
+    }
+    
+    func addPhoto() {
+        let imageGaleryPickerController = UIImagePickerController()
+        imageGaleryPickerController.delegate = self as UIImagePickerControllerDelegate & UINavigationControllerDelegate
+        
+        self.present(imageGaleryPickerController, animated: true, completion: nil)
+        addPhotoToDocument()
+    }
+    
+    func addPhotoToDocument() {
+       print("lolooool")
     }
 }
