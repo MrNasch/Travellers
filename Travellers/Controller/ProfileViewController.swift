@@ -17,6 +17,8 @@ class ProfileViewController: UIViewController {
     var db: Firestore!
     let storageRef = Storage.storage().reference()
     let reuseIdentifier = "imageCell"
+    var images = [ImageCellCollectionViewCell]()
+    let imagePicker = UIImagePickerController()
     
     @IBOutlet weak var firstname: UILabel!
     @IBOutlet weak var lastname: UILabel!
@@ -59,6 +61,7 @@ class ProfileViewController: UIViewController {
                     let lastname = dataDescription!["Lastname"] as? String ?? ""
                     let bioText = dataDescription!["Bio"] as? String ?? ""
                     let profile = dataDescription!["Profil"] as? String ?? ""
+                    let imagesUrl = dataDescription!["Image"] as? String ?? ""
                     self.firstname.text = firstname.capitalized
                     self.lastname.text = lastname.capitalized
                     self.bioText.text = bioText
@@ -141,7 +144,10 @@ class ProfileViewController: UIViewController {
     
     // add photos
     @IBAction func addPhotosTapped(_ sender: UIButton) {
-        addPhoto()
+        imagePicker.allowsEditing = false
+        imagePicker.sourceType = .photoLibrary
+        
+        present(imagePicker, animated: true, completion: nil)
     }
     
     // Disconnect user
@@ -164,13 +170,51 @@ class ProfileViewController: UIViewController {
 
 
 extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func randomString(length: Int) -> String {
+        let letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+        return String((0..<length).map{ _ in letters.randomElement()! })
+    }
+//    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+//
+//        let imageChoose = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
+//
+//        profilePicture.image = imageChoose
+//        uploadImageProfile()
+//        picker.dismiss(animated: true, completion: nil)
+//    }
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        
-        let imageChoose = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
-        
-        profilePicture.image = imageChoose
-        uploadImageProfile()
         picker.dismiss(animated: true, completion: nil)
+        
+        let imagePicked = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
+        
+        let imageGalRef = storageRef.child("imagesGallery/\(randomString(length: 20)).jpg")
+        
+        // File located on disk
+        guard let data = profilePicture.image?.jpegData(compressionQuality: 0.5) else {
+            return
+        }
+        
+        
+        // Upload the file to the path "images/rivers.jpg"
+        imageGalRef.putData(data, metadata: nil) { (metadata, error) in
+            // You can also access to download URL after upload.
+            imageGalRef.downloadURL { (url, error) in
+                guard let downloadURL = url else { return }
+                var dataToSave: [String: [Any]] = ["Image": ["\(downloadURL)"]]
+                guard let user = self.user else { return }
+                self.db.collection("users").document("\(user.uid)").setData(dataToSave, merge: true, completion: { (error) in
+                    if let error = error {
+                        print("noooooooo \(error.localizedDescription)")
+                    }
+                    let url = URL(string: "\(downloadURL)")
+                    print(url)
+                    dataToSave["Image"]?.append(url)
+                })
+            }
+        }
+        
+        
+        
     }
 }
 
@@ -178,7 +222,7 @@ extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationCo
 extension ProfileViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // image.count
-        return 15
+        return images.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -186,23 +230,21 @@ extension ProfileViewController: UICollectionViewDataSource, UICollectionViewDel
             return UICollectionViewCell()
         }
         
+        
+        
+        let docRef = db.collection("users").document("\(String(describing: user?.uid))")
+        docRef.getDocument { (document, error) in
+            guard let document = document, document.exists else { return }
+            let dataDescription = document.data()
+            let imagesUrl = dataDescription!["Image"] as? String ?? ""
+            let urlImage = URL(string: "\(imagesUrl)")
+            cell.imageCell.kf.setImage(with: urlImage)
+        }
+        
+        
         cell.backgroundColor = UIColor.green
         cell.layer.cornerRadius = 5
-//        let url = URL(string: "\(imageUrl)")
-//        cell.imageCell.kf.setImage(with: url)
         
         return cell
-    }
-    
-    func addPhoto() {
-        let imageGaleryPickerController = UIImagePickerController()
-        imageGaleryPickerController.delegate = self as UIImagePickerControllerDelegate & UINavigationControllerDelegate
-        
-        self.present(imageGaleryPickerController, animated: true, completion: nil)
-        addPhotoToDocument()
-    }
-    
-    func addPhotoToDocument() {
-       print("lolooool")
     }
 }
