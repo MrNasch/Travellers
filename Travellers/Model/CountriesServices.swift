@@ -14,7 +14,7 @@ class CountriesSevices {
     private init() {}
     
     // API URL
-    private let countriesUrl = URL(string: "https://restcountries.eu/rest/v2/name/{name}?fullText=true")!
+    private let countriesUrl = URL(string: "https://restcountries.eu/rest/v2/all")!
     
     //create session fake
     private var countriesSession = URLSession(configuration: .default)
@@ -26,7 +26,7 @@ class CountriesSevices {
     private var task: URLSessionDataTask?
     
     //create func that get weather from openweathermap
-    func getCountries(callback: @escaping (Bool, Countries?) ->Void) {
+    func getCountries(callback: @escaping (Bool, Country?) ->Void) {
         //cancel
         task?.cancel()
         //task creation
@@ -44,7 +44,7 @@ class CountriesSevices {
                 }
                 // Check decoder
                 let decoder = JSONDecoder()
-                guard let countries = try? decoder.decode(Countries.self, from: data) else {
+                guard let countries = try? decoder.decode(Country.self, from: data) else {
                     callback(false, nil)
                     return
                 }

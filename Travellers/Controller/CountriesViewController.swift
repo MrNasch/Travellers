@@ -8,28 +8,28 @@
 
 import UIKit
 
-//class CountriesViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
-//    
-//    
-////    let country = Countries()
-//    
-//    @IBOutlet weak var countryFlag: UIImageView!
-//    @IBOutlet weak var countryPicker: UIPickerView!
-//    
-////    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-////        return 1
-////    }
-////
-////    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-////        return country.country.count
-////    }
-////    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-////        return country.country[row]
-////    }
-////    override func viewDidLoad() {
-////        super.viewDidLoad()
-////
-////        // Do any additional setup after loading the view.
-////    }
-//
-//}
+class CountriesViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
+    
+    
+    let country = [Country]()
+    
+    @IBOutlet weak var countryFlag: UIImageView!
+    @IBOutlet weak var countryPicker: UIPickerView!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+    }
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return country.count
+    }
+
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return country.count
+    }
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return country[row].name
+    }
+
+}

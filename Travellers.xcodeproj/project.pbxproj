@@ -24,6 +24,7 @@
 		3431D6582295BC0800681F45 /* Countries.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3431D6572295BC0800681F45 /* Countries.swift */; };
 		3431D65A2295BC2D00681F45 /* CountriesServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3431D6592295BC2D00681F45 /* CountriesServices.swift */; };
 		3431D65C2295BC7900681F45 /* CountriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3431D65B2295BC7900681F45 /* CountriesViewController.swift */; };
+		34335C8022F8D91900E7E622 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34335C7F22F8D91900E7E622 /* MapViewController.swift */; };
 		346CE375227C6B2300AC49F5 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346CE374227C6B2300AC49F5 /* ProfileViewController.swift */; };
 		346CE377227C719800AC49F5 /* FirebaseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346CE376227C719800AC49F5 /* FirebaseHelper.swift */; };
 		346CE379227C804300AC49F5 /* KeyboardManagementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346CE378227C804300AC49F5 /* KeyboardManagementViewController.swift */; };
@@ -69,6 +70,7 @@
 		3431D6572295BC0800681F45 /* Countries.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Countries.swift; sourceTree = "<group>"; };
 		3431D6592295BC2D00681F45 /* CountriesServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesServices.swift; sourceTree = "<group>"; };
 		3431D65B2295BC7900681F45 /* CountriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesViewController.swift; sourceTree = "<group>"; };
+		34335C7F22F8D91900E7E622 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		346CE374227C6B2300AC49F5 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		346CE376227C719800AC49F5 /* FirebaseHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseHelper.swift; sourceTree = "<group>"; };
 		346CE378227C804300AC49F5 /* KeyboardManagementViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardManagementViewController.swift; sourceTree = "<group>"; };
@@ -186,6 +188,7 @@
 				346CE378227C804300AC49F5 /* KeyboardManagementViewController.swift */,
 				3431D65B2295BC7900681F45 /* CountriesViewController.swift */,
 				343001BF22F754A20042FF60 /* ImageCellCollectionViewCell.swift */,
+				34335C7F22F8D91900E7E622 /* MapViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -420,6 +423,7 @@
 				34309E8E227B5EA200D714EF /* LoginViewController.swift in Sources */,
 				346CE379227C804300AC49F5 /* KeyboardManagementViewController.swift in Sources */,
 				346CE377227C719800AC49F5 /* FirebaseHelper.swift in Sources */,
+				34335C8022F8D91900E7E622 /* MapViewController.swift in Sources */,
 				3431D65A2295BC2D00681F45 /* CountriesServices.swift in Sources */,
 				3431D6582295BC0800681F45 /* Countries.swift in Sources */,
 				34309E5C227AED0100D714EF /* Travellers.xcdatamodeld in Sources */,

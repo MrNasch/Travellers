@@ -407,7 +407,6 @@
                         <segue destination="XLA-Kt-DVx" kind="relationship" relationship="viewControllers" id="lft-d9-qRr"/>
                         <segue destination="HIO-9A-P2d" kind="relationship" relationship="viewControllers" id="Tkw-tD-1lX"/>
                         <segue destination="gds-AJ-1iR" kind="relationship" relationship="viewControllers" id="201-BV-sEf"/>
-                        <segue destination="5Pq-Eu-U8O" kind="relationship" relationship="viewControllers" id="Asr-Tc-66z"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YjD-Hs-Ksb" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -462,47 +461,42 @@
             </objects>
             <point key="canvasLocation" x="769.56521739130437" y="662.94642857142856"/>
         </scene>
-        <!--View Controller-->
+        <!--Map View Controller-->
         <scene sceneID="PY1-Ca-Q4c">
             <objects>
-                <viewController id="gds-AJ-1iR" sceneMemberID="viewController">
+                <viewController id="gds-AJ-1iR" customClass="MapViewController" customModule="Travellers" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="12R-9D-JwJ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" rotateEnabled="NO" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1rc-2E-TMS">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
+                            </mapView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="1rc-2E-TMS" firstAttribute="leading" secondItem="sP9-WX-WYh" secondAttribute="leading" id="e0b-h5-eeZ"/>
+                            <constraint firstItem="1rc-2E-TMS" firstAttribute="top" secondItem="sP9-WX-WYh" secondAttribute="top" constant="-44" id="gJq-TV-vES"/>
+                            <constraint firstItem="sP9-WX-WYh" firstAttribute="trailing" secondItem="1rc-2E-TMS" secondAttribute="trailing" id="ip1-fk-mR5"/>
+                            <constraint firstItem="sP9-WX-WYh" firstAttribute="bottom" secondItem="1rc-2E-TMS" secondAttribute="bottom" id="qD8-g9-Og5"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="sP9-WX-WYh"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="icons8-échange-de-devises-50 (1)" id="peH-yf-Amv">
+                    <tabBarItem key="tabBarItem" title="" image="icons8-modifier-51" id="peH-yf-Amv">
                         <inset key="imageInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="-15"/>
                     </tabBarItem>
+                    <connections>
+                        <outlet property="mapView" destination="1rc-2E-TMS" id="jOy-HE-rmx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qgv-cN-68B" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1543" y="931"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="02R-Z7-nZr">
-            <objects>
-                <viewController id="5Pq-Eu-U8O" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Fou-gt-NVj">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="zty-2c-BJb"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="" image="icons8-paramètres-50 (1)" id="zC7-tz-7QE">
-                        <inset key="imageInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="-15"/>
-                    </tabBarItem>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="mwY-9N-Sc8" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2335" y="1312"/>
+            <point key="canvasLocation" x="1542.0289855072465" y="930.80357142857133"/>
         </scene>
     </scenes>
     <resources>
         <image name="icons8-contacts-51" width="25" height="25"/>
         <image name="icons8-europe-filled-51" width="25" height="25"/>
-        <image name="icons8-échange-de-devises-50 (1)" width="25" height="25"/>
-        <image name="icons8-paramètres-50 (1)" width="25" height="25"/>
+        <image name="icons8-modifier-51" width="25" height="25"/>
     </resources>
 </document>
