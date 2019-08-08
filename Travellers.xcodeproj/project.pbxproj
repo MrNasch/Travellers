@@ -9,10 +9,10 @@
 /* Begin PBXBuildFile section */
 		20884547CFAB0B30AFB64399 /* Pods_Travellers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6D7D0ACFAE98FF311FEF614 /* Pods_Travellers.framework */; };
 		343001C022F754A20042FF60 /* ImageCellCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 343001BF22F754A20042FF60 /* ImageCellCollectionViewCell.swift */; };
+		34308CB722FC9E96009B6FD9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34308CB622FC9E95009B6FD9 /* Assets.xcassets */; };
 		34309E54227AED0100D714EF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34309E53227AED0100D714EF /* AppDelegate.swift */; };
 		34309E59227AED0100D714EF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34309E57227AED0100D714EF /* Main.storyboard */; };
 		34309E5C227AED0100D714EF /* Travellers.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 34309E5A227AED0100D714EF /* Travellers.xcdatamodeld */; };
-		34309E5E227AED0200D714EF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34309E5D227AED0200D714EF /* Assets.xcassets */; };
 		34309E61227AED0200D714EF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34309E5F227AED0200D714EF /* LaunchScreen.storyboard */; };
 		34309E6C227AED0200D714EF /* TravellersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34309E6B227AED0200D714EF /* TravellersTests.swift */; };
 		34309E77227AED0200D714EF /* TravellersUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34309E76227AED0200D714EF /* TravellersUITests.swift */; };
@@ -50,11 +50,11 @@
 /* Begin PBXFileReference section */
 		1D6C04B93CD6F5953B21C5B8 /* Pods-Travellers.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Travellers.debug.xcconfig"; path = "Target Support Files/Pods-Travellers/Pods-Travellers.debug.xcconfig"; sourceTree = "<group>"; };
 		343001BF22F754A20042FF60 /* ImageCellCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCellCollectionViewCell.swift; sourceTree = "<group>"; };
+		34308CB622FC9E95009B6FD9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../../../.Trash/Assets.xcassets; sourceTree = "<group>"; };
 		34309E50227AED0100D714EF /* Travellers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Travellers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		34309E53227AED0100D714EF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		34309E58227AED0100D714EF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		34309E5B227AED0100D714EF /* Travellers.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Travellers.xcdatamodel; sourceTree = "<group>"; };
-		34309E5D227AED0200D714EF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		34309E60227AED0200D714EF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		34309E62227AED0200D714EF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		34309E67227AED0200D714EF /* TravellersTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TravellersTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -134,7 +134,7 @@
 				34309E86227AED2600D714EF /* Controller */,
 				34309E85227AED2000D714EF /* View */,
 				34309E53227AED0100D714EF /* AppDelegate.swift */,
-				34309E5D227AED0200D714EF /* Assets.xcassets */,
+				34308CB622FC9E95009B6FD9 /* Assets.xcassets */,
 				34309E5F227AED0200D714EF /* LaunchScreen.storyboard */,
 				34309E62227AED0200D714EF /* Info.plist */,
 				34309E87227B5A0800D714EF /* GoogleService-Info.plist */,
@@ -323,7 +323,7 @@
 			files = (
 				34309E61227AED0200D714EF /* LaunchScreen.storyboard in Resources */,
 				34309E88227B5A0800D714EF /* GoogleService-Info.plist in Resources */,
-				34309E5E227AED0200D714EF /* Assets.xcassets in Resources */,
+				34308CB722FC9E96009B6FD9 /* Assets.xcassets in Resources */,
 				34309E59227AED0100D714EF /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
