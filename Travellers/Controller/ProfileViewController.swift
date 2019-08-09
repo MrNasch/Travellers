@@ -19,6 +19,7 @@ class ProfileViewController: UIViewController {
     let reuseIdentifier = "imageCell"
     var images = [ImageCellCollectionViewCell]()
     let imagePicker = UIImagePickerController()
+    // selected button
     
     @IBOutlet weak var firstname: UILabel!
     @IBOutlet weak var lastname: UILabel!
@@ -144,6 +145,7 @@ class ProfileViewController: UIViewController {
     
     // add photos
     @IBAction func addPhotosTapped(_ sender: UIButton) {
+        imagePicker.delegate = self
         imagePicker.allowsEditing = false
         imagePicker.sourceType = .photoLibrary
         
@@ -176,11 +178,11 @@ extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationCo
     }
 //    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
 //
-//        let imageChoose = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
-//
-//        profilePicture.image = imageChoose
-//        uploadImageProfile()
-//        picker.dismiss(animated: true, completion: nil)
+////        let imageChoose = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
+////
+////        profilePicture.image = imageChoose
+////        uploadImageProfile()
+////        picker.dismiss(animated: true, completion: nil)
 //    }
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         picker.dismiss(animated: true, completion: nil)
@@ -200,15 +202,17 @@ extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationCo
             // You can also access to download URL after upload.
             imageGalRef.downloadURL { (url, error) in
                 guard let downloadURL = url else { return }
+                
+                // get document then set
+                
                 var dataToSave: [String: [Any]] = ["Image": ["\(downloadURL)"]]
+                
+                
                 guard let user = self.user else { return }
                 self.db.collection("users").document("\(user.uid)").setData(dataToSave, merge: true, completion: { (error) in
                     if let error = error {
                         print("noooooooo \(error.localizedDescription)")
                     }
-                    let url = URL(string: "\(downloadURL)")
-                    print(url)
-                    dataToSave["Image"]?.append(url)
                 })
             }
         }
