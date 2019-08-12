@@ -19,7 +19,7 @@ class ProfileViewController: UIViewController {
     let reuseIdentifier = "imageCell"
     var images = [ImageCellCollectionViewCell]()
     let imagePicker = UIImagePickerController()
-    // selected button
+    var selectedPicker = true
     
     @IBOutlet weak var firstname: UILabel!
     @IBOutlet weak var lastname: UILabel!
@@ -145,6 +145,7 @@ class ProfileViewController: UIViewController {
     
     // add photos
     @IBAction func addPhotosTapped(_ sender: UIButton) {
+        selectedPicker = false
         imagePicker.delegate = self
         imagePicker.allowsEditing = false
         imagePicker.sourceType = .photoLibrary
@@ -176,49 +177,48 @@ extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationCo
         let letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
         return String((0..<length).map{ _ in letters.randomElement()! })
     }
-//    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-//
-////        let imageChoose = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
-////
-////        profilePicture.image = imageChoose
-////        uploadImageProfile()
-////        picker.dismiss(animated: true, completion: nil)
-//    }
+    
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        picker.dismiss(animated: true, completion: nil)
         
-        let imagePicked = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
-        
-        let imageGalRef = storageRef.child("imagesGallery/\(randomString(length: 20)).jpg")
-        
-        // File located on disk
-        guard let data = profilePicture.image?.jpegData(compressionQuality: 0.5) else {
-            return
-        }
-        
-        
-        // Upload the file to the path "images/rivers.jpg"
-        imageGalRef.putData(data, metadata: nil) { (metadata, error) in
-            // You can also access to download URL after upload.
-            imageGalRef.downloadURL { (url, error) in
-                guard let downloadURL = url else { return }
-                
-                // get document then set
-                
-                var dataToSave: [String: [Any]] = ["Image": ["\(downloadURL)"]]
-                
-                
-                guard let user = self.user else { return }
-                self.db.collection("users").document("\(user.uid)").setData(dataToSave, merge: true, completion: { (error) in
-                    if let error = error {
-                        print("noooooooo \(error.localizedDescription)")
-                    }
-                })
+        if selectedPicker == true {
+            let imageChoose = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
+            
+            profilePicture.image = imageChoose
+            uploadImageProfile()
+            picker.dismiss(animated: true, completion: nil)
+        } else {
+            picker.dismiss(animated: true, completion: nil)
+            
+            let imagePicked = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
+            
+            let imageGalRef = storageRef.child("imagesGallery/\(randomString(length: 20)).jpg")
+            
+            // File located on disk
+            guard let data = profilePicture.image?.jpegData(compressionQuality: 0.5) else {
+                return
+            }
+            
+            
+            // Upload the file to the path "images/rivers.jpg"
+            imageGalRef.putData(data, metadata: nil) { (metadata, error) in
+                // You can also access to download URL after upload.
+                imageGalRef.downloadURL { (url, error) in
+                    guard let downloadURL = url else { return }
+                    
+                    // get document then set
+                    
+                    var dataToSave: [String: [Any]] = ["Image": ["\(downloadURL)"]]
+                    
+                    
+                    guard let user = self.user else { return }
+                    self.db.collection("users").document("\(user.uid)").setData(dataToSave, merge: true, completion: { (error) in
+                        if let error = error {
+                            print("noooooooo \(error.localizedDescription)")
+                        }
+                    })
+                }
             }
         }
-        
-        
-        
     }
 }
 
