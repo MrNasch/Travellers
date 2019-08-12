@@ -75,9 +75,7 @@ class MapViewController: UIViewController {
 
     //tracking userLocation
     func startTrackingUser() {
-        mapView.showsPointsOfInterest = true
-        mapView.showsBuildings = true
-        mapView.showsUserLocation = true
+        createCamera()
         centerViewOnUserLocation()
         locationManager.startUpdatingLocation()
         previousLocation = getCenterLocation(for: mapView)
@@ -89,6 +87,20 @@ class MapViewController: UIViewController {
         let longitude = mapView.centerCoordinate.longitude
         
         return CLLocation(latitude: latitude, longitude: longitude)
+    }
+    
+    // create Camera
+    func createCamera() {
+        mapView.showsBuildings = true
+        mapView.showsUserLocation = true
+        mapView.mapType = .standard
+        
+        let mapCamera = MKMapCamera()
+        mapCamera.pitch = 65
+        mapCamera.altitude = 500
+        mapCamera.heading = 0
+        
+        mapView.camera = mapCamera
     }
     
     // get direction function

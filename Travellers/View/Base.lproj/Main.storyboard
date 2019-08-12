@@ -539,6 +539,6 @@
         <image name="icons8-europe-filled-51" width="25" height="25"/>
         <image name="icons8-marqueur-40" width="40" height="40"/>
         <image name="icons8-marqueur-53" width="25" height="25"/>
-        <image name="icons8-navigation-50" width="25" height="25"/>
+        <image name="icons8-navigation-50" width="50" height="50"/>
     </resources>
 </document>
