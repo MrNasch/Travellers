@@ -19,6 +19,7 @@ class ProfileViewController: UIViewController {
     let reuseIdentifier = "imageCell"
     var images = [ImageCellCollectionViewCell]()
     let imagePicker = UIImagePickerController()
+    var service = ImageService()
     var selectedPicker = true
     
     @IBOutlet weak var firstname: UILabel!
@@ -62,7 +63,6 @@ class ProfileViewController: UIViewController {
                     let lastname = dataDescription!["Lastname"] as? String ?? ""
                     let bioText = dataDescription!["Bio"] as? String ?? ""
                     let profile = dataDescription!["Profil"] as? String ?? ""
-                    let imagesUrl = dataDescription!["Image"] as? String ?? ""
                     self.firstname.text = firstname.capitalized
                     self.lastname.text = lastname.capitalized
                     self.bioText.text = bioText
@@ -125,7 +125,7 @@ class ProfileViewController: UIViewController {
             return
         }
         
-        // Upload the file to the path "images/rivers.jpg"
+        // Upload the file
         profileImageRef.putData(data, metadata: nil) { (metadata, error) in
             // You can also access to download URL after upload.
             profileImageRef.downloadURL { (url, error) in
@@ -181,42 +181,22 @@ extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationCo
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
         if selectedPicker == true {
+            
             let imageChoose = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
             
             profilePicture.image = imageChoose
             uploadImageProfile()
             picker.dismiss(animated: true, completion: nil)
+            
         } else {
+            
             picker.dismiss(animated: true, completion: nil)
             
             let imagePicked = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
+            guard let data = imagePicked.jpegData(compressionQuality: 0.5) else { return }
             
-            let imageGalRef = storageRef.child("imagesGallery/\(randomString(length: 20)).jpg")
-            
-            // File located on disk
-            guard let data = profilePicture.image?.jpegData(compressionQuality: 0.5) else {
-                return
-            }
-            
-            
-            // Upload the file to the path "images/rivers.jpg"
-            imageGalRef.putData(data, metadata: nil) { (metadata, error) in
-                // You can also access to download URL after upload.
-                imageGalRef.downloadURL { (url, error) in
-                    guard let downloadURL = url else { return }
-                    
-                    // get document then set
-                    
-                    var dataToSave: [String: [Any]] = ["Image": ["\(downloadURL)"]]
-                    
-                    
-                    guard let user = self.user else { return }
-                    self.db.collection("users").document("\(user.uid)").setData(dataToSave, merge: true, completion: { (error) in
-                        if let error = error {
-                            print("noooooooo \(error.localizedDescription)")
-                        }
-                    })
-                }
+            service.upload(images: [data], userId: user!.uid) {
+                
             }
         }
     }
@@ -235,8 +215,8 @@ extension ProfileViewController: UICollectionViewDataSource, UICollectionViewDel
         }
         
         
-        
-        let docRef = db.collection("users").document("\(String(describing: user?.uid))")
+        // get all the documents where userId = userId
+        let docRef = db.collection("imagesGallery").document("\(String(describing: user?.uid))")
         docRef.getDocument { (document, error) in
             guard let document = document, document.exists else { return }
             let dataDescription = document.data()
