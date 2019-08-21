@@ -68,7 +68,19 @@ class ProfileViewController: UIViewController {
                     self.bioText.text = bioText
                     let urlImage = URL(string: "\(profile)")
                     self.profilePicture.kf.setImage(with: urlImage)
-                    print("Document data: \(String(describing: dataDescription))")
+                }
+                
+                //
+                let docRef2 = db.collection("imagesGallery").whereField("userId", isEqualTo: "\(user.uid)")
+                docRef2.getDocuments() { (querySnapshot, err) in
+                    if let err = err {
+                        print("Error getting documents: \(err)")
+                    } else {
+                        for document in querySnapshot!.documents {
+                            print("\(document.documentID) => \(document.data())")
+                            print("OKOKOKOKOKOOKOKOOK")
+                        }
+                    }
                 }
             }
         } else {
@@ -181,12 +193,15 @@ extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationCo
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
         if selectedPicker == true {
+            picker.dismiss(animated: true, completion: nil)
             
             let imageChoose = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
             
-            profilePicture.image = imageChoose
+            
+            self.profilePicture.image = imageChoose
+            
             uploadImageProfile()
-            picker.dismiss(animated: true, completion: nil)
+            
             
         } else {
             
@@ -216,16 +231,28 @@ extension ProfileViewController: UICollectionViewDataSource, UICollectionViewDel
         
         
         // get all the documents where userId = userId
-        let docRef = db.collection("imagesGallery").document("\(String(describing: user?.uid))")
-        docRef.getDocument { (document, error) in
-            guard let document = document, document.exists else { return }
-            let dataDescription = document.data()
-            let imagesUrl = dataDescription!["Image"] as? String ?? ""
-            let urlImage = URL(string: "\(imagesUrl)")
+        // WRONG
+        service.getAllImagesFor(userId: "\(String(describing: user?.uid))") { (images) in
+            let urlImage = URL(string: "\(images)")
             cell.imageCell.kf.setImage(with: urlImage)
         }
         
-        
+        let docRef = db.collection("imagesGallery").whereField("userId", isEqualTo: "\(String(describing: user?.uid))")
+                docRef.getDocuments() { (querySnapshot, err) in
+                    if let err = err {
+                        print("Error getting documents: \(err)")
+                    } else {
+                        for document in querySnapshot!.documents {
+                            print("\(document.documentID) => \(document.data())")
+                            print("OKOKOKOKOKOOKOKOOK")
+                            
+                            
+//                            let imagesUrl = dataDescription!["url"] as? String ?? ""
+//                            let urlImage = URL(string: "\(imagesUrl)")
+//                            cell.imageCell.kf.setImage(with: urlImage)
+                        }
+                    }
+            }
         cell.backgroundColor = UIColor.green
         cell.layer.cornerRadius = 5
         

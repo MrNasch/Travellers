@@ -56,6 +56,47 @@ class ImageService {
                 })
             })
         }
+    }
+    
+    
+    //display images
+    func getAllImagesFor(userId: String, images: @escaping ([ImageEntity]) -> ()) {
+        let imagesCollection = Firestore.firestore().collection("imagesGallery")
+            .whereField("userId", isEqualTo: userId)
         
+        imagesCollection.addSnapshotListener { (query, error) in
+            guard let query = query else {
+                if let error = error {
+                    print("error getting images: ", error.localizedDescription)
+                }
+                return
+            }
+            
+            let imagesEntities = query.documents
+                .map { ImageEntity(id: $0.documentID, data: $0.data()) }
+            
+            DispatchQueue.main.async {
+                images(imagesEntities)
+            }
+        }
+    }
+    
+    //delete images
+    func delete(imageId: String, completion: @escaping () -> ()) {
+        let imageDocRef = Firestore.firestore().collection("imagesGallery").document(imageId)
+        
+        imageDocRef.delete { error in
+            if let error = error {
+                print("error: ", error.localizedDescription)
+                return
+            }
+            
+            DispatchQueue.main.async {
+                completion()
+            }
+        }
+        
+        let imageStorageRef = Storage.storage().reference(withPath: "imagesGallery").child(imageId)
+        imageStorageRef.delete()
     }
 }

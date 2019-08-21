@@ -70,7 +70,7 @@ struct FakeNetworkRequest: NetworkRequest {
 class CountriesServices {
     var networkRequest: NetworkRequest = AlamofireNetworkRequest()
     
-    func getCountry(query: String, completion: @escaping (Country?, Error?) -> Void) {
+    func getCountry(query: String, completion: @escaping ([Country]?, Error?) -> Void) {
         let url = "https://restcountries.eu/rest/v2/\(query)"
         networkRequest.request(url, completion: completion)
     }

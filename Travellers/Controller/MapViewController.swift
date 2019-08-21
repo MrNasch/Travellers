@@ -182,7 +182,8 @@ extension MapViewController: MKMapViewDelegate {
             guard let self = self else { return }
             
             if let _ = error {
-                self.alerts(title: "Oops", message: "unable to get previous location")
+                // handling error that isn't an error
+                print(error?.localizedDescription as Any)
                 return
             }
             
