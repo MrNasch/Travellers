@@ -17,7 +17,7 @@ class ProfileViewController: UIViewController {
     var db: Firestore!
     let storageRef = Storage.storage().reference()
     let reuseIdentifier = "imageCell"
-    var images = [ImageCellCollectionViewCell]()
+    var images = [ImageEntity]()
     let imagePicker = UIImagePickerController()
     var service = ImageService()
     var selectedPicker = true
@@ -27,11 +27,18 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var country: UILabel!
     @IBOutlet weak var profilePicture: UIImageView!
     @IBOutlet weak var bioText: UITextView!
-    
+    @IBOutlet weak var proCollectionView: UICollectionView!
     
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        proCollectionView.reloadData()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         displayUser()
+        displayImagesGal()
     }
     
     override func viewDidLoad() {
@@ -39,6 +46,8 @@ class ProfileViewController: UIViewController {
         bioText.delegate = self as? UITextViewDelegate
         db = Firestore.firestore()
         profilePicture.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(selectProfileImage)))
+        
+        
         
         // checking user info
         Auth.auth().addStateDidChangeListener { (auth, user) in
@@ -69,23 +78,19 @@ class ProfileViewController: UIViewController {
                     let urlImage = URL(string: "\(profile)")
                     self.profilePicture.kf.setImage(with: urlImage)
                 }
-                
-                //
-                let docRef2 = db.collection("imagesGallery").whereField("userId", isEqualTo: "\(user.uid)")
-                docRef2.getDocuments() { (querySnapshot, err) in
-                    if let err = err {
-                        print("Error getting documents: \(err)")
-                    } else {
-                        for document in querySnapshot!.documents {
-                            print("\(document.documentID) => \(document.data())")
-                            print("OKOKOKOKOKOOKOKOOK")
-                        }
-                    }
-                }
             }
         } else {
             // no user connected, send back to LoginViewController
             performSegue(withIdentifier: "Log", sender: nil)
+        }
+    }
+    
+    // Display images from gallery
+    func displayImagesGal() {
+        guard let userId = user?.uid else { return }
+        service.getAllImagesFor(userId: userId) { (images) in
+            self.images = images
+            print(images.count)
         }
     }
     // modify bio text and save it to firebase
@@ -229,32 +234,12 @@ extension ProfileViewController: UICollectionViewDataSource, UICollectionViewDel
             return UICollectionViewCell()
         }
         
+        // create image at index
+        let imageProUrl = images[indexPath.row]
         
-        // get all the documents where userId = userId
-        // WRONG
-        service.getAllImagesFor(userId: "\(String(describing: user?.uid))") { (images) in
-            let urlImage = URL(string: "\(images)")
-            cell.imageCell.kf.setImage(with: urlImage)
-        }
-        
-        let docRef = db.collection("imagesGallery").whereField("userId", isEqualTo: "\(String(describing: user?.uid))")
-                docRef.getDocuments() { (querySnapshot, err) in
-                    if let err = err {
-                        print("Error getting documents: \(err)")
-                    } else {
-                        for document in querySnapshot!.documents {
-                            print("\(document.documentID) => \(document.data())")
-                            print("OKOKOKOKOKOOKOKOOK")
-                            
-                            
-//                            let imagesUrl = dataDescription!["url"] as? String ?? ""
-//                            let urlImage = URL(string: "\(imagesUrl)")
-//                            cell.imageCell.kf.setImage(with: urlImage)
-                        }
-                    }
-            }
-        cell.backgroundColor = UIColor.green
-        cell.layer.cornerRadius = 5
+        cell.imageCell.kf.indicatorType = .activity
+        let url = URL(string: "\(imageProUrl.url ?? "")")
+        cell.imageCell.kf.setImage(with: url)
         
         return cell
     }

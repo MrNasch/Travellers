@@ -32,7 +32,7 @@ class CountriesViewController: UIViewController, UIPickerViewDataSource, UIPicke
                 self.alerts(title: "Oops", message: "unable to get countries")
                 print("KO")
             } else {
-//                self.countries = country
+                self.countries = country!
                 print("OK")
             }
         }
