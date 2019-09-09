@@ -12,7 +12,7 @@ import UIKit
 class CountriesViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     
     
-    var country: Country!
+//    var country: Country!
     var countries = [Country]()
     var request = CountriesServices()
     
@@ -30,10 +30,11 @@ class CountriesViewController: UIViewController, UIPickerViewDataSource, UIPicke
             guard let self = self else { return }
             if error != nil {
                 self.alerts(title: "Oops", message: "unable to get countries")
-                print("KO")
             } else {
-                self.countries = country!
-                print("OK")
+                guard let country = country else { return }
+                self.countries = country
+                self.countryPicker.reloadAllComponents()
+                print(self.countries)
             }
         }
     }
@@ -43,10 +44,10 @@ class CountriesViewController: UIViewController, UIPickerViewDataSource, UIPicke
     }
 
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return 1
+        return countries.count
     }
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return "countries.name"
+        return countries[row].name
     }
 
 }

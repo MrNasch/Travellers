@@ -62,6 +62,7 @@ class ImageService {
     //display images
     func getAllImagesFor(userId: String, images: @escaping ([ImageEntity]) -> ()) {
         let imagesCollection = Firestore.firestore().collection("imagesGallery")
+            .order(by: "dateAdded", descending: true)
             .whereField("userId", isEqualTo: userId)
         
         imagesCollection.addSnapshotListener { (query, error) in

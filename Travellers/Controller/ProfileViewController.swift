@@ -90,7 +90,7 @@ class ProfileViewController: UIViewController {
         guard let userId = user?.uid else { return }
         service.getAllImagesFor(userId: userId) { (images) in
             self.images = images
-            print(images.count)
+            self.proCollectionView.reloadData()
         }
     }
     // modify bio text and save it to firebase
@@ -153,6 +153,7 @@ class ProfileViewController: UIViewController {
                     if let error = error {
                         print("noooooooo \(error.localizedDescription)")
                     }
+                    self.profilePicture.kf.indicatorType = .activity
                     let url = URL(string: "\(downloadURL)")
                     self.profilePicture.kf.setImage(with: url)
                 })
@@ -188,13 +189,16 @@ class ProfileViewController: UIViewController {
     }
 }
 
-
+//image picker
 extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    // Random string
     func randomString(length: Int) -> String {
         let letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
         return String((0..<length).map{ _ in letters.randomElement()! })
     }
     
+    // select picture
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
         if selectedPicker == true {
@@ -206,7 +210,6 @@ extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationCo
             self.profilePicture.image = imageChoose
             
             uploadImageProfile()
-            
             
         } else {
             
@@ -222,8 +225,8 @@ extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationCo
     }
 }
 
-
-extension ProfileViewController: UICollectionViewDataSource, UICollectionViewDelegate {
+// collection view
+extension ProfileViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // image.count
         return images.count
@@ -243,4 +246,18 @@ extension ProfileViewController: UICollectionViewDataSource, UICollectionViewDel
         
         return cell
     }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 5
+    }
+    
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 5;
+    }
+    
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: ( collectionView.frame.size.width - 15 ) / 3, height:( collectionView.frame.size.width - 15 ) / 3)
+    }
 }
+
