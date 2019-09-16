@@ -17,6 +17,7 @@ protocol NetworkRequest {
 // Alamofire Request
 struct AlamofireNetworkRequest: NetworkRequest {
     func request<Model: Codable>(_ url: String, completion: @escaping (Model?, Error?) -> Void) {
+        
         AF.request(url).responseDecodable { (response: DataResponse<Model>) in
             if case .failure(let error) = response.result {
                 // Dans le cas d'erreur

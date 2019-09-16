@@ -7,22 +7,34 @@
 //
 
 import UIKit
-
+import Kingfisher
 
 class CountriesViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     
-    
-//    var country: Country!
     var countries = [Country]()
     var request = CountriesServices()
     
     @IBOutlet weak var countryFlag: UIImageView!
     @IBOutlet weak var countryPicker: UIPickerView!
+    @IBOutlet weak var capitalField: UILabel!
+    @IBOutlet weak var languageField: UILabel!
+    @IBOutlet weak var denonymField: UILabel!
+    @IBOutlet weak var populationField: UILabel!
+    @IBOutlet weak var currencyField: UILabel!
+    @IBOutlet weak var timeZoneField: UILabel!
+    @IBOutlet weak var regionField: UILabel!
+    @IBOutlet weak var startDatePicker: UIDatePicker!
+    @IBOutlet weak var endDatePicker: UIDatePicker!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         getPickerCountries()
-        
+        countryPicker.delegate = self
+        countryPicker.dataSource = self
+    }
+    
+    // add traveling date button 
+    @IBAction func didTapAddButton(_ sender: UIButton) {
     }
     
     func getPickerCountries() {
@@ -34,7 +46,7 @@ class CountriesViewController: UIViewController, UIPickerViewDataSource, UIPicke
                 guard let country = country else { return }
                 self.countries = country
                 self.countryPicker.reloadAllComponents()
-                print(self.countries)
+                self.fillWithCountryAtRow(0)
             }
         }
     }
@@ -49,6 +61,31 @@ class CountriesViewController: UIViewController, UIPickerViewDataSource, UIPicke
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return countries[row].name
     }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        fillWithCountryAtRow(row)
+        
+    }
+    
+    func fillWithCountryAtRow(_ row: Int) {
+        guard let flag = countries[row].flag else { return }
+        guard let url = URL(string: flag) else { return }
+        countryFlag.kf.setImage(with: url)
+        print(url)
+        capitalField.text = countries[row].capital
+        let joined = countries[row].languages?.compactMap { $0.name }.joined(separator: ", ")
+        languageField.text = joined
+        denonymField.text = countries[row].demonym
+        guard let population = countries[row].population else { return }
+        populationField.text = String(population)
+        
+        guard let currencies = countries[row].currencies else { return }
+        guard let code = currencies[0].code else { return }
+        currencyField.text = code
+        guard let timeZone = countries[row].timezones else { return }
+        timeZoneField.text = timeZone.joined(separator: ", ")
+        regionField.text = countries[row].region
+    }
 
 }
 extension CountriesViewController {
@@ -59,3 +96,5 @@ extension CountriesViewController {
         self.present(alertVC, animated: true, completion: nil)
     }
 }
+
+
