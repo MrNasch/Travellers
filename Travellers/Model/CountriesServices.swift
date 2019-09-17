@@ -17,17 +17,10 @@ protocol NetworkRequest {
 // Alamofire Request
 struct AlamofireNetworkRequest: NetworkRequest {
     func request<Model: Codable>(_ url: String, completion: @escaping (Model?, Error?) -> Void) {
-        
-        AF.request(url).responseDecodable { (response: DataResponse<Model>) in
+        AF.request(url).responseDecodable { ( response: DataResponse<Model>) in
             if case .failure(let error) = response.result {
                 // Dans le cas d'erreur
                 return completion(nil, error)
-            }
-            
-            let statusCode = response.response?.statusCode
-            
-            if statusCode == 401 {
-                return completion(nil, NSError())
             }
             guard case .success(let result) = response.result else {
                 //Erreur improbable
@@ -51,10 +44,6 @@ struct FakeNetworkRequest: NetworkRequest {
         if let error = error {
             // Dans le cas d'erreur
             return completion(nil, error)
-        }
-        
-        if statusCode == 401 {
-            return completion(nil, NSError())
         }
         
         guard let data = data else { return }
