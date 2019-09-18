@@ -8,9 +8,12 @@
 
 import UIKit
 import Kingfisher
+import Firebase
 
 class CountriesViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     
+    var user: User?
+    var db: Firestore!
     var countries = [Country]()
     var request = CountriesServices()
     
@@ -28,13 +31,20 @@ class CountriesViewController: UIViewController, UIPickerViewDataSource, UIPicke
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        // checking user info
+        Auth.auth().addStateDidChangeListener { (auth, user) in
+            guard let user = user else { return }
+            self.user = User(authData: user)
+        }
         getPickerCountries()
         countryPicker.delegate = self
         countryPicker.dataSource = self
+        
     }
     
     // add traveling date button 
     @IBAction func didTapAddButton(_ sender: UIButton) {
+        addTravelDates()
     }
     
     func getPickerCountries() {
@@ -51,6 +61,16 @@ class CountriesViewController: UIViewController, UIPickerViewDataSource, UIPicke
         }
     }
     
+    func addTravelDates() {
+        let dataToSave: [String: Any] = ["Country": countries[0].name ?? "", "From": startDatePicker.date, "To": endDatePicker.date, "UserID": user?.uid ?? ""]
+        self.db.collection("travels").document("ALEA").setData(dataToSave, completion: { (error) in
+            if let error = error {
+                print("\(error.localizedDescription)")
+            }
+        })
+    }
+    
+    
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
@@ -64,14 +84,13 @@ class CountriesViewController: UIViewController, UIPickerViewDataSource, UIPicke
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         fillWithCountryAtRow(row)
-        
     }
     
+    // updates view with country infos
     func fillWithCountryAtRow(_ row: Int) {
         guard let flag = countries[row].flag else { return }
         guard let url = URL(string: flag) else { return }
         countryFlag.kf.setImage(with: url)
-        print(url)
         capitalField.text = countries[row].capital
         let joined = countries[row].languages?.compactMap { $0.name }.joined(separator: ", ")
         languageField.text = joined

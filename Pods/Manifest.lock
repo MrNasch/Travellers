@@ -137,7 +137,7 @@ PODS:
     - CocoaLumberjack (~> 3.0)
 
 DEPENDENCIES:
-  - Alamofire (~> 5.0.0-beta.5)
+  - Alamofire (~> 5.0.0-rc.2)
   - Firebase/Auth
   - Firebase/Core
   - Firebase/Database
@@ -212,6 +212,6 @@ SPEC CHECKSUMS:
   Protobuf: 1097ca58584c8d9be81bfbf2c5ff5975648dd87a
   SVGKit: 8a2fc74258bdb2abb54d3b65f3dd68b0277a9c4d
 
-PODFILE CHECKSUM: 41af69e5be3feb4528f04d35ef574b155b6adc5f
+PODFILE CHECKSUM: b904a9899bea0bd3e4bff4b07cab0cfefb0dbf05
 
 COCOAPODS: 1.6.1

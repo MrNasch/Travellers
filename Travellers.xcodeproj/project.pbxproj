@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		20884547CFAB0B30AFB64399 /* Pods_Travellers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6D7D0ACFAE98FF311FEF614 /* Pods_Travellers.framework */; };
+		3427EDA72330F21C002DEE49 /* CountriesServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3427EDA62330F21C002DEE49 /* CountriesServices.swift */; };
 		34299E732303F9A600B445B5 /* imageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34299E722303F9A600B445B5 /* imageService.swift */; };
 		34299E752303FA6F00B445B5 /* ImageEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34299E742303FA6F00B445B5 /* ImageEntity.swift */; };
 		343001C022F754A20042FF60 /* ImageCellCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 343001BF22F754A20042FF60 /* ImageCellCollectionViewCell.swift */; };
@@ -23,7 +24,6 @@
 		34309E8C227B5E6800D714EF /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34309E8B227B5E6800D714EF /* User.swift */; };
 		34309E8E227B5EA200D714EF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34309E8D227B5EA200D714EF /* LoginViewController.swift */; };
 		3431D6582295BC0800681F45 /* Countries.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3431D6572295BC0800681F45 /* Countries.swift */; };
-		3431D65A2295BC2D00681F45 /* CountriesServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3431D6592295BC2D00681F45 /* CountriesServices.swift */; };
 		3431D65C2295BC7900681F45 /* CountriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3431D65B2295BC7900681F45 /* CountriesViewController.swift */; };
 		34335C8022F8D91900E7E622 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34335C7F22F8D91900E7E622 /* MapViewController.swift */; };
 		346CE375227C6B2300AC49F5 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346CE374227C6B2300AC49F5 /* ProfileViewController.swift */; };
@@ -51,6 +51,7 @@
 
 /* Begin PBXFileReference section */
 		1D6C04B93CD6F5953B21C5B8 /* Pods-Travellers.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Travellers.debug.xcconfig"; path = "Target Support Files/Pods-Travellers/Pods-Travellers.debug.xcconfig"; sourceTree = "<group>"; };
+		3427EDA62330F21C002DEE49 /* CountriesServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CountriesServices.swift; path = ../../../../../.Trash/CountriesServices.swift; sourceTree = "<group>"; };
 		34299E722303F9A600B445B5 /* imageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = imageService.swift; sourceTree = "<group>"; };
 		34299E742303FA6F00B445B5 /* ImageEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageEntity.swift; sourceTree = "<group>"; };
 		343001BF22F754A20042FF60 /* ImageCellCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCellCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -71,7 +72,6 @@
 		34309E8D227B5EA200D714EF /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		34309E8F227B5EDA00D714EF /* Travellers.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Travellers.entitlements; sourceTree = "<group>"; };
 		3431D6572295BC0800681F45 /* Countries.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Countries.swift; sourceTree = "<group>"; };
-		3431D6592295BC2D00681F45 /* CountriesServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesServices.swift; sourceTree = "<group>"; };
 		3431D65B2295BC7900681F45 /* CountriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesViewController.swift; sourceTree = "<group>"; };
 		34335C7F22F8D91900E7E622 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		346CE374227C6B2300AC49F5 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -171,9 +171,9 @@
 				34309E8B227B5E6800D714EF /* User.swift */,
 				346CE376227C719800AC49F5 /* FirebaseHelper.swift */,
 				3431D6572295BC0800681F45 /* Countries.swift */,
-				3431D6592295BC2D00681F45 /* CountriesServices.swift */,
 				34299E722303F9A600B445B5 /* imageService.swift */,
 				34299E742303FA6F00B445B5 /* ImageEntity.swift */,
+				3427EDA62330F21C002DEE49 /* CountriesServices.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -426,6 +426,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3427EDA72330F21C002DEE49 /* CountriesServices.swift in Sources */,
 				34309E8C227B5E6800D714EF /* User.swift in Sources */,
 				34309E54227AED0100D714EF /* AppDelegate.swift in Sources */,
 				34299E752303FA6F00B445B5 /* ImageEntity.swift in Sources */,
@@ -436,7 +437,6 @@
 				346CE377227C719800AC49F5 /* FirebaseHelper.swift in Sources */,
 				34335C8022F8D91900E7E622 /* MapViewController.swift in Sources */,
 				34299E732303F9A600B445B5 /* imageService.swift in Sources */,
-				3431D65A2295BC2D00681F45 /* CountriesServices.swift in Sources */,
 				3431D6582295BC0800681F45 /* Countries.swift in Sources */,
 				34309E5C227AED0100D714EF /* Travellers.xcdatamodeld in Sources */,
 				343001C022F754A20042FF60 /* ImageCellCollectionViewCell.swift in Sources */,
