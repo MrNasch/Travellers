@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		20884547CFAB0B30AFB64399 /* Pods_Travellers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6D7D0ACFAE98FF311FEF614 /* Pods_Travellers.framework */; };
-		3427EDA72330F21C002DEE49 /* CountriesServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3427EDA62330F21C002DEE49 /* CountriesServices.swift */; };
+		340DA9DE2338232900F3548D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 340DA9DD2338232900F3548D /* GoogleService-Info.plist */; };
 		34299E732303F9A600B445B5 /* imageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34299E722303F9A600B445B5 /* imageService.swift */; };
 		34299E752303FA6F00B445B5 /* ImageEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34299E742303FA6F00B445B5 /* ImageEntity.swift */; };
 		343001C022F754A20042FF60 /* ImageCellCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 343001BF22F754A20042FF60 /* ImageCellCollectionViewCell.swift */; };
@@ -18,18 +18,18 @@
 		34309E61227AED0200D714EF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34309E5F227AED0200D714EF /* LaunchScreen.storyboard */; };
 		34309E6C227AED0200D714EF /* TravellersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34309E6B227AED0200D714EF /* TravellersTests.swift */; };
 		34309E77227AED0200D714EF /* TravellersUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34309E76227AED0200D714EF /* TravellersUITests.swift */; };
-		34309E88227B5A0800D714EF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 34309E87227B5A0800D714EF /* GoogleService-Info.plist */; };
-		34309E89227B5A0800D714EF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 34309E87227B5A0800D714EF /* GoogleService-Info.plist */; };
-		34309E8A227B5A0800D714EF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 34309E87227B5A0800D714EF /* GoogleService-Info.plist */; };
 		34309E8C227B5E6800D714EF /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34309E8B227B5E6800D714EF /* User.swift */; };
 		34309E8E227B5EA200D714EF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34309E8D227B5EA200D714EF /* LoginViewController.swift */; };
 		3431D6582295BC0800681F45 /* Countries.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3431D6572295BC0800681F45 /* Countries.swift */; };
 		3431D65C2295BC7900681F45 /* CountriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3431D65B2295BC7900681F45 /* CountriesViewController.swift */; };
 		34335C8022F8D91900E7E622 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34335C7F22F8D91900E7E622 /* MapViewController.swift */; };
+		3435603723323A3F004BE960 /* TravelDatesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3435603623323A3F004BE960 /* TravelDatesViewController.swift */; };
+		3435603923323B2D004BE960 /* TravelCellCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3435603823323B2D004BE960 /* TravelCellCollectionViewCell.swift */; };
+		3466348D2338280B003FB8E8 /* CountriesServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3466348C2338280B003FB8E8 /* CountriesServices.swift */; };
+		3466348F23382997003FB8E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3466348E23382997003FB8E8 /* Assets.xcassets */; };
 		346CE375227C6B2300AC49F5 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346CE374227C6B2300AC49F5 /* ProfileViewController.swift */; };
 		346CE377227C719800AC49F5 /* FirebaseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346CE376227C719800AC49F5 /* FirebaseHelper.swift */; };
 		346CE379227C804300AC49F5 /* KeyboardManagementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346CE378227C804300AC49F5 /* KeyboardManagementViewController.swift */; };
-		34788ABA2301A0A400ABA0DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34788AB92301A0A400ABA0DA /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,7 +51,7 @@
 
 /* Begin PBXFileReference section */
 		1D6C04B93CD6F5953B21C5B8 /* Pods-Travellers.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Travellers.debug.xcconfig"; path = "Target Support Files/Pods-Travellers/Pods-Travellers.debug.xcconfig"; sourceTree = "<group>"; };
-		3427EDA62330F21C002DEE49 /* CountriesServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CountriesServices.swift; path = ../../../../../.Trash/CountriesServices.swift; sourceTree = "<group>"; };
+		340DA9DD2338232900F3548D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		34299E722303F9A600B445B5 /* imageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = imageService.swift; sourceTree = "<group>"; };
 		34299E742303FA6F00B445B5 /* ImageEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageEntity.swift; sourceTree = "<group>"; };
 		343001BF22F754A20042FF60 /* ImageCellCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCellCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -67,17 +67,19 @@
 		34309E72227AED0200D714EF /* TravellersUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TravellersUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		34309E76227AED0200D714EF /* TravellersUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravellersUITests.swift; sourceTree = "<group>"; };
 		34309E78227AED0200D714EF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		34309E87227B5A0800D714EF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		34309E8B227B5E6800D714EF /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		34309E8D227B5EA200D714EF /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		34309E8F227B5EDA00D714EF /* Travellers.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Travellers.entitlements; sourceTree = "<group>"; };
 		3431D6572295BC0800681F45 /* Countries.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Countries.swift; sourceTree = "<group>"; };
 		3431D65B2295BC7900681F45 /* CountriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesViewController.swift; sourceTree = "<group>"; };
 		34335C7F22F8D91900E7E622 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		3435603623323A3F004BE960 /* TravelDatesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelDatesViewController.swift; sourceTree = "<group>"; };
+		3435603823323B2D004BE960 /* TravelCellCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelCellCollectionViewCell.swift; sourceTree = "<group>"; };
+		3466348C2338280B003FB8E8 /* CountriesServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesServices.swift; sourceTree = "<group>"; };
+		3466348E23382997003FB8E8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		346CE374227C6B2300AC49F5 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		346CE376227C719800AC49F5 /* FirebaseHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseHelper.swift; sourceTree = "<group>"; };
 		346CE378227C804300AC49F5 /* KeyboardManagementViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardManagementViewController.swift; sourceTree = "<group>"; };
-		34788AB92301A0A400ABA0DA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "../../../../Downloads/Travellers-master/Travellers/Assets.xcassets"; sourceTree = "<group>"; };
 		9217C16316720B1C40DB59DA /* Pods-Travellers.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Travellers.release.xcconfig"; path = "Target Support Files/Pods-Travellers/Pods-Travellers.release.xcconfig"; sourceTree = "<group>"; };
 		D6D7D0ACFAE98FF311FEF614 /* Pods_Travellers.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Travellers.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -138,10 +140,10 @@
 				34309E86227AED2600D714EF /* Controller */,
 				34309E85227AED2000D714EF /* View */,
 				34309E53227AED0100D714EF /* AppDelegate.swift */,
-				34788AB92301A0A400ABA0DA /* Assets.xcassets */,
+				340DA9DD2338232900F3548D /* GoogleService-Info.plist */,
+				3466348E23382997003FB8E8 /* Assets.xcassets */,
 				34309E5F227AED0200D714EF /* LaunchScreen.storyboard */,
 				34309E62227AED0200D714EF /* Info.plist */,
-				34309E87227B5A0800D714EF /* GoogleService-Info.plist */,
 				34309E5A227AED0100D714EF /* Travellers.xcdatamodeld */,
 			);
 			path = Travellers;
@@ -173,7 +175,7 @@
 				3431D6572295BC0800681F45 /* Countries.swift */,
 				34299E722303F9A600B445B5 /* imageService.swift */,
 				34299E742303FA6F00B445B5 /* ImageEntity.swift */,
-				3427EDA62330F21C002DEE49 /* CountriesServices.swift */,
+				3466348C2338280B003FB8E8 /* CountriesServices.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -194,7 +196,9 @@
 				346CE378227C804300AC49F5 /* KeyboardManagementViewController.swift */,
 				3431D65B2295BC7900681F45 /* CountriesViewController.swift */,
 				343001BF22F754A20042FF60 /* ImageCellCollectionViewCell.swift */,
+				3435603823323B2D004BE960 /* TravelCellCollectionViewCell.swift */,
 				34335C7F22F8D91900E7E622 /* MapViewController.swift */,
+				3435603623323A3F004BE960 /* TravelDatesViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -328,9 +332,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				34309E61227AED0200D714EF /* LaunchScreen.storyboard in Resources */,
-				34309E88227B5A0800D714EF /* GoogleService-Info.plist in Resources */,
+				340DA9DE2338232900F3548D /* GoogleService-Info.plist in Resources */,
 				34309E59227AED0100D714EF /* Main.storyboard in Resources */,
-				34788ABA2301A0A400ABA0DA /* Assets.xcassets in Resources */,
+				3466348F23382997003FB8E8 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -338,7 +342,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				34309E89227B5A0800D714EF /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -346,7 +349,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				34309E8A227B5A0800D714EF /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -364,12 +366,11 @@
 				"${PODS_ROOT}/Target Support Files/Pods-Travellers/Pods-Travellers-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/BoringSSL-GRPC/openssl_grpc.framework",
-				"${BUILT_PRODUCTS_DIR}/CocoaLumberjack/CocoaLumberjack.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/PocketSVG/PocketSVG.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
-				"${BUILT_PRODUCTS_DIR}/SVGKit/SVGKit.framework",
 				"${BUILT_PRODUCTS_DIR}/gRPC-C++/grpcpp.framework",
 				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
@@ -381,12 +382,11 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl_grpc.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CocoaLumberjack.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PocketSVG.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVGKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpcpp.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
@@ -426,15 +426,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3427EDA72330F21C002DEE49 /* CountriesServices.swift in Sources */,
 				34309E8C227B5E6800D714EF /* User.swift in Sources */,
 				34309E54227AED0100D714EF /* AppDelegate.swift in Sources */,
+				3466348D2338280B003FB8E8 /* CountriesServices.swift in Sources */,
 				34299E752303FA6F00B445B5 /* ImageEntity.swift in Sources */,
+				3435603723323A3F004BE960 /* TravelDatesViewController.swift in Sources */,
 				346CE375227C6B2300AC49F5 /* ProfileViewController.swift in Sources */,
 				3431D65C2295BC7900681F45 /* CountriesViewController.swift in Sources */,
 				34309E8E227B5EA200D714EF /* LoginViewController.swift in Sources */,
 				346CE379227C804300AC49F5 /* KeyboardManagementViewController.swift in Sources */,
 				346CE377227C719800AC49F5 /* FirebaseHelper.swift in Sources */,
+				3435603923323B2D004BE960 /* TravelCellCollectionViewCell.swift in Sources */,
 				34335C8022F8D91900E7E622 /* MapViewController.swift in Sources */,
 				34299E732303F9A600B445B5 /* imageService.swift in Sources */,
 				3431D6582295BC0800681F45 /* Countries.swift in Sources */,
@@ -614,7 +616,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 1D6C04B93CD6F5953B21C5B8 /* Pods-Travellers.debug.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Travellers/Travellers.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HD9FBZBVT8;
@@ -665,7 +666,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9217C16316720B1C40DB59DA /* Pods-Travellers.release.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Travellers/Travellers.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HD9FBZBVT8;

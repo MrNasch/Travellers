@@ -9,6 +9,7 @@
 import UIKit
 import Kingfisher
 import Firebase
+import PocketSVG
 
 class CountriesViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     
@@ -17,7 +18,7 @@ class CountriesViewController: UIViewController, UIPickerViewDataSource, UIPicke
     var countries = [Country]()
     var request = CountriesServices()
     
-    @IBOutlet weak var countryFlag: UIImageView!
+    @IBOutlet weak var imageView: UIView!
     @IBOutlet weak var countryPicker: UIPickerView!
     @IBOutlet weak var capitalField: UILabel!
     @IBOutlet weak var languageField: UILabel!
@@ -39,7 +40,6 @@ class CountriesViewController: UIViewController, UIPickerViewDataSource, UIPicke
         getPickerCountries()
         countryPicker.delegate = self
         countryPicker.dataSource = self
-        
     }
     
     // add traveling date button 
@@ -54,7 +54,7 @@ class CountriesViewController: UIViewController, UIPickerViewDataSource, UIPicke
                 self.alerts(title: "Oops", message: "unable to get countries")
             } else {
                 guard let country = country else { return }
-                self.countries = country
+                self.countries = [country]
                 self.countryPicker.reloadAllComponents()
                 self.fillWithCountryAtRow(0)
             }
@@ -90,17 +90,24 @@ class CountriesViewController: UIViewController, UIPickerViewDataSource, UIPicke
     func fillWithCountryAtRow(_ row: Int) {
         guard let flag = countries[row].flag else { return }
         guard let url = URL(string: flag) else { return }
-        countryFlag.kf.setImage(with: url)
+        
+        let image = SVGImageView.init(contentsOf: url)
+        image.frame = imageView.bounds
+        image.contentMode = .scaleAspectFit
+        imageView.addSubview(image)
+        
         capitalField.text = countries[row].capital
         let joined = countries[row].languages?.compactMap { $0.name }.joined(separator: ", ")
         languageField.text = joined
         denonymField.text = countries[row].demonym
+        
         guard let population = countries[row].population else { return }
         populationField.text = String(population)
         
         guard let currencies = countries[row].currencies else { return }
         guard let code = currencies[0].code else { return }
         currencyField.text = code
+        
         guard let timeZone = countries[row].timezones else { return }
         timeZoneField.text = timeZone.joined(separator: ", ")
         regionField.text = countries[row].region

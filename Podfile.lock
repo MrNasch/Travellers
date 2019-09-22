@@ -6,9 +6,6 @@ PODS:
   - BoringSSL-GRPC/Implementation (0.0.3):
     - BoringSSL-GRPC/Interface (= 0.0.3)
   - BoringSSL-GRPC/Interface (0.0.3)
-  - CocoaLumberjack (3.5.3):
-    - CocoaLumberjack/Core (= 3.5.3)
-  - CocoaLumberjack/Core (3.5.3)
   - Firebase/Auth (6.8.1):
     - Firebase/CoreOnly
     - FirebaseAuth (~> 6.2.3)
@@ -132,9 +129,8 @@ PODS:
     - nanopb/encode (= 0.3.901)
   - nanopb/decode (0.3.901)
   - nanopb/encode (0.3.901)
+  - PocketSVG (2.4.2)
   - Protobuf (3.9.0)
-  - SVGKit (2.1.0):
-    - CocoaLumberjack (~> 3.0)
 
 DEPENDENCIES:
   - Alamofire (~> 5.0.0-rc.2)
@@ -144,13 +140,12 @@ DEPENDENCIES:
   - Firebase/Firestore
   - Firebase/Storage
   - Kingfisher
-  - SVGKit (from `https://github.com/SVGKit/SVGKit.git`, branch `3.x`)
+  - PocketSVG
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
     - BoringSSL-GRPC
-    - CocoaLumberjack
     - Firebase
     - FirebaseAnalytics
     - FirebaseAuth
@@ -172,22 +167,12 @@ SPEC REPOS:
     - Kingfisher
     - leveldb-library
     - nanopb
+    - PocketSVG
     - Protobuf
-
-EXTERNAL SOURCES:
-  SVGKit:
-    :branch: 3.x
-    :git: https://github.com/SVGKit/SVGKit.git
-
-CHECKOUT OPTIONS:
-  SVGKit:
-    :commit: 39dd210fd47e3195f57f914354ffd2d0b4b8ff1c
-    :git: https://github.com/SVGKit/SVGKit.git
 
 SPEC CHECKSUMS:
   Alamofire: f9450d3c7f6bea2ad62e7a541c3e9b186c7991d6
   BoringSSL-GRPC: db8764df3204ccea016e1c8dd15d9a9ad63ff318
-  CocoaLumberjack: 2f44e60eb91c176d471fdba43b9e3eae6a721947
   Firebase: 9cbe4e5b5eaafa05dc932be58b7c8c3820d71e88
   FirebaseAnalytics: 843c7f64a8f9c79f0d03281197ebe7bb1d58d477
   FirebaseAuth: e7f86c2dfc57281cd01f7da5e4b40e01e4510a4a
@@ -209,9 +194,9 @@ SPEC CHECKSUMS:
   Kingfisher: 176d377ad339113c99ad4980cbae687f807e20fe
   leveldb-library: 55d93ee664b4007aac644a782d11da33fba316f7
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
+  PocketSVG: c30139829206a43df2ec203880e3970531facba7
   Protobuf: 1097ca58584c8d9be81bfbf2c5ff5975648dd87a
-  SVGKit: 8a2fc74258bdb2abb54d3b65f3dd68b0277a9c4d
 
-PODFILE CHECKSUM: b904a9899bea0bd3e4bff4b07cab0cfefb0dbf05
+PODFILE CHECKSUM: 3f318f8dc08941ad1e6075351c55c33312769e0a
 
 COCOAPODS: 1.6.1
