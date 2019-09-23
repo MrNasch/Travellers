@@ -54,7 +54,7 @@ class CountriesViewController: UIViewController, UIPickerViewDataSource, UIPicke
                 self.alerts(title: "Oops", message: "unable to get countries")
             } else {
                 guard let country = country else { return }
-                self.countries = [country]
+//                self.countries = country
                 self.countryPicker.reloadAllComponents()
                 self.fillWithCountryAtRow(0)
             }
@@ -62,8 +62,12 @@ class CountriesViewController: UIViewController, UIPickerViewDataSource, UIPicke
     }
     
     func addTravelDates() {
-        let dataToSave: [String: Any] = ["Country": countries[0].name ?? "", "From": startDatePicker.date, "To": endDatePicker.date, "UserID": user?.uid ?? ""]
-        self.db.collection("travels").document("ALEA").setData(dataToSave, completion: { (error) in
+        let random = randomString(length: 10)
+        guard let user = user else { return }
+        
+        let dataToSave: [String: Any] = ["DateAdded":  Timestamp(date: Date()), "Country": countries[0].name ?? "", "From": startDatePicker.date, "To": endDatePicker.date, "UserID": user.uid ]
+        
+        self.db.collection("travels").document("\(random)").setData(dataToSave, completion: { (error) in
             if let error = error {
                 print("\(error.localizedDescription)")
             }
@@ -115,6 +119,11 @@ class CountriesViewController: UIViewController, UIPickerViewDataSource, UIPicke
 
 }
 extension CountriesViewController {
+    // Random string
+    func randomString(length: Int) -> String {
+        let letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+        return String((0..<length).map{ _ in letters.randomElement()! })
+    }
     // alerts
     func alerts(title: String, message: String) {
         let alertVC = UIAlertController(title: title, message: message, preferredStyle: .alert)

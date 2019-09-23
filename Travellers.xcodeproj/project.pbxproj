@@ -30,6 +30,8 @@
 		346CE375227C6B2300AC49F5 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346CE374227C6B2300AC49F5 /* ProfileViewController.swift */; };
 		346CE377227C719800AC49F5 /* FirebaseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346CE376227C719800AC49F5 /* FirebaseHelper.swift */; };
 		346CE379227C804300AC49F5 /* KeyboardManagementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346CE378227C804300AC49F5 /* KeyboardManagementViewController.swift */; };
+		34A016DA2339286D002BF101 /* TravelServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A016D92339286D002BF101 /* TravelServices.swift */; };
+		34A016DC23392878002BF101 /* TravelEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A016DB23392878002BF101 /* TravelEntity.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +82,8 @@
 		346CE374227C6B2300AC49F5 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		346CE376227C719800AC49F5 /* FirebaseHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseHelper.swift; sourceTree = "<group>"; };
 		346CE378227C804300AC49F5 /* KeyboardManagementViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardManagementViewController.swift; sourceTree = "<group>"; };
+		34A016D92339286D002BF101 /* TravelServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TravelServices.swift; sourceTree = "<group>"; };
+		34A016DB23392878002BF101 /* TravelEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TravelEntity.swift; sourceTree = "<group>"; };
 		9217C16316720B1C40DB59DA /* Pods-Travellers.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Travellers.release.xcconfig"; path = "Target Support Files/Pods-Travellers/Pods-Travellers.release.xcconfig"; sourceTree = "<group>"; };
 		D6D7D0ACFAE98FF311FEF614 /* Pods_Travellers.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Travellers.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -176,6 +180,8 @@
 				34299E722303F9A600B445B5 /* imageService.swift */,
 				34299E742303FA6F00B445B5 /* ImageEntity.swift */,
 				3466348C2338280B003FB8E8 /* CountriesServices.swift */,
+				34A016D92339286D002BF101 /* TravelServices.swift */,
+				34A016DB23392878002BF101 /* TravelEntity.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -426,7 +432,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				34A016DC23392878002BF101 /* TravelEntity.swift in Sources */,
 				34309E8C227B5E6800D714EF /* User.swift in Sources */,
+				34A016DA2339286D002BF101 /* TravelServices.swift in Sources */,
 				34309E54227AED0100D714EF /* AppDelegate.swift in Sources */,
 				3466348D2338280B003FB8E8 /* CountriesServices.swift in Sources */,
 				34299E752303FA6F00B445B5 /* ImageEntity.swift in Sources */,
