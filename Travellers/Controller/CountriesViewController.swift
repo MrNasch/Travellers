@@ -37,6 +37,7 @@ class CountriesViewController: UIViewController, UIPickerViewDataSource, UIPicke
             guard let user = user else { return }
             self.user = User(authData: user)
         }
+        db = Firestore.firestore()
         getPickerCountries()
         countryPicker.delegate = self
         countryPicker.dataSource = self
@@ -98,6 +99,9 @@ class CountriesViewController: UIViewController, UIPickerViewDataSource, UIPicke
         let image = SVGImageView.init(contentsOf: url)
         image.frame = imageView.bounds
         image.contentMode = .scaleAspectFit
+        imageView.subviews.forEach { (view) in
+            view.removeFromSuperview()
+        }
         imageView.addSubview(image)
         
         capitalField.text = countries[row].capital

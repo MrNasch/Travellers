@@ -22,6 +22,7 @@ class TravelDatesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.reloadData()
+        
     }
     
     func displayTravels() {
@@ -32,11 +33,11 @@ class TravelDatesViewController: UIViewController {
     }
 }
 
-extension TravelDatesViewController: UITabBarDelegate, UITableViewDataSource {
+extension TravelDatesViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // travel count
-        return 4
+        return 3
     }
     
     // data in cell
@@ -47,9 +48,9 @@ extension TravelDatesViewController: UITabBarDelegate, UITableViewDataSource {
         return cell
     }
     
-    // Height of the row
+    // heigh for row
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 200
+        return 100
     }
     
 }
