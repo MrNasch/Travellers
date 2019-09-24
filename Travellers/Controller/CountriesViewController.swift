@@ -93,16 +93,17 @@ class CountriesViewController: UIViewController, UIPickerViewDataSource, UIPicke
     
     // updates view with country infos
     func fillWithCountryAtRow(_ row: Int) {
-        guard let flag = countries[row].flag else { return }
-        guard let url = URL(string: flag) else { return }
         
-        let image = SVGImageView.init(contentsOf: url)
-        image.frame = imageView.bounds
-        image.contentMode = .scaleAspectFit
+        guard let flag = countries[row].alpha3Code?.lowercased() else { return }
+        let flagImage = "\(flag).png"
+        let image = UIImage(named: flagImage)
+        let flagView = UIImageView(image: image)
+        flagView.frame = imageView.bounds
+        flagView.contentMode = .scaleAspectFit
         imageView.subviews.forEach { (view) in
             view.removeFromSuperview()
         }
-        imageView.addSubview(image)
+        imageView.addSubview(flagView)
         
         capitalField.text = countries[row].capital
         let joined = countries[row].languages?.compactMap { $0.name }.joined(separator: ", ")
