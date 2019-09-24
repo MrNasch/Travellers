@@ -407,7 +407,7 @@
                         <segue destination="XLA-Kt-DVx" kind="relationship" relationship="viewControllers" id="lft-d9-qRr"/>
                         <segue destination="HIO-9A-P2d" kind="relationship" relationship="viewControllers" id="Tkw-tD-1lX"/>
                         <segue destination="gds-AJ-1iR" kind="relationship" relationship="viewControllers" id="201-BV-sEf"/>
-                        <segue destination="pDO-hD-iZl" kind="relationship" relationship="viewControllers" id="4ea-F7-YMO"/>
+                        <segue destination="pDO-hD-iZl" kind="relationship" relationship="viewControllers" id="giF-gt-FcW"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YjD-Hs-Ksb" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -732,43 +732,56 @@
                                 <rect key="frame" x="20" y="44" width="374" height="769"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="travelCell" rowHeight="50" id="0FI-Dg-iWW" customClass="TravelCellTravelCellCollectionViewCell" customModule="Travellers" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="travelCell" rowHeight="50" id="0FI-Dg-iWW" customClass="TravelCell" customModule="Travellers" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="374" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="0FI-Dg-iWW" id="BLf-hR-DnM">
                                             <rect key="frame" x="0.0" y="0.0" width="374" height="49.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Country" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TLr-9d-j2a">
-                                                    <rect key="frame" x="20" y="14" width="62" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="From" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EcS-NP-KtB">
-                                                    <rect key="frame" x="110" y="14" width="40" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="To" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ODe-Zl-BWT">
-                                                    <rect key="frame" x="166" y="14" width="19" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="233444" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y7b-Gq-fnf">
-                                                    <rect key="frame" x="209" y="14" width="63" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="Flf-bf-hwR">
+                                                    <rect key="frame" x="20" y="11" width="334" height="28"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Country" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TLr-9d-j2a">
+                                                            <rect key="frame" x="0.0" y="0.0" width="83.5" height="28"/>
+                                                            <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="From" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EcS-NP-KtB">
+                                                            <rect key="frame" x="83.5" y="0.0" width="83.5" height="28"/>
+                                                            <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="To" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ODe-Zl-BWT">
+                                                            <rect key="frame" x="167" y="0.0" width="83.5" height="28"/>
+                                                            <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="233444" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y7b-Gq-fnf">
+                                                            <rect key="frame" x="250.5" y="0.0" width="83.5" height="28"/>
+                                                            <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailingMargin" secondItem="Flf-bf-hwR" secondAttribute="trailing" id="3DM-12-Fra"/>
+                                                <constraint firstItem="Flf-bf-hwR" firstAttribute="top" secondItem="BLf-hR-DnM" secondAttribute="topMargin" id="Q0f-AJ-my3"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="Flf-bf-hwR" secondAttribute="bottom" id="iLr-QD-EWp"/>
+                                                <constraint firstItem="Flf-bf-hwR" firstAttribute="leading" secondItem="BLf-hR-DnM" secondAttribute="leadingMargin" id="pHL-Sn-L3C"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="country" destination="TLr-9d-j2a" id="TTF-yB-o9s"/>
+                                            <outlet property="dateFrom" destination="EcS-NP-KtB" id="Odc-nr-Sjt"/>
+                                            <outlet property="dateTo" destination="ODe-Zl-BWT" id="wa8-mD-ehU"/>
+                                            <outlet property="numberOfUser" destination="Y7b-Gq-fnf" id="iae-uc-81g"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -787,6 +800,9 @@
                         <viewLayoutGuide key="safeArea" id="Bgj-lf-b0a"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="6mi-3W-wZ0"/>
+                    <connections>
+                        <outlet property="tableView" destination="EDa-UX-OoQ" id="e0g-MR-Ssp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tYZ-BR-ZWF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

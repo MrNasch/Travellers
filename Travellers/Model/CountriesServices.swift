@@ -20,7 +20,6 @@ struct AlamofireNetworkRequest: NetworkRequest {
                 return completion(nil, error)
             }
             guard case .success(let result) = response.result else {
-                //Erreur improbable
                 return
             }
             completion(result, nil)

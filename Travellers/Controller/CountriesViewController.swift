@@ -54,7 +54,7 @@ class CountriesViewController: UIViewController, UIPickerViewDataSource, UIPicke
                 self.alerts(title: "Oops", message: "unable to get countries")
             } else {
                 guard let country = country else { return }
-//                self.countries = country
+                self.countries = country
                 self.countryPicker.reloadAllComponents()
                 self.fillWithCountryAtRow(0)
             }

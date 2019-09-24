@@ -10,7 +10,9 @@ import Foundation
 import Firebase
 
 class TravelService {
-    func getAllTravel(userId: String, images: @escaping ([TravelEntity]) -> ()) {
+    
+    // get all travel dates
+    func getAllTravel(userId: String, travels: @escaping ([TravelEntity]) -> ()) {
         let travelsCollection = Firestore.firestore().collection("Travels")
             .order(by: "dateAdded", descending: true)
             .whereField("userId", isEqualTo: userId)
@@ -27,8 +29,28 @@ class TravelService {
                 .map { TravelEntity(id: $0.documentID, data: $0.data()) }
             
             DispatchQueue.main.async {
-                images(travelEntities)
+                travels(travelEntities)
             }
         }
+    }
+    
+    
+    //delete travel date
+    func delete(travelId: String, completion: @escaping () -> ()) {
+        let travelDocRef = Firestore.firestore().collection("travels").document(travelId)
+        
+        travelDocRef.delete { error in
+            if let error = error {
+                print("error: ", error.localizedDescription)
+                return
+            }
+            
+            DispatchQueue.main.async {
+                completion()
+            }
+        }
+        
+        let travelStorageRef = Storage.storage().reference(withPath: "travels").child(travelId)
+        travelStorageRef.delete()
     }
 }
