@@ -17,6 +17,7 @@ class CountriesViewController: UIViewController, UIPickerViewDataSource, UIPicke
     var db: Firestore!
     var countries = [Country]()
     var request = CountriesServices()
+    var name: String?
     
     @IBOutlet weak var imageView: UIView!
     @IBOutlet weak var countryPicker: UIPickerView!
@@ -66,13 +67,15 @@ class CountriesViewController: UIViewController, UIPickerViewDataSource, UIPicke
         let random = randomString(length: 10)
         guard let user = user else { return }
         
-        let dataToSave: [String: Any] = ["DateAdded":  Timestamp(date: Date()), "Country": countries[0].name ?? "", "From": startDatePicker.date, "To": endDatePicker.date, "UserID": user.uid ]
+        let dataToSave: [String: Any] = ["DateAdded":  Timestamp(date: Date()), "Country": name ?? "", "From": startDatePicker.date, "To": endDatePicker.date, "UserID": user.uid ]
         
         self.db.collection("travels").document("\(random)").setData(dataToSave, completion: { (error) in
             if let error = error {
                 print("\(error.localizedDescription)")
             }
         })
+        
+        alerts(title: "Wouhou", message: "Travel dates successfully added")
     }
     
     
@@ -93,7 +96,6 @@ class CountriesViewController: UIViewController, UIPickerViewDataSource, UIPicke
     
     // updates view with country infos
     func fillWithCountryAtRow(_ row: Int) {
-        
         guard let flag = countries[row].alpha3Code?.lowercased() else { return }
         let flagImage = "\(flag).png"
         let image = UIImage(named: flagImage)
@@ -104,6 +106,8 @@ class CountriesViewController: UIViewController, UIPickerViewDataSource, UIPicke
             view.removeFromSuperview()
         }
         imageView.addSubview(flagView)
+        
+        name = countries[row].name
         
         capitalField.text = countries[row].capital
         let joined = countries[row].languages?.compactMap { $0.name }.joined(separator: ", ")

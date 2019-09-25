@@ -19,16 +19,28 @@ class TravelDatesViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tableView.reloadData()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.reloadData()
-        
+        db = Firestore.firestore()
+        // checking user info
+        Auth.auth().addStateDidChangeListener { (auth, user) in
+            guard let user = user else { return }
+            self.user = User(authData: user)
+        }
+        displayTravels()
+        print(travelDates.count)
     }
     
     func displayTravels() {
         guard let userId = user?.uid else { return }
         service.getAllTravel(userId: userId) { (travelDates) in
             self.travelDates = travelDates
+            print(travelDates.count)
         }
     }
 }
@@ -37,7 +49,7 @@ extension TravelDatesViewController: UITableViewDelegate, UITableViewDataSource 
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // travel count
-        return 3
+        return travelDates.count
     }
     
     // data in cell
