@@ -9,15 +9,16 @@
 import UIKit
 import Kingfisher
 import Firebase
-import PocketSVG
 
 class CountriesViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     
     var user: User?
     var db: Firestore!
     var countries = [Country]()
-    var request = CountriesServices()
+    let request = CountriesServices()
+    let travels = TravelService()
     var name: String?
+    var travel = [TravelEntity]()
     
     @IBOutlet weak var imageView: UIView!
     @IBOutlet weak var countryPicker: UIPickerView!
@@ -31,14 +32,18 @@ class CountriesViewController: UIViewController, UIPickerViewDataSource, UIPicke
     @IBOutlet weak var startDatePicker: UIDatePicker!
     @IBOutlet weak var endDatePicker: UIDatePicker!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
         // checking user info
         Auth.auth().addStateDidChangeListener { (auth, user) in
             guard let user = user else { return }
             self.user = User(authData: user)
         }
         db = Firestore.firestore()
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
         getPickerCountries()
         countryPicker.delegate = self
         countryPicker.dataSource = self
@@ -49,6 +54,7 @@ class CountriesViewController: UIViewController, UIPickerViewDataSource, UIPicke
         addTravelDates()
     }
     
+    // display countries in picker
     func getPickerCountries() {
         request.getCountry(query: "all") { [weak self] country, error in
             guard let self = self else { return }
@@ -63,21 +69,25 @@ class CountriesViewController: UIViewController, UIPickerViewDataSource, UIPicke
         }
     }
     
+    // adding travel dates to firebase
     func addTravelDates() {
         let random = randomString(length: 10)
         guard let user = user else { return }
         
-        let dataToSave: [String: Any] = ["DateAdded":  Timestamp(date: Date()), "Country": name ?? "", "From": startDatePicker.date, "To": endDatePicker.date, "UserID": user.uid ]
+        travels.getAllTravel(userId: user.uid) { (travelDates) in
+            self.travel = travelDates
+        }
+        
+        let dataToSave: [String: Any] = ["country": name ?? "", "from": startDatePicker.date, "to": endDatePicker.date, "userId": user.uid ]
         
         self.db.collection("travels").document("\(random)").setData(dataToSave, completion: { (error) in
             if let error = error {
                 print("\(error.localizedDescription)")
+            } else {
+                self.alerts(title: "Wouhou", message: "Travel dates successfully added")
             }
         })
-        
-        alerts(title: "Wouhou", message: "Travel dates successfully added")
     }
-    
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1

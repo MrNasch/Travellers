@@ -7,22 +7,21 @@
 //
 
 import Foundation
+import Firebase
 
 struct TravelEntity {
     
     let travelId: String
-    let dateAdded: Date
-    let dateFrom: Date
-    let DateTo: Date
-    let CountryDestination: String
+    let dateFrom: Timestamp
+    let dateTo: Timestamp
+    let countryDestination: String
     let userId: String
     
     init(id: String, data: [String: Any]) {
         self.travelId = id
-        self.dateAdded = data["DateAdded"] as! Date
-        self.dateFrom = data["From"] as! Date
-        self.DateTo = data["To"] as! Date
-        self.CountryDestination = data["Country"] as! String
-        self.userId = data["UserId"] as! String
+        self.dateFrom = data["from"] as! Timestamp
+        self.dateTo = data["to"] as! Timestamp
+        self.countryDestination = data["country"] as! String
+        self.userId = data["userId"] as! String
     }
 }

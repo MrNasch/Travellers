@@ -13,8 +13,8 @@ class TravelService {
     
     // get all travel dates
     func getAllTravel(userId: String, travels: @escaping ([TravelEntity]) -> ()) {
-        let travelsCollection = Firestore.firestore().collection("Travels")
-            .order(by: "dateAdded", descending: true)
+        let travelsCollection = Firestore.firestore().collection("travels")
+            .order(by: "from", descending: false)
             .whereField("userId", isEqualTo: userId)
         
         travelsCollection.addSnapshotListener { (query, error) in

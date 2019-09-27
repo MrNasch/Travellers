@@ -15,32 +15,28 @@ class TravelDatesViewController: UIViewController {
     var user: User?
     var db: Firestore!
     let service = TravelService()
-    var travelDates = [TravelEntity]()
+    var travels = [TravelEntity]()
 
     @IBOutlet weak var tableView: UITableView!
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        tableView.reloadData()
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
+
         db = Firestore.firestore()
         // checking user info
         Auth.auth().addStateDidChangeListener { (auth, user) in
             guard let user = user else { return }
             self.user = User(authData: user)
+            self.displayTravels()
+            self.tableView.reloadData()
         }
-        displayTravels()
-        print(travelDates.count)
     }
     
     func displayTravels() {
         guard let userId = user?.uid else { return }
         service.getAllTravel(userId: userId) { (travelDates) in
-            self.travelDates = travelDates
-            print(travelDates.count)
+            self.travels = travelDates
+            print(self.travels.count)
         }
     }
 }
@@ -49,7 +45,7 @@ extension TravelDatesViewController: UITableViewDelegate, UITableViewDataSource 
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // travel count
-        return travelDates.count
+        return travels.count
     }
     
     // data in cell
@@ -57,6 +53,16 @@ extension TravelDatesViewController: UITableViewDelegate, UITableViewDataSource 
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "travelCell", for: indexPath) as? TravelCell else {
             return UITableViewCell()
         }
+        
+        let travelDate = travels[indexPath.row]
+        
+        cell.country.text = travelDate.countryDestination
+//        cell.dateFrom.text = travelDate.dateFrom
+//        cell.dateTo.text = travelDate.dateTo
+        cell.numberOfUser.text = travelDate.travelId
+        
+        
+        
         return cell
     }
     
