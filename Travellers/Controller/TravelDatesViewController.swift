@@ -11,17 +11,17 @@ import Firebase
 import Kingfisher
 
 class TravelDatesViewController: UIViewController {
-
+    
     var user: User?
     var db: Firestore!
     let service = TravelService()
     var travels = [TravelEntity]()
-
+    
     @IBOutlet weak var tableView: UITableView!
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-
+        
         db = Firestore.firestore()
         // checking user info
         Auth.auth().addStateDidChangeListener { (auth, user) in
@@ -55,20 +55,30 @@ extension TravelDatesViewController: UITableViewDelegate, UITableViewDataSource 
         }
         
         let travelDate = travels[indexPath.row]
+        let dateFrom = travelDate.dateFrom.dateValue()
+        let dateTo = travelDate.dateTo.dateValue()
         
         cell.country.text = travelDate.countryDestination
-//        cell.dateFrom.text = travelDate.dateFrom
-//        cell.dateTo.text = travelDate.dateTo
-        cell.numberOfUser.text = travelDate.travelId
-        
-        
+        cell.dateFrom.text = dateFrom.toString(dateFormat: "dd / MM / yyyy")
+        cell.dateTo.text = dateTo.toString(dateFormat: "dd / MM / yyyy")
+        cell.numberOfUser.text = String(travels.count)
         
         return cell
     }
     
     // heigh for row
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
+        return 80
     }
-    
 }
+
+extension Date {
+    // convert date to string
+    func toString( dateFormat format  : String ) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = format
+        return dateFormatter.string(from: self)
+    }
+}
+
+
