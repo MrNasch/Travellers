@@ -152,7 +152,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1833" y="880"/>
+            <point key="canvasLocation" x="-1833.3333333333335" y="879.91071428571422"/>
         </scene>
         <!--Profile View Controller-->
         <scene sceneID="Y3P-6c-1s7">
@@ -710,7 +710,7 @@
             </objects>
             <point key="canvasLocation" x="1542.0289855072465" y="930.80357142857133"/>
         </scene>
-        <!--Item-->
+        <!--Travel Dates View Controller-->
         <scene sceneID="nU6-bI-aVn">
             <objects>
                 <viewController id="pDO-hD-iZl" customClass="TravelDatesViewController" customModule="Travellers" customModuleProvider="target" sceneMemberID="viewController">
@@ -799,7 +799,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Bgj-lf-b0a"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="6mi-3W-wZ0"/>
+                    <tabBarItem key="tabBarItem" title="" image="icons8-aéroport-50" id="6mi-3W-wZ0">
+                        <inset key="imageInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="-15"/>
+                    </tabBarItem>
                     <connections>
                         <outlet property="tableView" destination="EDa-UX-OoQ" id="e0g-MR-Ssp"/>
                     </connections>
@@ -810,6 +812,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="icons8-aéroport-50" width="17" height="17"/>
         <image name="icons8-contacts-51" width="25" height="25"/>
         <image name="icons8-europe-filled-51" width="25" height="25"/>
         <image name="icons8-marqueur-40" width="40" height="40"/>
