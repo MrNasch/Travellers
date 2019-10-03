@@ -16,7 +16,6 @@
 		34309E59227AED0100D714EF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34309E57227AED0100D714EF /* Main.storyboard */; };
 		34309E5C227AED0100D714EF /* Travellers.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 34309E5A227AED0100D714EF /* Travellers.xcdatamodeld */; };
 		34309E61227AED0200D714EF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34309E5F227AED0200D714EF /* LaunchScreen.storyboard */; };
-		34309E6C227AED0200D714EF /* TravellersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34309E6B227AED0200D714EF /* TravellersTests.swift */; };
 		34309E77227AED0200D714EF /* TravellersUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34309E76227AED0200D714EF /* TravellersUITests.swift */; };
 		34309E8C227B5E6800D714EF /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34309E8B227B5E6800D714EF /* User.swift */; };
 		34309E8E227B5EA200D714EF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34309E8D227B5EA200D714EF /* LoginViewController.swift */; };
@@ -29,6 +28,9 @@
 		346CE375227C6B2300AC49F5 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346CE374227C6B2300AC49F5 /* ProfileViewController.swift */; };
 		346CE377227C719800AC49F5 /* FirebaseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346CE376227C719800AC49F5 /* FirebaseHelper.swift */; };
 		346CE379227C804300AC49F5 /* KeyboardManagementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346CE378227C804300AC49F5 /* KeyboardManagementViewController.swift */; };
+		348C950C2345E97F00BE49E9 /* CountryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348C950B2345E97F00BE49E9 /* CountryTests.swift */; };
+		348C95102345EB3E00BE49E9 /* Country.json in Resources */ = {isa = PBXBuildFile; fileRef = 348C950F2345EB3E00BE49E9 /* Country.json */; };
+		348C95122345EB6400BE49E9 /* FakeResponseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348C95112345EB6400BE49E9 /* FakeResponseData.swift */; };
 		34A016DA2339286D002BF101 /* TravelServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A016D92339286D002BF101 /* TravelServices.swift */; };
 		34A016DC23392878002BF101 /* TravelEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A016DB23392878002BF101 /* TravelEntity.swift */; };
 		34A016DE23394165002BF101 /* TravelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A016DD23394165002BF101 /* TravelCell.swift */; };
@@ -64,7 +66,6 @@
 		34309E60227AED0200D714EF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		34309E62227AED0200D714EF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		34309E67227AED0200D714EF /* TravellersTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TravellersTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		34309E6B227AED0200D714EF /* TravellersTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravellersTests.swift; sourceTree = "<group>"; };
 		34309E6D227AED0200D714EF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		34309E72227AED0200D714EF /* TravellersUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TravellersUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		34309E76227AED0200D714EF /* TravellersUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravellersUITests.swift; sourceTree = "<group>"; };
@@ -81,6 +82,10 @@
 		346CE374227C6B2300AC49F5 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		346CE376227C719800AC49F5 /* FirebaseHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseHelper.swift; sourceTree = "<group>"; };
 		346CE378227C804300AC49F5 /* KeyboardManagementViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardManagementViewController.swift; sourceTree = "<group>"; };
+		348C950B2345E97F00BE49E9 /* CountryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryTests.swift; sourceTree = "<group>"; };
+		348C950F2345EB3E00BE49E9 /* Country.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Country.json; sourceTree = "<group>"; };
+		348C95112345EB6400BE49E9 /* FakeResponseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeResponseData.swift; sourceTree = "<group>"; };
+		348C95132345EC7F00BE49E9 /* TravellersTests-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TravellersTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		34A016D92339286D002BF101 /* TravelServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TravelServices.swift; sourceTree = "<group>"; };
 		34A016DB23392878002BF101 /* TravelEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TravelEntity.swift; sourceTree = "<group>"; };
 		34A016DD23394165002BF101 /* TravelCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TravelCell.swift; sourceTree = "<group>"; };
@@ -156,8 +161,11 @@
 		34309E6A227AED0200D714EF /* TravellersTests */ = {
 			isa = PBXGroup;
 			children = (
-				34309E6B227AED0200D714EF /* TravellersTests.swift */,
+				348C95132345EC7F00BE49E9 /* TravellersTests-Bridging-Header.h */,
 				34309E6D227AED0200D714EF /* Info.plist */,
+				348C950B2345E97F00BE49E9 /* CountryTests.swift */,
+				348C950F2345EB3E00BE49E9 /* Country.json */,
+				348C95112345EB6400BE49E9 /* FakeResponseData.swift */,
 			);
 			path = TravellersTests;
 			sourceTree = "<group>";
@@ -304,6 +312,7 @@
 					};
 					34309E66227AED0200D714EF = {
 						CreatedOnToolsVersion = 10.2.1;
+						LastSwiftMigration = 1100;
 						TestTargetID = 34309E4F227AED0100D714EF;
 					};
 					34309E71227AED0200D714EF = {
@@ -348,6 +357,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				348C95102345EB3E00BE49E9 /* Country.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -457,7 +467,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				34309E6C227AED0200D714EF /* TravellersTests.swift in Sources */,
+				348C950C2345E97F00BE49E9 /* CountryTests.swift in Sources */,
+				348C95122345EB6400BE49E9 /* FakeResponseData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -725,8 +736,10 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HD9FBZBVT8;
+				"HEADER_SEARCH_PATHS[arch=*]" = "$(SRCROOT)/Pods/**";
 				INFOPLIST_FILE = TravellersTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -735,6 +748,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.nicolaspaschal.TravellersTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "TravellersTests/TravellersTests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Travellers.app/Travellers";
@@ -746,6 +761,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HD9FBZBVT8;
 				INFOPLIST_FILE = TravellersTests/Info.plist;
@@ -756,6 +772,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.nicolaspaschal.TravellersTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "TravellersTests/TravellersTests-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Travellers.app/Travellers";

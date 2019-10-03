@@ -36,7 +36,6 @@ class TravelDatesViewController: UIViewController {
         guard let userId = user?.uid else { return }
         service.getAllTravel(userId: userId) { (travelDates) in
             self.travels = travelDates
-            print(self.travels.count)
         }
     }
 }

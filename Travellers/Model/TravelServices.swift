@@ -35,10 +35,11 @@ class TravelService {
     }
     
     // get all user in the same date intervals
-    func getUserInDate(dateFrom: String, dateTo: String, travels: @escaping ([TravelEntity]) -> ()) {
+    func getUserInDate(countryDestination: String, dateFrom: String, dateTo: String, travels: @escaping ([TravelEntity]) -> ()) {
         let travelsCollection = Firestore.firestore().collection("travels")
             .whereField("from", isGreaterThanOrEqualTo: dateFrom)
             .whereField("to", isLessThanOrEqualTo: dateTo)
+            .whereField("country", isEqualTo: countryDestination)
         
         travelsCollection.addSnapshotListener { (query, error) in
             guard let query = query else {
