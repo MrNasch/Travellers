@@ -645,7 +645,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 1D6C04B93CD6F5953B21C5B8 /* Pods-Travellers.debug.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-2";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Travellers/Travellers.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HD9FBZBVT8;
@@ -697,7 +697,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9217C16316720B1C40DB59DA /* Pods-Travellers.release.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-2";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Travellers/Travellers.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HD9FBZBVT8;
