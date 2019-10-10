@@ -31,9 +31,12 @@
 		348C950C2345E97F00BE49E9 /* CountryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348C950B2345E97F00BE49E9 /* CountryTests.swift */; };
 		348C95102345EB3E00BE49E9 /* Country.json in Resources */ = {isa = PBXBuildFile; fileRef = 348C950F2345EB3E00BE49E9 /* Country.json */; };
 		348C95122345EB6400BE49E9 /* FakeResponseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348C95112345EB6400BE49E9 /* FakeResponseData.swift */; };
+		349FCDE6234F4702003CDA22 /* UserEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349FCDE5234F4702003CDA22 /* UserEntity.swift */; };
+		349FCDE8234F4E3E003CDA22 /* UserServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349FCDE7234F4E3E003CDA22 /* UserServices.swift */; };
 		34A016DA2339286D002BF101 /* TravelServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A016D92339286D002BF101 /* TravelServices.swift */; };
 		34A016DC23392878002BF101 /* TravelEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A016DB23392878002BF101 /* TravelEntity.swift */; };
 		34A016DE23394165002BF101 /* TravelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A016DD23394165002BF101 /* TravelCell.swift */; };
+		34ED667A234E9BC6000704F0 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34ED6679234E9BC6000704F0 /* UserCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,9 +89,12 @@
 		348C950F2345EB3E00BE49E9 /* Country.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Country.json; sourceTree = "<group>"; };
 		348C95112345EB6400BE49E9 /* FakeResponseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeResponseData.swift; sourceTree = "<group>"; };
 		348C95132345EC7F00BE49E9 /* TravellersTests-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TravellersTests-Bridging-Header.h"; sourceTree = "<group>"; };
+		349FCDE5234F4702003CDA22 /* UserEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEntity.swift; sourceTree = "<group>"; };
+		349FCDE7234F4E3E003CDA22 /* UserServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserServices.swift; sourceTree = "<group>"; };
 		34A016D92339286D002BF101 /* TravelServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TravelServices.swift; sourceTree = "<group>"; };
 		34A016DB23392878002BF101 /* TravelEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TravelEntity.swift; sourceTree = "<group>"; };
 		34A016DD23394165002BF101 /* TravelCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TravelCell.swift; sourceTree = "<group>"; };
+		34ED6679234E9BC6000704F0 /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
 		9217C16316720B1C40DB59DA /* Pods-Travellers.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Travellers.release.xcconfig"; path = "Target Support Files/Pods-Travellers/Pods-Travellers.release.xcconfig"; sourceTree = "<group>"; };
 		D6D7D0ACFAE98FF311FEF614 /* Pods_Travellers.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Travellers.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -189,7 +195,9 @@
 				34299E742303FA6F00B445B5 /* ImageEntity.swift */,
 				34299E722303F9A600B445B5 /* imageService.swift */,
 				34A016D92339286D002BF101 /* TravelServices.swift */,
+				349FCDE7234F4E3E003CDA22 /* UserServices.swift */,
 				34A016DB23392878002BF101 /* TravelEntity.swift */,
+				349FCDE5234F4702003CDA22 /* UserEntity.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -213,6 +221,7 @@
 				34335C7F22F8D91900E7E622 /* MapViewController.swift */,
 				34A016DD23394165002BF101 /* TravelCell.swift */,
 				3435603623323A3F004BE960 /* TravelDatesViewController.swift */,
+				34ED6679234E9BC6000704F0 /* UserCell.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -443,9 +452,11 @@
 				34A016DC23392878002BF101 /* TravelEntity.swift in Sources */,
 				34A016DE23394165002BF101 /* TravelCell.swift in Sources */,
 				34309E8C227B5E6800D714EF /* User.swift in Sources */,
+				349FCDE6234F4702003CDA22 /* UserEntity.swift in Sources */,
 				34A016DA2339286D002BF101 /* TravelServices.swift in Sources */,
 				34309E54227AED0100D714EF /* AppDelegate.swift in Sources */,
 				3466348D2338280B003FB8E8 /* CountriesServices.swift in Sources */,
+				34ED667A234E9BC6000704F0 /* UserCell.swift in Sources */,
 				34299E752303FA6F00B445B5 /* ImageEntity.swift in Sources */,
 				3435603723323A3F004BE960 /* TravelDatesViewController.swift in Sources */,
 				346CE375227C6B2300AC49F5 /* ProfileViewController.swift in Sources */,
@@ -454,6 +465,7 @@
 				346CE379227C804300AC49F5 /* KeyboardManagementViewController.swift in Sources */,
 				346CE377227C719800AC49F5 /* FirebaseHelper.swift in Sources */,
 				34335C8022F8D91900E7E622 /* MapViewController.swift in Sources */,
+				349FCDE8234F4E3E003CDA22 /* UserServices.swift in Sources */,
 				34299E732303F9A600B445B5 /* imageService.swift in Sources */,
 				3431D6582295BC0800681F45 /* Countries.swift in Sources */,
 				34309E5C227AED0100D714EF /* Travellers.xcdatamodeld in Sources */,
@@ -633,6 +645,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 1D6C04B93CD6F5953B21C5B8 /* Pods-Travellers.debug.xcconfig */;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-2";
 				CODE_SIGN_ENTITLEMENTS = Travellers/Travellers.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HD9FBZBVT8;
@@ -668,6 +681,7 @@
 					"$(SDKROOT)/usr/include/libxml2",
 				);
 				INFOPLIST_FILE = Travellers/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -683,6 +697,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9217C16316720B1C40DB59DA /* Pods-Travellers.release.xcconfig */;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-2";
 				CODE_SIGN_ENTITLEMENTS = Travellers/Travellers.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HD9FBZBVT8;
@@ -718,6 +733,7 @@
 					"$(SDKROOT)/usr/include/libxml2",
 				);
 				INFOPLIST_FILE = Travellers/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

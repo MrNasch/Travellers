@@ -14,10 +14,19 @@ class TravelDatesViewController: UIViewController {
     
     var user: User?
     var db: Firestore!
+    var userEntity = [UserEntity]()
     let service = TravelService()
     var travels = [TravelEntity]()
+    private var cellExpanded: Int = -1
     
     @IBOutlet weak var tableView: UITableView!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        tableView.tableFooterView = UIView()
+        tableView.layoutMargins = UIEdgeInsets.zero
+        tableView.separatorInset = UIEdgeInsets.zero
+    }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -28,7 +37,6 @@ class TravelDatesViewController: UIViewController {
             guard let user = user else { return }
             self.user = User(authData: user)
             self.displayTravels()
-            self.tableView.reloadData()
         }
     }
     
@@ -36,6 +44,7 @@ class TravelDatesViewController: UIViewController {
         guard let userId = user?.uid else { return }
         service.getAllTravel(userId: userId) { (travelDates) in
             self.travels = travelDates
+            self.tableView.reloadData()
         }
     }
 }
@@ -49,25 +58,63 @@ extension TravelDatesViewController: UITableViewDelegate, UITableViewDataSource 
     
     // data in cell
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "travelCell", for: indexPath) as? TravelCell else {
-            return UITableViewCell()
+        
+        if cellExpanded != indexPath.row {
+            
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "travelCell", for: indexPath) as? TravelCell else {
+                return UITableViewCell()
+            }
+            
+            let travelDate = travels[indexPath.row]
+            let dateFrom = travelDate.dateFrom.dateValue()
+            let dateTo = travelDate.dateTo.dateValue()
+            
+            cell.layoutMargins = UIEdgeInsets.zero
+            
+            service.getUserInDate(countryDestination: travelDate.countryDestination, dateFrom: dateFrom.toString(dateFormat: "dd-MM-yyyy"), dateTo: dateTo.toString(dateFormat: "dd-MM-yyyy")) { (users) in
+                cell.numberOfUser.text = String(users.count)
+            }
+            
+            cell.country.text = travelDate.countryDestination
+            cell.dateFrom.text = dateFrom.toString(dateFormat: "dd-MM-yyyy")
+            cell.dateTo.text = dateTo.toString(dateFormat: "dd-MM-yyyy")
+            
+            return cell
+            
+        } else {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "userCell", for: indexPath) as? UserCell else {
+                return UITableViewCell()
+            }
+            let userThatTravel = userEntity[indexPath.row]
+            
+            cell.userName.text = userThatTravel.firstName
+            let urlImage = URL(string: "\(userThatTravel.profilImage)")
+            cell.userPPImage.kf.setImage(with: urlImage)
+            
+            return cell
         }
+    }
+    
+    //selected row
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let travelDate = travels[indexPath.row]
-        let dateFrom = travelDate.dateFrom.dateValue()
-        let dateTo = travelDate.dateTo.dateValue()
-        
-        cell.country.text = travelDate.countryDestination
-        cell.dateFrom.text = dateFrom.toString(dateFormat: "dd / MM / yyyy")
-        cell.dateTo.text = dateTo.toString(dateFormat: "dd / MM / yyyy")
-        cell.numberOfUser.text = String(travels.count)
-        
-        return cell
+            if indexPath.row != cellExpanded {
+                cellExpanded = indexPath.row
+            } else {
+                cellExpanded = -1
+            }
+            tableView.beginUpdates()
+            tableView.endUpdates()
+
     }
     
     // heigh for row
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 80
+        if indexPath.row == cellExpanded {
+            return 200
+        } else {
+            return 60
+        }
     }
 }
 

@@ -20,7 +20,7 @@ class TravelService {
         travelsCollection.addSnapshotListener { (query, error) in
             guard let query = query else {
                 if let error = error {
-                    print("error getting images: ", error.localizedDescription)
+                    print("error getting travels: ", error.localizedDescription)
                 }
                 return
             }
@@ -36,15 +36,22 @@ class TravelService {
     
     // get all user in the same date intervals
     func getUserInDate(countryDestination: String, dateFrom: String, dateTo: String, travels: @escaping ([TravelEntity]) -> ()) {
+        let df = DateFormatter()
+            df.dateFormat = "dd-MM-yyyy"
+        guard let from = df.date(from: dateFrom) else { return }
+        guard let to = df.date(from: dateTo) else { return }
         let travelsCollection = Firestore.firestore().collection("travels")
-            .whereField("from", isGreaterThanOrEqualTo: dateFrom)
-            .whereField("to", isLessThanOrEqualTo: dateTo)
+            .whereField("to", isGreaterThanOrEqualTo: from)
             .whereField("country", isEqualTo: countryDestination)
+        
+        travelsCollection
+            .whereField("from", isEqualTo: to)
+            .whereField("to", isLessThanOrEqualTo: from)
         
         travelsCollection.addSnapshotListener { (query, error) in
             guard let query = query else {
                 if let error = error {
-                    print("error getting images: ", error.localizedDescription)
+                    print("error getting travels: ", error.localizedDescription)
                 }
                 return
             }
@@ -78,3 +85,5 @@ class TravelService {
         travelStorageRef.delete()
     }
 }
+
+
