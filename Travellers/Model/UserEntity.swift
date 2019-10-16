@@ -10,13 +10,13 @@ import Foundation
 
 
 struct UserEntity {
-    let userId: String
+    var userId: String
     let firstName: String
     let profilImage: String
     
     init(id: String, data: [String: Any]) {
         self.userId = id
-        self.firstName = data["Firstname"] as! String
-        self.profilImage = data["Profil"] as! String
+        self.firstName = data["Firstname"] as? String ?? ""
+        self.profilImage = data["Profil"] as? String ?? ""
     }
 }

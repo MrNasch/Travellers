@@ -15,7 +15,7 @@ struct TravelEntity {
     let dateFrom: Timestamp
     let dateTo: Timestamp
     let countryDestination: String
-    let userId: String
+    var userId: String
     
     init(id: String, data: [String: Any]) {
         self.travelId = id

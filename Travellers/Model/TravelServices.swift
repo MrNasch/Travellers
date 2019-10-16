@@ -41,12 +41,12 @@ class TravelService {
         guard let from = df.date(from: dateFrom) else { return }
         guard let to = df.date(from: dateTo) else { return }
         let travelsCollection = Firestore.firestore().collection("travels")
-            .whereField("to", isGreaterThanOrEqualTo: from)
+            .whereField("to", isGreaterThanOrEqualTo: to)
             .whereField("country", isEqualTo: countryDestination)
         
         travelsCollection
-            .whereField("from", isEqualTo: to)
-            .whereField("to", isLessThanOrEqualTo: from)
+            .whereField("from", isEqualTo: from)
+            .whereField("to", isLessThanOrEqualTo: to)
         
         travelsCollection.addSnapshotListener { (query, error) in
             guard let query = query else {

@@ -36,6 +36,8 @@
 		34A016DA2339286D002BF101 /* TravelServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A016D92339286D002BF101 /* TravelServices.swift */; };
 		34A016DC23392878002BF101 /* TravelEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A016DB23392878002BF101 /* TravelEntity.swift */; };
 		34A016DE23394165002BF101 /* TravelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A016DD23394165002BF101 /* TravelCell.swift */; };
+		34C9ACA62357186E00BB4F9D /* GoogleServiceTests-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 34C9ACA52357186E00BB4F9D /* GoogleServiceTests-Info.plist */; };
+		34C9ACA82357196000BB4F9D /* AuthUsersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C9ACA72357196000BB4F9D /* AuthUsersTests.swift */; };
 		34ED667A234E9BC6000704F0 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34ED6679234E9BC6000704F0 /* UserCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -94,6 +96,8 @@
 		34A016D92339286D002BF101 /* TravelServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TravelServices.swift; sourceTree = "<group>"; };
 		34A016DB23392878002BF101 /* TravelEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TravelEntity.swift; sourceTree = "<group>"; };
 		34A016DD23394165002BF101 /* TravelCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TravelCell.swift; sourceTree = "<group>"; };
+		34C9ACA52357186E00BB4F9D /* GoogleServiceTests-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleServiceTests-Info.plist"; sourceTree = "<group>"; };
+		34C9ACA72357196000BB4F9D /* AuthUsersTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthUsersTests.swift; sourceTree = "<group>"; };
 		34ED6679234E9BC6000704F0 /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
 		9217C16316720B1C40DB59DA /* Pods-Travellers.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Travellers.release.xcconfig"; path = "Target Support Files/Pods-Travellers/Pods-Travellers.release.xcconfig"; sourceTree = "<group>"; };
 		D6D7D0ACFAE98FF311FEF614 /* Pods_Travellers.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Travellers.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -156,6 +160,7 @@
 				34309E85227AED2000D714EF /* View */,
 				34309E53227AED0100D714EF /* AppDelegate.swift */,
 				340DA9DD2338232900F3548D /* GoogleService-Info.plist */,
+				34C9ACA52357186E00BB4F9D /* GoogleServiceTests-Info.plist */,
 				3466348E23382997003FB8E8 /* Assets.xcassets */,
 				34309E5F227AED0200D714EF /* LaunchScreen.storyboard */,
 				34309E62227AED0200D714EF /* Info.plist */,
@@ -172,6 +177,7 @@
 				348C950B2345E97F00BE49E9 /* CountryTests.swift */,
 				348C950F2345EB3E00BE49E9 /* Country.json */,
 				348C95112345EB6400BE49E9 /* FakeResponseData.swift */,
+				34C9ACA72357196000BB4F9D /* AuthUsersTests.swift */,
 			);
 			path = TravellersTests;
 			sourceTree = "<group>";
@@ -355,6 +361,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				34C9ACA62357186E00BB4F9D /* GoogleServiceTests-Info.plist in Resources */,
 				34309E61227AED0200D714EF /* LaunchScreen.storyboard in Resources */,
 				340DA9DE2338232900F3548D /* GoogleService-Info.plist in Resources */,
 				34309E59227AED0100D714EF /* Main.storyboard in Resources */,
@@ -478,6 +485,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				348C950C2345E97F00BE49E9 /* CountryTests.swift in Sources */,
+				34C9ACA82357196000BB4F9D /* AuthUsersTests.swift in Sources */,
 				348C95122345EB6400BE49E9 /* FakeResponseData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

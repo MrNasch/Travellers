@@ -15,8 +15,10 @@ class TravelDatesViewController: UIViewController {
     var user: User?
     var db: Firestore!
     var userEntity = [UserEntity]()
+    let userService = UserServices()
     let service = TravelService()
     var travels = [TravelEntity]()
+    var userIDTravel = ""
     private var cellExpanded: Int = -1
     
     @IBOutlet weak var tableView: UITableView!
@@ -73,6 +75,10 @@ extension TravelDatesViewController: UITableViewDelegate, UITableViewDataSource 
             
             service.getUserInDate(countryDestination: travelDate.countryDestination, dateFrom: dateFrom.toString(dateFormat: "dd-MM-yyyy"), dateTo: dateTo.toString(dateFormat: "dd-MM-yyyy")) { (users) in
                 cell.numberOfUser.text = String(users.count)
+                print(users)
+                for differentUsers in users {
+                    self.userIDTravel = differentUsers.userId
+                }
             }
             
             cell.country.text = travelDate.countryDestination
@@ -85,10 +91,13 @@ extension TravelDatesViewController: UITableViewDelegate, UITableViewDataSource 
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "userCell", for: indexPath) as? UserCell else {
                 return UITableViewCell()
             }
-            let userThatTravel = userEntity[indexPath.row]
             
-            cell.userName.text = userThatTravel.firstName
-            let urlImage = URL(string: "\(userThatTravel.profilImage)")
+            userService.getAllUser(userId: userIDTravel) { (users) in
+                self.userEntity = users
+                self.tableView.reloadData()
+            }
+            cell.userName.text = userEntity[0].firstName
+            let urlImage = URL(string: "\(userEntity[0].profilImage)")
             cell.userPPImage.kf.setImage(with: urlImage)
             
             return cell
