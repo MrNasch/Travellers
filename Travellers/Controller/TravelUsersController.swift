@@ -51,10 +51,6 @@ extension TravelUsersController: UITableViewDelegate, UITableViewDataSource {
             return UITableViewCell()
         }
         
-        cell
-        
         return cell
     }
-    
-    
 }
