@@ -18,8 +18,7 @@ class TravelDatesViewController: UIViewController {
     let userService = UserServices()
     let service = TravelService()
     var travels = [TravelEntity]()
-    var userIDTravel = ""
-    private var cellExpanded: Int = -1
+    var userIDTravel = [String: [String]]()
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -61,7 +60,6 @@ extension TravelDatesViewController: UITableViewDelegate, UITableViewDataSource 
     // data in cell
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        if cellExpanded != indexPath.row {
             
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "travelCell", for: indexPath) as? TravelCell else {
                 return UITableViewCell()
@@ -74,11 +72,11 @@ extension TravelDatesViewController: UITableViewDelegate, UITableViewDataSource 
             cell.layoutMargins = UIEdgeInsets.zero
             
             service.getUserInDate(countryDestination: travelDate.countryDestination, dateFrom: dateFrom.toString(dateFormat: "dd-MM-yyyy"), dateTo: dateTo.toString(dateFormat: "dd-MM-yyyy")) { (users) in
-                cell.numberOfUser.text = String(users.count)
-                print(users)
-                for differentUsers in users {
-                    self.userIDTravel = differentUsers.userId
-                }
+                let usersId = users.map { $0.userId }
+                let uniqueUsersId = Set(usersId)
+                cell.numberOfUser.text = String(uniqueUsersId.count)
+                self.userIDTravel[self.travels[indexPath.row].travelId] = Array(uniqueUsersId)
+                print(uniqueUsersId)
             }
             
             cell.country.text = travelDate.countryDestination
@@ -86,44 +84,18 @@ extension TravelDatesViewController: UITableViewDelegate, UITableViewDataSource 
             cell.dateTo.text = dateTo.toString(dateFormat: "dd-MM-yyyy")
             
             return cell
-            
-        } else {
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: "userCell", for: indexPath) as? UserCell else {
-                return UITableViewCell()
-            }
-            
-            userService.getAllUser(userId: userIDTravel) { (users) in
-                self.userEntity = users
-                self.tableView.reloadData()
-            }
-            cell.userName.text = userEntity[0].firstName
-            let urlImage = URL(string: "\(userEntity[0].profilImage)")
-            cell.userPPImage.kf.setImage(with: urlImage)
-            
-            return cell
-        }
     }
-    
+    // TO MODAL
     //selected row
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-            if indexPath.row != cellExpanded {
-                cellExpanded = indexPath.row
-            } else {
-                cellExpanded = -1
-            }
-            tableView.beginUpdates()
-            tableView.endUpdates()
-
+        let users = travels[indexPath.row].userId
+        self.performSegue(withIdentifier: "travelUsers", sender: users)
     }
     
     // heigh for row
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if indexPath.row == cellExpanded {
-            return 200
-        } else {
+        
             return 60
-        }
     }
 }
 
@@ -133,6 +105,15 @@ extension Date {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = format
         return dateFormatter.string(from: self)
+    }
+}
+extension TravelDatesViewController {
+    // prepare for segue
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "travelUsers" {
+            let travelUsersVC = segue.destination as! TravelUsersController
+            travelUsersVC.users = sender as? UserEntity
+        }
     }
 }
 

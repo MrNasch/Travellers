@@ -38,6 +38,7 @@
 		34A016DE23394165002BF101 /* TravelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A016DD23394165002BF101 /* TravelCell.swift */; };
 		34C9ACA62357186E00BB4F9D /* GoogleServiceTests-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 34C9ACA52357186E00BB4F9D /* GoogleServiceTests-Info.plist */; };
 		34C9ACA82357196000BB4F9D /* AuthUsersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C9ACA72357196000BB4F9D /* AuthUsersTests.swift */; };
+		34C9ACAA23577AE800BB4F9D /* TravelUsersController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C9ACA923577AE700BB4F9D /* TravelUsersController.swift */; };
 		34ED667A234E9BC6000704F0 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34ED6679234E9BC6000704F0 /* UserCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -98,6 +99,7 @@
 		34A016DD23394165002BF101 /* TravelCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TravelCell.swift; sourceTree = "<group>"; };
 		34C9ACA52357186E00BB4F9D /* GoogleServiceTests-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleServiceTests-Info.plist"; sourceTree = "<group>"; };
 		34C9ACA72357196000BB4F9D /* AuthUsersTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthUsersTests.swift; sourceTree = "<group>"; };
+		34C9ACA923577AE700BB4F9D /* TravelUsersController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelUsersController.swift; sourceTree = "<group>"; };
 		34ED6679234E9BC6000704F0 /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
 		9217C16316720B1C40DB59DA /* Pods-Travellers.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Travellers.release.xcconfig"; path = "Target Support Files/Pods-Travellers/Pods-Travellers.release.xcconfig"; sourceTree = "<group>"; };
 		D6D7D0ACFAE98FF311FEF614 /* Pods_Travellers.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Travellers.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -211,6 +213,9 @@
 		34309E85227AED2000D714EF /* View */ = {
 			isa = PBXGroup;
 			children = (
+				343001BF22F754A20042FF60 /* ImageCellCollectionViewCell.swift */,
+				34A016DD23394165002BF101 /* TravelCell.swift */,
+				34ED6679234E9BC6000704F0 /* UserCell.swift */,
 				34309E57227AED0100D714EF /* Main.storyboard */,
 			);
 			path = View;
@@ -223,11 +228,9 @@
 				346CE374227C6B2300AC49F5 /* ProfileViewController.swift */,
 				346CE378227C804300AC49F5 /* KeyboardManagementViewController.swift */,
 				3431D65B2295BC7900681F45 /* CountriesViewController.swift */,
-				343001BF22F754A20042FF60 /* ImageCellCollectionViewCell.swift */,
 				34335C7F22F8D91900E7E622 /* MapViewController.swift */,
-				34A016DD23394165002BF101 /* TravelCell.swift */,
 				3435603623323A3F004BE960 /* TravelDatesViewController.swift */,
-				34ED6679234E9BC6000704F0 /* UserCell.swift */,
+				34C9ACA923577AE700BB4F9D /* TravelUsersController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -466,6 +469,7 @@
 				34ED667A234E9BC6000704F0 /* UserCell.swift in Sources */,
 				34299E752303FA6F00B445B5 /* ImageEntity.swift in Sources */,
 				3435603723323A3F004BE960 /* TravelDatesViewController.swift in Sources */,
+				34C9ACAA23577AE800BB4F9D /* TravelUsersController.swift in Sources */,
 				346CE375227C6B2300AC49F5 /* ProfileViewController.swift in Sources */,
 				3431D65C2295BC7900681F45 /* CountriesViewController.swift in Sources */,
 				34309E8E227B5EA200D714EF /* LoginViewController.swift in Sources */,

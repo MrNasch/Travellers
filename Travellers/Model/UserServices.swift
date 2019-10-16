@@ -11,7 +11,7 @@ import Firebase
 
 class UserServices {
     // get all travel dates
-    func getAllUser(userId: String, usersThatTravel: @escaping ([UserEntity]) -> ()) {
+    func getAllUser(userId: [String: [String]], usersThatTravel: @escaping ([UserEntity]) -> ()) {
         let travelsCollection = Firestore.firestore().collection("users")
             .whereField("userId", isEqualTo: userId)
         
