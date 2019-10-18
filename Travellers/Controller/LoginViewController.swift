@@ -74,9 +74,12 @@ class LoginViewController: KeyboardManagementViewController {
             profilVC.user = self.user
         }
     }
+    
+    // email (v2)
     @IBAction func emailChanged(_ sender: UITextField) {
         // veirfy is email exist
     }
+    
     @IBAction func didTapConnectButton(_ sender: UIButton) {
         if emailTextField.text!.isEmpty  {
             self.alerts(title: "Connection Failed", message: "Please enter your email adress")
@@ -86,8 +89,11 @@ class LoginViewController: KeyboardManagementViewController {
             connectUsers()
         }
     }
+    
+    // facebook (v2)
     @IBAction func didTapFacebookConnectButton(_ sender: UIButton) {
     }
+    
     // Users creation or connexion
     func connectUsers() {
         // create user or connect user
@@ -105,12 +111,14 @@ class LoginViewController: KeyboardManagementViewController {
             }
             // if Sign Up selected
         } else {
-            Auth.auth().createUser(withEmail: emailTextField.text!, password: passwordTextField.text!) { user, error in
+            guard let email = emailTextField.text else { return }
+            guard let password = passwordTextField.text else { return }
+            Auth.auth().createUser(withEmail: email, password: password) { user, error in
                 if error == nil {
                     let userId = Auth.auth().currentUser?.uid
                     if let userId = userId {
                         
-                        Auth.auth().signIn(withEmail: self.emailTextField.text!, password: self.passwordTextField.text!)
+                        Auth.auth().signIn(withEmail: email, password: password)
                         guard let emailText = self.emailTextField.text, !emailText.isEmpty else { return }
                         guard let passwordText = self.passwordTextField.text, !passwordText.isEmpty else { return }
                         guard let firstnameText = self.firstnameTextField.text, !firstnameText.isEmpty else { return }

@@ -8,7 +8,6 @@
 
 import UIKit
 import Firebase
-import Kingfisher
 
 class TravelDatesViewController: UIViewController {
     
@@ -94,7 +93,6 @@ extension TravelDatesViewController: UITableViewDelegate, UITableViewDataSource 
     
     // heigh for row
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        
             return 60
     }
 }
