@@ -99,7 +99,7 @@ extension TravelDatesViewController: UITableViewDelegate, UITableViewDataSource 
 
 extension Date {
     // convert date to string
-    func toString( dateFormat format  : String ) -> String {
+    func toString(dateFormat format : String ) -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = format
         return dateFormatter.string(from: self)
@@ -110,7 +110,7 @@ extension TravelDatesViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "travelUsers" {
             let travelUsersVC = segue.destination as! TravelUsersController
-            travelUsersVC.users = sender as? UserEntity
+            travelUsersVC.users = [UserEntity]()
         }
     }
 }

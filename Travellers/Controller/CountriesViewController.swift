@@ -74,11 +74,17 @@ class CountriesViewController: UIViewController, UIPickerViewDataSource, UIPicke
         let random = randomString(length: 10)
         guard let user = user else { return }
         
-        travels.getAllTravel(userId: user.uid) { (travelDates) in
-            self.travel = travelDates
-        }
+//        travels.getAllTravel(userId: user.uid) { (travelDates) in
+//            self.travel = travelDates
+//        }
         
-        let dataToSave: [String: Any] = ["country": name ?? "", "from": startDatePicker.date, "to": endDatePicker.date, "userId": user.uid ]
+        // transform date to "dd-MM-yyyy"
+        let df = DateFormatter()
+            df.dateFormat = "dd-MM-yyyy"
+        guard let from = df.date(from: startDatePicker?.date.toString(dateFormat: "dd-MM-yyyy") ?? "") else { return }
+        guard let to = df.date(from: endDatePicker?.date.toString(dateFormat: "dd-MM-yyyy") ?? "") else { return }
+        
+        let dataToSave: [String: Any] = ["country": name ?? "", "from": from, "to": to, "userId": user.uid ]
         
         self.db.collection("travels").document("\(random)").setData(dataToSave, completion: { (error) in
             if let error = error {

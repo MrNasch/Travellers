@@ -12,7 +12,7 @@ import Kingfisher
 
 class TravelUsersController: UIViewController {
 
-    var users: UserEntity!
+    var users = [UserEntity]()
     var user: User?
     var db: Firestore!
     
@@ -26,6 +26,9 @@ class TravelUsersController: UIViewController {
         tableView.layoutMargins = UIEdgeInsets.zero
         tableView.separatorInset = UIEdgeInsets.zero
         tableView.reloadData()
+        
+        print(self.users)
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -43,14 +46,13 @@ class TravelUsersController: UIViewController {
 
 extension TravelUsersController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return users.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "usersThatTravel", for: indexPath) as? UserCell else {
             return UITableViewCell()
         }
-        
         return cell
     }
 }
