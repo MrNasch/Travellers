@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		20884547CFAB0B30AFB64399 /* Pods_Travellers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6D7D0ACFAE98FF311FEF614 /* Pods_Travellers.framework */; };
 		34299E732303F9A600B445B5 /* imageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34299E722303F9A600B445B5 /* imageService.swift */; };
 		34299E752303FA6F00B445B5 /* ImageEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34299E742303FA6F00B445B5 /* ImageEntity.swift */; };
 		343001C022F754A20042FF60 /* ImageCellCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 343001BF22F754A20042FF60 /* ImageCellCollectionViewCell.swift */; };
@@ -27,6 +26,9 @@
 		346CE375227C6B2300AC49F5 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346CE374227C6B2300AC49F5 /* ProfileViewController.swift */; };
 		346CE377227C719800AC49F5 /* FirebaseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346CE376227C719800AC49F5 /* FirebaseHelper.swift */; };
 		346CE379227C804300AC49F5 /* KeyboardManagementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346CE378227C804300AC49F5 /* KeyboardManagementViewController.swift */; };
+		347E3FF8235F2512000C13AD /* Pods_Travellers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6D7D0ACFAE98FF311FEF614 /* Pods_Travellers.framework */; };
+		347E3FFC235F28F9000C13AD /* ProfileTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347E3FFB235F28F9000C13AD /* ProfileTests.swift */; };
+		347E4006235F352E000C13AD /* RegisterUserPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347E4005235F352E000C13AD /* RegisterUserPresenter.swift */; };
 		348C950C2345E97F00BE49E9 /* CountryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348C950B2345E97F00BE49E9 /* CountryTests.swift */; };
 		348C95102345EB3E00BE49E9 /* Country.json in Resources */ = {isa = PBXBuildFile; fileRef = 348C950F2345EB3E00BE49E9 /* Country.json */; };
 		348C95122345EB6400BE49E9 /* FakeResponseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348C95112345EB6400BE49E9 /* FakeResponseData.swift */; };
@@ -86,6 +88,8 @@
 		346CE374227C6B2300AC49F5 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		346CE376227C719800AC49F5 /* FirebaseHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseHelper.swift; sourceTree = "<group>"; };
 		346CE378227C804300AC49F5 /* KeyboardManagementViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardManagementViewController.swift; sourceTree = "<group>"; };
+		347E3FFB235F28F9000C13AD /* ProfileTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTests.swift; sourceTree = "<group>"; };
+		347E4005235F352E000C13AD /* RegisterUserPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterUserPresenter.swift; sourceTree = "<group>"; };
 		348C950B2345E97F00BE49E9 /* CountryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryTests.swift; sourceTree = "<group>"; };
 		348C950F2345EB3E00BE49E9 /* Country.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Country.json; sourceTree = "<group>"; };
 		348C95112345EB6400BE49E9 /* FakeResponseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeResponseData.swift; sourceTree = "<group>"; };
@@ -108,7 +112,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				20884547CFAB0B30AFB64399 /* Pods_Travellers.framework in Frameworks */,
+				347E3FF8235F2512000C13AD /* Pods_Travellers.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -132,6 +136,7 @@
 		34309E47227AED0100D714EF = {
 			isa = PBXGroup;
 			children = (
+				347E4005235F352E000C13AD /* RegisterUserPresenter.swift */,
 				34309E52227AED0100D714EF /* Travellers */,
 				34309E6A227AED0200D714EF /* TravellersTests */,
 				34309E75227AED0200D714EF /* TravellersUITests */,
@@ -177,6 +182,7 @@
 				348C950F2345EB3E00BE49E9 /* Country.json */,
 				348C95112345EB6400BE49E9 /* FakeResponseData.swift */,
 				34C9ACA72357196000BB4F9D /* AuthUsersTests.swift */,
+				347E3FFB235F28F9000C13AD /* ProfileTests.swift */,
 			);
 			path = TravellersTests;
 			sourceTree = "<group>";
@@ -528,6 +534,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				348C950C2345E97F00BE49E9 /* CountryTests.swift in Sources */,
+				347E4006235F352E000C13AD /* RegisterUserPresenter.swift in Sources */,
+				347E3FFC235F28F9000C13AD /* ProfileTests.swift in Sources */,
 				34C9ACA82357196000BB4F9D /* AuthUsersTests.swift in Sources */,
 				348C95122345EB6400BE49E9 /* FakeResponseData.swift in Sources */,
 			);

@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-//        if let firebaseOptions = FirebaseOptions(contentsOfFile: "GoogleServiceTests-Info.plist"),  ProcessInfo.processInfo.environment["XCTestConfigurationFilePath"] != nil {
+//        if let firebaseOptions = FirebaseOptions(contentsOfFile: "Firebase/Dev/GoogleService-Info.plist"),  ProcessInfo.processInfo.environment["XCTestConfigurationFilePath"] != nil {
 //            // Code only executes when tests are running
 //            FirebaseApp.configure(options: firebaseOptions)
 //        } else {

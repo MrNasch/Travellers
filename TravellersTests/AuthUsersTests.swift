@@ -13,65 +13,64 @@ import Firebase
 
 class AuthUsersTests: XCTestCase {
     
+    // Given
+    let db = Firestore.firestore()
+    let user = Auth.auth().currentUser
+    let expectation = XCTestExpectation(description: "Wait for queue change")
+    
     func testFirebase_Auth_Exist() {
-
-        let segmented = 0
-        let db = Firestore.firestore()
-        //When
         
-        let user = Auth.auth().currentUser
+        //When
         // Get document in DB
         if let user = user {
             let docRef = db.collection("users").document("\(user.uid)")
             docRef.getDocument { (document, error) in
-                guard let document = document, document.exists else { return }
-                let dataDescription = document.data()
-                let firstname = dataDescription!["Firstname"] as? String ?? ""
-                let lastname = dataDescription!["Lastname"] as? String ?? ""
-                let email = dataDescription!["Email"] as? String ?? ""
-                let password = dataDescription!["Password"] as? String ?? ""
-                let firstnameTextField = firstname
-                let lastnameTextField = lastname
-                let emailTextField = email
-                let passwordTextField = password
                 
-                if segmented == 1 {
-                    Auth.auth().createUser(withEmail: emailTextField, password: passwordTextField) { user, error in
-                        if error == nil {
-                            let userId = Auth.auth().currentUser?.uid
-                            if let userId = userId {
-                                
-                                Auth.auth().signIn(withEmail: emailTextField, password: passwordTextField)
-                                let emailText = emailTextField
-                                let passwordText = passwordTextField
-                                let firstnameText = firstnameTextField
-                                let lastnameText = lastnameTextField
-                                let dataToSave: [String: Any] = ["Email": emailText, "Paswword": passwordText, "Firstname": firstnameText, "Lastname": lastnameText]
-                                db.collection("users").document("\(userId)").setData(dataToSave, completion: { (error) in
-                                    if let error = error {
-                                        print("noooooooo \(error.localizedDescription)")
-                                    } else {
-                                        print("OK")
-                                    }
-                                })
-                            }
-                        }
+            }
+            //Then
+            XCTAssertNotNil(db)
+            XCTAssertNotNil(user)
+            XCTAssertEqual(user.uid, "AmBjDdw1lCRpMNJbj8982Oh48T32")
+            XCTAssertEqual(user.email, "test@test.be")
+            expectation.fulfill()
+            
+        }
+        wait(for: [expectation], timeout: 1)
+    }
+    
+    func testFirebase_UserNotExist_ThenCreate() {
+        //Given
+        let segmented = 1
+        let emailTextField: String = "test3@test.be"
+        let passwordTextField: String = "111111"
+        let firstnameTextField: String = "2"
+        let lastnameTextField: String = "22"
+        //When
+        if segmented == 1 {
+            Auth.auth().createUser(withEmail: emailTextField, password: passwordTextField) { user, error in
+                if error == nil {
+                    let userId = Auth.auth().currentUser?.uid
+                    if let userId = userId {
+                        
+                        Auth.auth().signIn(withEmail: emailTextField, password: passwordTextField)
+                        let emailText = emailTextField
+                        let passwordText = passwordTextField
+                        let firstnameText = firstnameTextField
+                        let lastnameText = lastnameTextField
+                        let dataToSave: [String: Any] = ["Email": emailText, "Paswword": passwordText, "Firstname": firstnameText, "Lastname": lastnameText]
+                        self.db.collection("users").document("\(userId)").setData(dataToSave, completion: { (error) in
+                            
+                        })
                     }
                 }
             }
+            //Then
+            XCTAssertEqual(passwordTextField, "111111")
+            XCTAssertEqual(emailTextField, "test3@test.be")
+            XCTAssertEqual(firstnameTextField, "2")
+            XCTAssertEqual(lastnameTextField, "22")
+            expectation.fulfill()
         }
-
-                let expectation = XCTestExpectation(description: "Wait for queue change")
-        
-        //Then
-        XCTAssertNotNil(db)
-        XCTAssertEqual(user?.uid, "kGrazsROPvf4ERhPd7vcdSZthZP2")
-        XCTAssertEqual(user?.email, "test2@test.be")
-        expectation.fulfill()
-        
-        wait(for: [expectation], timeout: 0.01)
+        wait(for: [expectation], timeout: 1)
     }
-    
-    
-    
 }

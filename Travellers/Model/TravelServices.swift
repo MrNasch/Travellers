@@ -65,25 +65,25 @@ class TravelService {
         }
     }
     
-    
+    //V2
     //delete travel date
-    func delete(travelId: String, completion: @escaping () -> ()) {
-        let travelDocRef = Firestore.firestore().collection("travels").document(travelId)
-        
-        travelDocRef.delete { error in
-            if let error = error {
-                print("error: ", error.localizedDescription)
-                return
-            }
-            
-            DispatchQueue.main.async {
-                completion()
-            }
-        }
-        
-        let travelStorageRef = Storage.storage().reference(withPath: "travels").child(travelId)
-        travelStorageRef.delete()
-    }
+//    func delete(travelId: String, completion: @escaping () -> ()) {
+//        let travelDocRef = Firestore.firestore().collection("travels").document(travelId)
+//        
+//        travelDocRef.delete { error in
+//            if let error = error {
+//                print("error: ", error.localizedDescription)
+//                return
+//            }
+//            
+//            DispatchQueue.main.async {
+//                completion()
+//            }
+//        }
+//        
+//        let travelStorageRef = Storage.storage().reference(withPath: "travels").child(travelId)
+//        travelStorageRef.delete()
+//    }
 }
 
 

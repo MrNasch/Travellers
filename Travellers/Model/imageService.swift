@@ -81,23 +81,23 @@ class ImageService {
             }
         }
     }
-    
+    //V2
     //delete images
-    func delete(imageId: String, completion: @escaping () -> ()) {
-        let imageDocRef = Firestore.firestore().collection("imagesGallery").document(imageId)
-        
-        imageDocRef.delete { error in
-            if let error = error {
-                print("error: ", error.localizedDescription)
-                return
-            }
-            
-            DispatchQueue.main.async {
-                completion()
-            }
-        }
-        
-        let imageStorageRef = Storage.storage().reference(withPath: "imagesGallery").child(imageId)
-        imageStorageRef.delete()
-    }
+//    func delete(imageId: String, completion: @escaping () -> ()) {
+//        let imageDocRef = Firestore.firestore().collection("imagesGallery").document(imageId)
+//        
+//        imageDocRef.delete { error in
+//            if let error = error {
+//                print("error: ", error.localizedDescription)
+//                return
+//            }
+//            
+//            DispatchQueue.main.async {
+//                completion()
+//            }
+//        }
+//        
+//        let imageStorageRef = Storage.storage().reference(withPath: "imagesGallery").child(imageId)
+//        imageStorageRef.delete()
+//    }
 }
