@@ -12,22 +12,22 @@ import Kingfisher
 
 class TravelUsersController: UIViewController {
 
+    var userTravel = [String]()
     var users = [UserEntity]()
     var user: User?
     var db: Firestore!
+    let userService = UserServices()
     
     
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         tableView.tableFooterView = UIView()
         tableView.layoutMargins = UIEdgeInsets.zero
         tableView.separatorInset = UIEdgeInsets.zero
         tableView.reloadData()
-        
-        print(self.users)
         
     }
     
@@ -39,6 +39,15 @@ class TravelUsersController: UIViewController {
         Auth.auth().addStateDidChangeListener { (auth, user) in
             guard let user = user else { return }
             self.user = User(authData: user)
+            self.displayUsers()
+        }
+    }
+    
+    func displayUsers() {
+        userService.getAllUser(userId: userTravel) { (usersIn) in
+            self.users = usersIn
+            self.tableView.reloadData()
+            print(self.users)
         }
     }
 
@@ -53,6 +62,13 @@ extension TravelUsersController: UITableViewDelegate, UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "usersThatTravel", for: indexPath) as? UserCell else {
             return UITableViewCell()
         }
+        
+        let allUsers = users[indexPath.row]
+        
+        cell.userName.text = allUsers.firstName
+        let urlImage = URL(string: "\(allUsers.profilImage)")
+        cell.userPPImage.kf.setImage(with: urlImage)
+        
         return cell
     }
 }

@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		20884547CFAB0B30AFB64399 /* Pods_Travellers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6D7D0ACFAE98FF311FEF614 /* Pods_Travellers.framework */; };
-		340DA9DE2338232900F3548D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 340DA9DD2338232900F3548D /* GoogleService-Info.plist */; };
 		34299E732303F9A600B445B5 /* imageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34299E722303F9A600B445B5 /* imageService.swift */; };
 		34299E752303FA6F00B445B5 /* ImageEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34299E742303FA6F00B445B5 /* ImageEntity.swift */; };
 		343001C022F754A20042FF60 /* ImageCellCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 343001BF22F754A20042FF60 /* ImageCellCollectionViewCell.swift */; };
@@ -36,7 +35,6 @@
 		34A016DA2339286D002BF101 /* TravelServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A016D92339286D002BF101 /* TravelServices.swift */; };
 		34A016DC23392878002BF101 /* TravelEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A016DB23392878002BF101 /* TravelEntity.swift */; };
 		34A016DE23394165002BF101 /* TravelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A016DD23394165002BF101 /* TravelCell.swift */; };
-		34C9ACA62357186E00BB4F9D /* GoogleServiceTests-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 34C9ACA52357186E00BB4F9D /* GoogleServiceTests-Info.plist */; };
 		34C9ACA82357196000BB4F9D /* AuthUsersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C9ACA72357196000BB4F9D /* AuthUsersTests.swift */; };
 		34C9ACAA23577AE800BB4F9D /* TravelUsersController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C9ACA923577AE700BB4F9D /* TravelUsersController.swift */; };
 		34ED667A234E9BC6000704F0 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34ED6679234E9BC6000704F0 /* UserCell.swift */; };
@@ -97,7 +95,7 @@
 		34A016D92339286D002BF101 /* TravelServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TravelServices.swift; sourceTree = "<group>"; };
 		34A016DB23392878002BF101 /* TravelEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TravelEntity.swift; sourceTree = "<group>"; };
 		34A016DD23394165002BF101 /* TravelCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TravelCell.swift; sourceTree = "<group>"; };
-		34C9ACA52357186E00BB4F9D /* GoogleServiceTests-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleServiceTests-Info.plist"; sourceTree = "<group>"; };
+		34C9ACA52357186E00BB4F9D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		34C9ACA72357196000BB4F9D /* AuthUsersTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthUsersTests.swift; sourceTree = "<group>"; };
 		34C9ACA923577AE700BB4F9D /* TravelUsersController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelUsersController.swift; sourceTree = "<group>"; };
 		34ED6679234E9BC6000704F0 /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
@@ -160,9 +158,8 @@
 				34309E84227AED1B00D714EF /* Model */,
 				34309E86227AED2600D714EF /* Controller */,
 				34309E85227AED2000D714EF /* View */,
+				347E3FF4235F00F0000C13AD /* Firebase */,
 				34309E53227AED0100D714EF /* AppDelegate.swift */,
-				340DA9DD2338232900F3548D /* GoogleService-Info.plist */,
-				34C9ACA52357186E00BB4F9D /* GoogleServiceTests-Info.plist */,
 				3466348E23382997003FB8E8 /* Assets.xcassets */,
 				34309E5F227AED0200D714EF /* LaunchScreen.storyboard */,
 				34309E62227AED0200D714EF /* Info.plist */,
@@ -235,6 +232,31 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		347E3FF4235F00F0000C13AD /* Firebase */ = {
+			isa = PBXGroup;
+			children = (
+				347E3FF6235F0122000C13AD /* Prod */,
+				347E3FF5235F011B000C13AD /* Dev */,
+			);
+			path = Firebase;
+			sourceTree = "<group>";
+		};
+		347E3FF5235F011B000C13AD /* Dev */ = {
+			isa = PBXGroup;
+			children = (
+				34C9ACA52357186E00BB4F9D /* GoogleService-Info.plist */,
+			);
+			path = Dev;
+			sourceTree = "<group>";
+		};
+		347E3FF6235F0122000C13AD /* Prod */ = {
+			isa = PBXGroup;
+			children = (
+				340DA9DD2338232900F3548D /* GoogleService-Info.plist */,
+			);
+			path = Prod;
+			sourceTree = "<group>";
+		};
 		4D9C60BD7052C03EED161BD2 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -264,6 +286,7 @@
 				34309E4D227AED0100D714EF /* Frameworks */,
 				34309E4E227AED0100D714EF /* Resources */,
 				157C34AB417EC3993260D3BC /* [CP] Embed Pods Frameworks */,
+				347E3FF7235F02B8000C13AD /* Setup Firebase environement GoogleService-info.plist */,
 			);
 			buildRules = (
 			);
@@ -364,9 +387,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				34C9ACA62357186E00BB4F9D /* GoogleServiceTests-Info.plist in Resources */,
 				34309E61227AED0200D714EF /* LaunchScreen.storyboard in Resources */,
-				340DA9DE2338232900F3548D /* GoogleService-Info.plist in Resources */,
 				34309E59227AED0100D714EF /* Main.storyboard in Resources */,
 				3466348F23382997003FB8E8 /* Assets.xcassets in Resources */,
 			);
@@ -429,6 +450,24 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Travellers/Pods-Travellers-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		347E3FF7235F02B8000C13AD /* Setup Firebase environement GoogleService-info.plist */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Setup Firebase environement GoogleService-info.plist";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Name of the resource we're selectively copying\nGOOGLESERVICE_INFO_PLIST=GoogleService-Info.plist\n\n# Get references to dev and prod versions of the GoogleService-Info.plist\n# NOTE: These should only live on the file system and should NOT be part of the target (since we'll be adding them to the target manually)\nGOOGLESERVICE_INFO_DEV=${PROJECT_DIR}/${TARGET_NAME}/Firebase/Dev/${GOOGLESERVICE_INFO_PLIST}\nGOOGLESERVICE_INFO_PROD=${PROJECT_DIR}/${TARGET_NAME}/Firebase/Prod/${GOOGLESERVICE_INFO_PLIST}\n\n# Make sure the dev version of GoogleService-Info.plist exists\necho \"Looking for ${GOOGLESERVICE_INFO_PLIST} in ${GOOGLESERVICE_INFO_DEV}\"\nif [ ! -f $GOOGLESERVICE_INFO_DEV ]\nthen\n    echo \"No Development GoogleService-Info.plist found. Please ensure it's in the proper directory.\"\n    exit 1\nfi\n\n# Make sure the prod version of GoogleService-Info.plist exists\necho \"Looking for ${GOOGLESERVICE_INFO_PLIST} in ${GOOGLESERVICE_INFO_PROD}\"\nif [ ! -f $GOOGLESERVICE_INFO_PROD ]\nthen\n    echo \"No Production GoogleService-Info.plist found. Please ensure it's in the proper directory.\"\n    exit 1\nfi\n\n# Get a reference to the destination location for the GoogleService-Info.plist\nPLIST_DESTINATION=${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.app\necho \"Will copy ${GOOGLESERVICE_INFO_PLIST} to final destination: ${PLIST_DESTINATION}\"\n\n# Copy over the prod GoogleService-Info.plist for Release builds\nif [ \"${CONFIGURATION}\" == \"Release\" ]\nthen\n    echo \"Using ${GOOGLESERVICE_INFO_PROD}\"\n    cp \"${GOOGLESERVICE_INFO_PROD}\" \"${PLIST_DESTINATION}\"\nelse\n    echo \"Using ${GOOGLESERVICE_INFO_DEV}\"\n    cp \"${GOOGLESERVICE_INFO_DEV}\" \"${PLIST_DESTINATION}\"\nfi\n";
 		};
 		68CEA6FFA8D4C89DEA4C5B36 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;

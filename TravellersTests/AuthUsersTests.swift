@@ -66,6 +66,7 @@ class AuthUsersTests: XCTestCase {
         //Then
         XCTAssertNotNil(db)
         XCTAssertEqual(user?.uid, "kGrazsROPvf4ERhPd7vcdSZthZP2")
+        XCTAssertEqual(user?.email, "test2@test.be")
         expectation.fulfill()
         
         wait(for: [expectation], timeout: 0.01)

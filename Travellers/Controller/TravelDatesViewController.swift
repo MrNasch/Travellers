@@ -18,6 +18,7 @@ class TravelDatesViewController: UIViewController {
     let service = TravelService()
     var travels = [TravelEntity]()
     var userIDTravel = [String: [String]]()
+    var userTravel = [String]()
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -75,9 +76,9 @@ extension TravelDatesViewController: UITableViewDelegate, UITableViewDataSource 
                 let uniqueUsersId = Set(usersId)
                 cell.numberOfUser.text = String(uniqueUsersId.count)
                 self.userIDTravel[self.travels[indexPath.row].travelId] = Array(uniqueUsersId)
-                print(uniqueUsersId)
+                self.userTravel = Array(uniqueUsersId)
+                
             }
-            
             cell.country.text = travelDate.countryDestination
             cell.dateFrom.text = dateFrom.toString(dateFormat: "dd-MM-yyyy")
             cell.dateTo.text = dateTo.toString(dateFormat: "dd-MM-yyyy")
@@ -110,7 +111,7 @@ extension TravelDatesViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "travelUsers" {
             let travelUsersVC = segue.destination as! TravelUsersController
-            travelUsersVC.users = [UserEntity]()
+            travelUsersVC.userTravel = userTravel
         }
     }
 }
