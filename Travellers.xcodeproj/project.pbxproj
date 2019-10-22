@@ -28,7 +28,6 @@
 		346CE379227C804300AC49F5 /* KeyboardManagementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346CE378227C804300AC49F5 /* KeyboardManagementViewController.swift */; };
 		347E3FF8235F2512000C13AD /* Pods_Travellers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6D7D0ACFAE98FF311FEF614 /* Pods_Travellers.framework */; };
 		347E3FFC235F28F9000C13AD /* ProfileTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347E3FFB235F28F9000C13AD /* ProfileTests.swift */; };
-		347E4006235F352E000C13AD /* RegisterUserPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347E4005235F352E000C13AD /* RegisterUserPresenter.swift */; };
 		348C950C2345E97F00BE49E9 /* CountryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348C950B2345E97F00BE49E9 /* CountryTests.swift */; };
 		348C95102345EB3E00BE49E9 /* Country.json in Resources */ = {isa = PBXBuildFile; fileRef = 348C950F2345EB3E00BE49E9 /* Country.json */; };
 		348C95122345EB6400BE49E9 /* FakeResponseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348C95112345EB6400BE49E9 /* FakeResponseData.swift */; };
@@ -40,6 +39,8 @@
 		34C9ACA82357196000BB4F9D /* AuthUsersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C9ACA72357196000BB4F9D /* AuthUsersTests.swift */; };
 		34C9ACAA23577AE800BB4F9D /* TravelUsersController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C9ACA923577AE700BB4F9D /* TravelUsersController.swift */; };
 		34ED667A234E9BC6000704F0 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34ED6679234E9BC6000704F0 /* UserCell.swift */; };
+		34F4826A235F7B62004F570D /* UserServicesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F48269235F7B62004F570D /* UserServicesTests.swift */; };
+		34F4826C235F7B88004F570D /* TravelServicesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F4826B235F7B88004F570D /* TravelServicesTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,7 +90,6 @@
 		346CE376227C719800AC49F5 /* FirebaseHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseHelper.swift; sourceTree = "<group>"; };
 		346CE378227C804300AC49F5 /* KeyboardManagementViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardManagementViewController.swift; sourceTree = "<group>"; };
 		347E3FFB235F28F9000C13AD /* ProfileTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTests.swift; sourceTree = "<group>"; };
-		347E4005235F352E000C13AD /* RegisterUserPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterUserPresenter.swift; sourceTree = "<group>"; };
 		348C950B2345E97F00BE49E9 /* CountryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryTests.swift; sourceTree = "<group>"; };
 		348C950F2345EB3E00BE49E9 /* Country.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Country.json; sourceTree = "<group>"; };
 		348C95112345EB6400BE49E9 /* FakeResponseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeResponseData.swift; sourceTree = "<group>"; };
@@ -103,6 +103,8 @@
 		34C9ACA72357196000BB4F9D /* AuthUsersTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthUsersTests.swift; sourceTree = "<group>"; };
 		34C9ACA923577AE700BB4F9D /* TravelUsersController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelUsersController.swift; sourceTree = "<group>"; };
 		34ED6679234E9BC6000704F0 /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
+		34F48269235F7B62004F570D /* UserServicesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserServicesTests.swift; sourceTree = "<group>"; };
+		34F4826B235F7B88004F570D /* TravelServicesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelServicesTests.swift; sourceTree = "<group>"; };
 		9217C16316720B1C40DB59DA /* Pods-Travellers.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Travellers.release.xcconfig"; path = "Target Support Files/Pods-Travellers/Pods-Travellers.release.xcconfig"; sourceTree = "<group>"; };
 		D6D7D0ACFAE98FF311FEF614 /* Pods_Travellers.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Travellers.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -136,7 +138,6 @@
 		34309E47227AED0100D714EF = {
 			isa = PBXGroup;
 			children = (
-				347E4005235F352E000C13AD /* RegisterUserPresenter.swift */,
 				34309E52227AED0100D714EF /* Travellers */,
 				34309E6A227AED0200D714EF /* TravellersTests */,
 				34309E75227AED0200D714EF /* TravellersUITests */,
@@ -183,6 +184,8 @@
 				348C95112345EB6400BE49E9 /* FakeResponseData.swift */,
 				34C9ACA72357196000BB4F9D /* AuthUsersTests.swift */,
 				347E3FFB235F28F9000C13AD /* ProfileTests.swift */,
+				34F48269235F7B62004F570D /* UserServicesTests.swift */,
+				34F4826B235F7B88004F570D /* TravelServicesTests.swift */,
 			);
 			path = TravellersTests;
 			sourceTree = "<group>";
@@ -534,7 +537,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				348C950C2345E97F00BE49E9 /* CountryTests.swift in Sources */,
-				347E4006235F352E000C13AD /* RegisterUserPresenter.swift in Sources */,
+				34F4826C235F7B88004F570D /* TravelServicesTests.swift in Sources */,
+				34F4826A235F7B62004F570D /* UserServicesTests.swift in Sources */,
 				347E3FFC235F28F9000C13AD /* ProfileTests.swift in Sources */,
 				34C9ACA82357196000BB4F9D /* AuthUsersTests.swift in Sources */,
 				348C95122345EB6400BE49E9 /* FakeResponseData.swift in Sources */,

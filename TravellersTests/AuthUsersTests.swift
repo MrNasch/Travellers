@@ -35,7 +35,7 @@ class AuthUsersTests: XCTestCase {
             expectation.fulfill()
             
         }
-        wait(for: [expectation], timeout: 1)
+        wait(for: [expectation], timeout: 10)
     }
     
     func testFirebase_UserNotExist_ThenCreate() {
@@ -71,6 +71,6 @@ class AuthUsersTests: XCTestCase {
             XCTAssertEqual(lastnameTextField, "22")
             expectation.fulfill()
         }
-        wait(for: [expectation], timeout: 1)
+        wait(for: [expectation], timeout: 10)
     }
 }

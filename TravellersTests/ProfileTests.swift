@@ -41,17 +41,48 @@ class ProfileTests: XCTestCase {
             bioText = bioTextText
             urlImage = profileText
             //Then
-                XCTAssertNotNil(self.db)
-                XCTAssertNotNil(self.user)
-                XCTAssertNotNil(document)
-                XCTAssertNil(error)
-                XCTAssertEqual(firstname, "test")
-                XCTAssertEqual(lastname, "destests")
-                XCTAssertEqual(bioText, "Feeder")
-                XCTAssertEqual(urlImage, "https://firebasestorage.googleapis.com/v0/b/travellerstest-51afb.appspot.com/o/profileImage%2FkGrazsROPvf4ERhPd7vcdSZthZP2.jpg?alt=media&token=5a116788-0b86-4270-9e38-48a3fe3154a8")
+            XCTAssertNotNil(self.db)
+            XCTAssertNotNil(self.user)
+            XCTAssertNotNil(document)
+            XCTAssertNil(error)
+            XCTAssertEqual(firstname, "test")
+            XCTAssertEqual(lastname, "destests")
+            XCTAssertEqual(bioText, "Feeder")
+            XCTAssertEqual(urlImage, "https://firebasestorage.googleapis.com/v0/b/travellerstest-51afb.appspot.com/o/profileImage%2FkGrazsROPvf4ERhPd7vcdSZthZP2.jpg?alt=media&token=5a116788-0b86-4270-9e38-48a3fe3154a8")
             expectation.fulfill()
             
         }
-        wait(for: [expectation], timeout: 20)
+        wait(for: [expectation], timeout: 10)
+    }
+    
+    func testProfil_IfImageExist_DisplayImage() {
+        // Given
+        guard let userId = user?.uid else { return }
+        //When
+        let expectation = XCTestExpectation(description: "Wait for queue change")
+        service.getAllImagesFor(userId: userId) { (images) in
+            //Then
+            XCTAssertNotNil(images)
+            expectation.fulfill()
+        }
+        wait(for: [expectation], timeout: 10)
+    }
+    
+    func testProfil_WantAddImage_AddImage() {
+        // Given
+        guard let userId = user?.uid else { return }
+        //When
+        let expectation = XCTestExpectation(description: "Wait for queue change")
+        let data = FakeResponseData.imageData
+        
+        service.upload(images: [data], userId: userId) { () in
+            //Then
+            XCTAssertNotNil(self.images)
+            expectation.fulfill()
+        }
+        wait(for: [expectation], timeout: 10)
     }
 }
+
+
+
