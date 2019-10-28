@@ -22,7 +22,7 @@ class UserServicesTests: XCTestCase {
         guard let userId = user?.uid else { return }
         //When
         let expectation = XCTestExpectation(description: "Wait for queue change")
-        service.getAllUser(userId: [userId]) { (users) in
+        service.getAllUser(userId: userId) { (users) in
             //Then
             XCTAssertNotNil(users)
             expectation.fulfill()

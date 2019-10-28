@@ -31,16 +31,19 @@ class KeyboardManagementViewController: UIViewController {
     func addTap() {
         view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tap)))
     }
+    
     @objc func tap() {
         view.endEditing(true)
     }
     
+    // animate
     func animation(_ constant: CGFloat, _ constraint: NSLayoutConstraint) {
         UIView.animate(withDuration: 0.5) {
             constraint.constant = constant
         }
     }
     
+    // check heught of view
     func checkHeight(_ view:UIView, constraint: NSLayoutConstraint) {
         let bottom = view.frame.maxY
         let screenHeight = UIScreen.main.bounds.height

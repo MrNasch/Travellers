@@ -28,7 +28,6 @@ class TravelUsersController: UIViewController {
         tableView.layoutMargins = UIEdgeInsets.zero
         tableView.separatorInset = UIEdgeInsets.zero
         tableView.reloadData()
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -43,11 +42,13 @@ class TravelUsersController: UIViewController {
         }
     }
     
+    // display user that travel at the same dates
     func displayUsers() {
-        userService.getAllUser(userId: userTravel) { (usersIn) in
-            self.users = usersIn
-            self.tableView.reloadData()
-            print(self.users)
+        for user in userTravel {
+            userService.getAllUser(userId: user) { (usersIn) in
+                self.users.append(usersIn[0])
+                self.tableView.reloadData()
+            }
         }
     }
 
@@ -58,11 +59,11 @@ extension TravelUsersController: UITableViewDelegate, UITableViewDataSource {
         return users.count
     }
     
+    // diplay infos of users
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "usersThatTravel", for: indexPath) as? UserCell else {
             return UITableViewCell()
         }
-        
         let allUsers = users[indexPath.row]
         
         cell.userName.text = allUsers.firstName

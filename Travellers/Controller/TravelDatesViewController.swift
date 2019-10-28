@@ -41,6 +41,7 @@ class TravelDatesViewController: UIViewController {
         }
     }
     
+    // display travel dates
     func displayTravels() {
         guard let userId = user?.uid else { return }
         service.getAllTravel(userId: userId) { (travelDates) in
@@ -76,7 +77,6 @@ extension TravelDatesViewController: UITableViewDelegate, UITableViewDataSource 
                 let uniqueUsersId = Set(usersId)
                 cell.numberOfUser.text = String(uniqueUsersId.count)
                 self.userIDTravel[self.travels[indexPath.row].travelId] = Array(uniqueUsersId)
-                self.userTravel = Array(uniqueUsersId)
                 
             }
             cell.country.text = travelDate.countryDestination
@@ -85,10 +85,9 @@ extension TravelDatesViewController: UITableViewDelegate, UITableViewDataSource 
             
             return cell
     }
-    // TO MODAL
     //selected row
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let users = travels[indexPath.row].userId
+        let users = self.userIDTravel[travels[indexPath.row].travelId]
         self.performSegue(withIdentifier: "travelUsers", sender: users)
     }
     
@@ -111,7 +110,7 @@ extension TravelDatesViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "travelUsers" {
             let travelUsersVC = segue.destination as! TravelUsersController
-            travelUsersVC.userTravel = userTravel
+            travelUsersVC.userTravel = (sender as? [String])!
         }
     }
 }

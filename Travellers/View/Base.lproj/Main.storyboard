@@ -788,7 +788,6 @@
                                             <outlet property="dateFrom" destination="EcS-NP-KtB" id="Odc-nr-Sjt"/>
                                             <outlet property="dateTo" destination="ODe-Zl-BWT" id="wa8-mD-ehU"/>
                                             <outlet property="numberOfUser" destination="Y7b-Gq-fnf" id="iae-uc-81g"/>
-                                            <segue destination="kvw-Fi-pqb" kind="show" identifier="travelUsers" id="lcb-cq-0ea"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -812,6 +811,7 @@
                     </tabBarItem>
                     <connections>
                         <outlet property="tableView" destination="EDa-UX-OoQ" id="e0g-MR-Ssp"/>
+                        <segue destination="kvw-Fi-pqb" kind="show" identifier="travelUsers" id="9e1-DT-snO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tYZ-BR-ZWF" userLabel="First Responder" sceneMemberID="firstResponder"/>

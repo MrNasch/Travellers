@@ -11,9 +11,9 @@ import Firebase
 
 class UserServices {
     // get all travel dates
-    func getAllUser(userId: [String], usersThatTravel: @escaping ([UserEntity]) -> ()) {
-        let travelsCollection = Firestore.firestore().collection("users")
-            .whereField("userId", isEqualTo: userId)
+    func getAllUser(userId: String, usersThatTravel: @escaping ([UserEntity]) -> ()) {
+        
+        let travelsCollection = Firestore.firestore().collection("users").whereField(FieldPath.documentID(), isEqualTo: userId )
         
         travelsCollection.addSnapshotListener { (query, error) in
             guard let query = query else {

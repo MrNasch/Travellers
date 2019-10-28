@@ -141,6 +141,7 @@ class MapViewController: UIViewController {
         return request
     }
     
+    // reset map
     func resetMapView(withNew directions: MKDirections) {
         mapView.removeOverlays(mapView.overlays)
         directionsArray.append(directions)
@@ -149,7 +150,7 @@ class MapViewController: UIViewController {
         directionsArray.remove(at: index)}
     }
     
-    
+    // getDirections
     @IBAction func didTapNavigationButton(_ sender: UIButton) {
         getDirections()
     }
@@ -203,6 +204,7 @@ extension MapViewController: MKMapViewDelegate {
         }
     }
     
+    // render map
     func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
         let renderer = MKPolylineRenderer(overlay: overlay as! MKPolyline)
         renderer.strokeColor = .orange

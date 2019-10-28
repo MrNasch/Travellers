@@ -17,7 +17,7 @@ class FirebaseHelper {
         return Auth.auth().currentUser?.uid
     }
     
-    // authentification
+    // authentification Facebook V2
     
     
 }

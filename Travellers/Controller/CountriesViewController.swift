@@ -74,10 +74,6 @@ class CountriesViewController: UIViewController, UIPickerViewDataSource, UIPicke
         let random = randomString(length: 10)
         guard let user = user else { return }
         
-//        travels.getAllTravel(userId: user.uid) { (travelDates) in
-//            self.travel = travelDates
-//        }
-        
         // transform date to "dd-MM-yyyy"
         let df = DateFormatter()
             df.dateFormat = "dd-MM-yyyy"
