@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "CBC9AE84CAB829D72F76902FBE5AF342"
+               BlueprintIdentifier = "4597B4290958B7AFF45B8AB7BD086890"
                BuildableName = "Pods_Travellers.framework"
                BlueprintName = "Pods-Travellers"
                ReferencedContainer = "container:Pods.xcodeproj">
