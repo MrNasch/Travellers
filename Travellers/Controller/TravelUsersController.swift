@@ -46,7 +46,8 @@ class TravelUsersController: UIViewController {
     func displayUsers() {
         for user in userTravel {
             userService.getAllUser(userId: user) { (usersIn) in
-                self.users.append(usersIn[0])
+                guard let user = usersIn.first else { return }
+                self.users.append(user)
                 self.tableView.reloadData()
             }
         }

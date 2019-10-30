@@ -20,7 +20,7 @@ class ProfileViewController: UIViewController {
     var images = [ImageEntity]()
     let imagePicker = UIImagePickerController()
     var service = ImageService()
-    var selectedPicker = true
+    var  selectedPicker = true
     
     @IBOutlet weak var firstname: UILabel!
     @IBOutlet weak var lastname: UILabel!
@@ -107,6 +107,7 @@ class ProfileViewController: UIViewController {
     
     // add profil picture
     @objc func selectProfileImage() {
+        selectedPicker = true
         let imagePickerController = UIImagePickerController()
         imagePickerController.delegate = self as UIImagePickerControllerDelegate & UINavigationControllerDelegate
         
