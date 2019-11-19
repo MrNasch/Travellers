@@ -8,6 +8,7 @@
 
 import Foundation
 // MARK: - Country
+//decodable
 struct Country: Codable {
     let name: String?
     let alpha3Code: String?

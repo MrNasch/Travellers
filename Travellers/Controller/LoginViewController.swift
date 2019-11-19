@@ -9,7 +9,8 @@
 import UIKit
 import Firebase
 
-class LoginViewController: KeyboardManagementViewController {
+// final blocking heritage
+final class LoginViewController: KeyboardManagementViewController {
     
     
     var user: User?
