@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -294,8 +294,8 @@
 				34309E4C227AED0100D714EF /* Sources */,
 				34309E4D227AED0100D714EF /* Frameworks */,
 				34309E4E227AED0100D714EF /* Resources */,
-				157C34AB417EC3993260D3BC /* [CP] Embed Pods Frameworks */,
 				347E3FF7235F02B8000C13AD /* Setup Firebase environement GoogleService-info.plist */,
+				310431706252E086A4A99121 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -420,7 +420,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		157C34AB417EC3993260D3BC /* [CP] Embed Pods Frameworks */ = {
+		310431706252E086A4A99121 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -728,6 +728,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.nicolaspaschal.Travellers;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -780,6 +781,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.nicolaspaschal.Travellers;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
