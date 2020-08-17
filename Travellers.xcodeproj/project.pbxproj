@@ -21,6 +21,8 @@
 		3431D65C2295BC7900681F45 /* CountriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3431D65B2295BC7900681F45 /* CountriesViewController.swift */; };
 		34335C8022F8D91900E7E622 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34335C7F22F8D91900E7E622 /* MapViewController.swift */; };
 		3435603723323A3F004BE960 /* TravelDatesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3435603623323A3F004BE960 /* TravelDatesViewController.swift */; };
+		345F2F5F249FD5D800E5E47B /* HomeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 345F2F5E249FD5D800E5E47B /* HomeKit.framework */; };
+		345F2F61249FD6E600E5E47B /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 345F2F60249FD6E600E5E47B /* CloudKit.framework */; };
 		3466348D2338280B003FB8E8 /* CountriesServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3466348C2338280B003FB8E8 /* CountriesServices.swift */; };
 		3466348F23382997003FB8E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3466348E23382997003FB8E8 /* Assets.xcassets */; };
 		346CE375227C6B2300AC49F5 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346CE374227C6B2300AC49F5 /* ProfileViewController.swift */; };
@@ -84,6 +86,8 @@
 		3431D65B2295BC7900681F45 /* CountriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesViewController.swift; sourceTree = "<group>"; };
 		34335C7F22F8D91900E7E622 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		3435603623323A3F004BE960 /* TravelDatesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelDatesViewController.swift; sourceTree = "<group>"; };
+		345F2F5E249FD5D800E5E47B /* HomeKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HomeKit.framework; path = System/Library/Frameworks/HomeKit.framework; sourceTree = SDKROOT; };
+		345F2F60249FD6E600E5E47B /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		3466348C2338280B003FB8E8 /* CountriesServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesServices.swift; sourceTree = "<group>"; };
 		3466348E23382997003FB8E8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		346CE374227C6B2300AC49F5 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -114,6 +118,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				345F2F61249FD6E600E5E47B /* CloudKit.framework in Frameworks */,
+				345F2F5F249FD5D800E5E47B /* HomeKit.framework in Frameworks */,
 				347E3FF8235F2512000C13AD /* Pods_Travellers.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -278,6 +284,8 @@
 		F4777510A20D1F12D2686726 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				345F2F60249FD6E600E5E47B /* CloudKit.framework */,
+				345F2F5E249FD5D800E5E47B /* HomeKit.framework */,
 				D6D7D0ACFAE98FF311FEF614 /* Pods_Travellers.framework */,
 			);
 			name = Frameworks;

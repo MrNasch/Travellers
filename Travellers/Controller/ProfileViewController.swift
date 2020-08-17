@@ -20,7 +20,8 @@ class ProfileViewController: UIViewController {
     var images = [ImageEntity]()
     let imagePicker = UIImagePickerController()
     var service = ImageService()
-    var  selectedPicker = true
+    var selectedPicker = true
+    let orange = UIColor(red: 255, green: 204, blue: 51, alpha: 1)
     
     @IBOutlet weak var firstname: UILabel!
     @IBOutlet weak var lastname: UILabel!
@@ -39,6 +40,7 @@ class ProfileViewController: UIViewController {
         super.viewDidAppear(animated)
         displayUser()
         displayImagesGal()
+        profilePicture.makeRounded()
     }
     
     override func viewDidLoad() {
@@ -166,7 +168,7 @@ class ProfileViewController: UIViewController {
     @IBAction func addPhotosTapped(_ sender: UIButton) {
         selectedPicker = false
         imagePicker.delegate = self
-        imagePicker.allowsEditing = false
+        imagePicker.allowsEditing = true
         imagePicker.sourceType = .photoLibrary
         
         present(imagePicker, animated: true, completion: nil)
@@ -247,6 +249,11 @@ extension ProfileViewController: UICollectionViewDataSource, UICollectionViewDel
         
         return cell
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print("\(indexPath)")
+    }
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 5
     }
@@ -262,3 +269,12 @@ extension ProfileViewController: UICollectionViewDataSource, UICollectionViewDel
     }
 }
 
+// UIImage extension
+extension UIImageView {
+    
+    // make profil picture rounded
+    func makeRounded() {
+        self.layer.cornerRadius = self.frame.height / 2.5
+        self.clipsToBounds = true
+    }
+}
