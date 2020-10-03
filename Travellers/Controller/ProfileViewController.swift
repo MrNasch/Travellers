@@ -22,7 +22,9 @@ class ProfileViewController: UIViewController {
     var service = ImageService()
     var selectedPicker = true
     let orange = UIColor(red: 255, green: 204, blue: 51, alpha: 1)
+    let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: Selector(("DismissKeyboard")))
     
+    @IBOutlet var mainView: UIView!
     @IBOutlet weak var firstname: UILabel!
     @IBOutlet weak var lastname: UILabel!
     @IBOutlet weak var country: UILabel!
@@ -33,7 +35,10 @@ class ProfileViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
         proCollectionView.reloadData()
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -50,14 +55,12 @@ class ProfileViewController: UIViewController {
         profilePicture.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(selectProfileImage)))
         
         
-        
         // checking user info
         Auth.auth().addStateDidChangeListener { (auth, user) in
             guard let user = user else { return }
             self.user = User(authData: user)
         }
     }
-    
     
     // check user and update infos
     func displayUser() {
@@ -251,7 +254,12 @@ extension ProfileViewController: UICollectionViewDataSource, UICollectionViewDel
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("\(indexPath)")
+        
+        let imageView = UIImageView()
+        self.mainView.addSubview(imageView)
+        let url = URL(string: "\(images[indexPath.row].url ?? "")")
+        imageView.kf.setImage(with: url)
+        imageView.frame = mainView.frame
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
