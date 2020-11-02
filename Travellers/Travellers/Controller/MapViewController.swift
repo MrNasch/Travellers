@@ -13,6 +13,8 @@ import MapKit
 
 class MapViewController: UIViewController {
     
+    var user: User?
+    
     @IBOutlet weak var addressLabel: UILabel!
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var goButton: UIButton!
