@@ -10,13 +10,12 @@
 #endif
 #endif
 
+#import "GDTCORAssert 3.h"
 #import "GDTCORAssert.h"
 #import "GDTCORClock 3.h"
 #import "GDTCORClock.h"
 #import "GDTCORConsoleLogger 3.h"
 #import "GDTCORConsoleLogger.h"
-#import "GDTCORDataFuture 3.h"
-#import "GDTCORDataFuture.h"
 #import "GDTCOREvent 3.h"
 #import "GDTCOREvent.h"
 #import "GDTCOREventDataObject 3.h"
@@ -29,10 +28,10 @@
 #import "GDTCORPlatform.h"
 #import "GDTCORPrioritizer 3.h"
 #import "GDTCORPrioritizer.h"
+#import "GDTCORReachability.h"
 #import "GDTCORRegistrar 3.h"
 #import "GDTCORRegistrar.h"
-#import "GDTCORStoredEvent 3.h"
-#import "GDTCORStoredEvent.h"
+#import "GDTCORStorageProtocol.h"
 #import "GDTCORTargets 3.h"
 #import "GDTCORTargets.h"
 #import "GDTCORTransport 3.h"

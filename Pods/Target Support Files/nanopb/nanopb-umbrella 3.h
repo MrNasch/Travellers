@@ -10,6 +10,7 @@
 #endif
 #endif
 
+#import "pb 3.h"
 #import "pb.h"
 #import "pb_common 2.h"
 #import "pb_common.h"

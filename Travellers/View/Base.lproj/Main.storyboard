@@ -379,6 +379,7 @@
                         <outlet property="country" destination="PgZ-A1-caa" id="nRj-G9-07r"/>
                         <outlet property="firstname" destination="7Qp-dA-mxg" id="YaX-se-9aT"/>
                         <outlet property="lastname" destination="dGs-Nu-AaU" id="Dev-eq-VeA"/>
+                        <outlet property="mainView" destination="Bp4-ED-ZzV" id="6TP-9b-W2c"/>
                         <outlet property="proCollectionView" destination="h8w-c5-TU8" id="pQ9-Qv-YWI"/>
                         <outlet property="profilePicture" destination="142-ZS-5y8" id="AxJ-6v-SNW"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="Log" id="3Nh-HQ-SrW"/>
