@@ -33,7 +33,7 @@ final class LoginViewController: KeyboardManagementViewController {
         addTap()
         Auth.auth().addStateDidChangeListener { (auth, user) in
             if user != nil {
-                self.performSegue(withIdentifier: "segueToProfil", sender: nil)
+                self.performSegue(withIdentifier: "segueToMap", sender: nil)
             }
         }
     }
@@ -69,10 +69,10 @@ final class LoginViewController: KeyboardManagementViewController {
     }
     // Segue to profil
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "segueToProfil" {
+        if segue.identifier == "segueToMap" {
             let tabCtrl = segue.destination as! UITabBarController
-            let profilVC = tabCtrl.viewControllers![0] as! ProfileViewController
-            profilVC.user = self.user
+            let mapVC = tabCtrl.viewControllers![0] as! MapViewController
+            mapVC.user = self.user
         }
     }
     
@@ -107,7 +107,7 @@ final class LoginViewController: KeyboardManagementViewController {
                 if let error = error, user == nil {
                     self.alerts(title: "Sing In failed", message: error.localizedDescription)
                 } else {
-                    self.performSegue(withIdentifier: "segueToProfil", sender: nil)
+                    self.performSegue(withIdentifier: "segueToMap", sender: nil)
                 }
             }
             // if Sign Up selected
@@ -133,7 +133,7 @@ final class LoginViewController: KeyboardManagementViewController {
                             }
                         })
                         
-                        self.performSegue(withIdentifier: "segueToProfil", sender: nil)
+                        self.performSegue(withIdentifier: "segueToMap", sender: nil)
                         
                         // Throw error if email already exist
                     }

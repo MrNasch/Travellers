@@ -1,0 +1,943 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		34299E732303F9A600B445B5 /* imageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34299E722303F9A600B445B5 /* imageService.swift */; };
+		34299E752303FA6F00B445B5 /* ImageEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34299E742303FA6F00B445B5 /* ImageEntity.swift */; };
+		343001C022F754A20042FF60 /* ImageCellCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 343001BF22F754A20042FF60 /* ImageCellCollectionViewCell.swift */; };
+		34309E54227AED0100D714EF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34309E53227AED0100D714EF /* AppDelegate.swift */; };
+		34309E59227AED0100D714EF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34309E57227AED0100D714EF /* Main.storyboard */; };
+		34309E5C227AED0100D714EF /* Travellers.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 34309E5A227AED0100D714EF /* Travellers.xcdatamodeld */; };
+		34309E61227AED0200D714EF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34309E5F227AED0200D714EF /* LaunchScreen.storyboard */; };
+		34309E77227AED0200D714EF /* TravellersUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34309E76227AED0200D714EF /* TravellersUITests.swift */; };
+		34309E8C227B5E6800D714EF /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34309E8B227B5E6800D714EF /* User.swift */; };
+		34309E8E227B5EA200D714EF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34309E8D227B5EA200D714EF /* LoginViewController.swift */; };
+		3431D6582295BC0800681F45 /* Countries.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3431D6572295BC0800681F45 /* Countries.swift */; };
+		3431D65C2295BC7900681F45 /* CountriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3431D65B2295BC7900681F45 /* CountriesViewController.swift */; };
+		34335C8022F8D91900E7E622 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34335C7F22F8D91900E7E622 /* MapViewController.swift */; };
+		3435603723323A3F004BE960 /* TravelDatesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3435603623323A3F004BE960 /* TravelDatesViewController.swift */; };
+		345F2F5F249FD5D800E5E47B /* HomeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 345F2F5E249FD5D800E5E47B /* HomeKit.framework */; };
+		345F2F61249FD6E600E5E47B /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 345F2F60249FD6E600E5E47B /* CloudKit.framework */; };
+		3466348D2338280B003FB8E8 /* CountriesServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3466348C2338280B003FB8E8 /* CountriesServices.swift */; };
+		3466348F23382997003FB8E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3466348E23382997003FB8E8 /* Assets.xcassets */; };
+		346CE375227C6B2300AC49F5 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346CE374227C6B2300AC49F5 /* ProfileViewController.swift */; };
+		346CE377227C719800AC49F5 /* FirebaseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346CE376227C719800AC49F5 /* FirebaseHelper.swift */; };
+		346CE379227C804300AC49F5 /* KeyboardManagementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346CE378227C804300AC49F5 /* KeyboardManagementViewController.swift */; };
+		347E3FF8235F2512000C13AD /* Pods_Travellers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6D7D0ACFAE98FF311FEF614 /* Pods_Travellers.framework */; };
+		347E3FFC235F28F9000C13AD /* ProfileTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347E3FFB235F28F9000C13AD /* ProfileTests.swift */; };
+		348C950C2345E97F00BE49E9 /* CountryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348C950B2345E97F00BE49E9 /* CountryTests.swift */; };
+		348C95102345EB3E00BE49E9 /* Country.json in Resources */ = {isa = PBXBuildFile; fileRef = 348C950F2345EB3E00BE49E9 /* Country.json */; };
+		348C95122345EB6400BE49E9 /* FakeResponseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348C95112345EB6400BE49E9 /* FakeResponseData.swift */; };
+		349FCDE6234F4702003CDA22 /* UserEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349FCDE5234F4702003CDA22 /* UserEntity.swift */; };
+		349FCDE8234F4E3E003CDA22 /* UserServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349FCDE7234F4E3E003CDA22 /* UserServices.swift */; };
+		34A016DA2339286D002BF101 /* TravelServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A016D92339286D002BF101 /* TravelServices.swift */; };
+		34A016DC23392878002BF101 /* TravelEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A016DB23392878002BF101 /* TravelEntity.swift */; };
+		34A016DE23394165002BF101 /* TravelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A016DD23394165002BF101 /* TravelCell.swift */; };
+		34C9ACA82357196000BB4F9D /* AuthUsersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C9ACA72357196000BB4F9D /* AuthUsersTests.swift */; };
+		34C9ACAA23577AE800BB4F9D /* TravelUsersController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C9ACA923577AE700BB4F9D /* TravelUsersController.swift */; };
+		34ED667A234E9BC6000704F0 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34ED6679234E9BC6000704F0 /* UserCell.swift */; };
+		34F4826A235F7B62004F570D /* UserServicesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F48269235F7B62004F570D /* UserServicesTests.swift */; };
+		34F4826C235F7B88004F570D /* TravelServicesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F4826B235F7B88004F570D /* TravelServicesTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		34309E68227AED0200D714EF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 34309E48227AED0100D714EF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 34309E4F227AED0100D714EF;
+			remoteInfo = Travellers;
+		};
+		34309E73227AED0200D714EF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 34309E48227AED0100D714EF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 34309E4F227AED0100D714EF;
+			remoteInfo = Travellers;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1D6C04B93CD6F5953B21C5B8 /* Pods-Travellers.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Travellers.debug.xcconfig"; path = "Target Support Files/Pods-Travellers/Pods-Travellers.debug.xcconfig"; sourceTree = "<group>"; };
+		340DA9DD2338232900F3548D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		34299E722303F9A600B445B5 /* imageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = imageService.swift; sourceTree = "<group>"; };
+		34299E742303FA6F00B445B5 /* ImageEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageEntity.swift; sourceTree = "<group>"; };
+		343001BF22F754A20042FF60 /* ImageCellCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCellCollectionViewCell.swift; sourceTree = "<group>"; };
+		34309E50227AED0100D714EF /* Travellers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Travellers.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		34309E53227AED0100D714EF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		34309E58227AED0100D714EF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		34309E5B227AED0100D714EF /* Travellers.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Travellers.xcdatamodel; sourceTree = "<group>"; };
+		34309E60227AED0200D714EF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		34309E62227AED0200D714EF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		34309E67227AED0200D714EF /* TravellersTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TravellersTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		34309E6D227AED0200D714EF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		34309E72227AED0200D714EF /* TravellersUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TravellersUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		34309E76227AED0200D714EF /* TravellersUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravellersUITests.swift; sourceTree = "<group>"; };
+		34309E78227AED0200D714EF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		34309E8B227B5E6800D714EF /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		34309E8D227B5EA200D714EF /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		34309E8F227B5EDA00D714EF /* Travellers.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Travellers.entitlements; sourceTree = "<group>"; };
+		3431D6572295BC0800681F45 /* Countries.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Countries.swift; sourceTree = "<group>"; };
+		3431D65B2295BC7900681F45 /* CountriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesViewController.swift; sourceTree = "<group>"; };
+		34335C7F22F8D91900E7E622 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		3435603623323A3F004BE960 /* TravelDatesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelDatesViewController.swift; sourceTree = "<group>"; };
+		345F2F5E249FD5D800E5E47B /* HomeKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HomeKit.framework; path = System/Library/Frameworks/HomeKit.framework; sourceTree = SDKROOT; };
+		345F2F60249FD6E600E5E47B /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		3466348C2338280B003FB8E8 /* CountriesServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesServices.swift; sourceTree = "<group>"; };
+		3466348E23382997003FB8E8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		346CE374227C6B2300AC49F5 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		346CE376227C719800AC49F5 /* FirebaseHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseHelper.swift; sourceTree = "<group>"; };
+		346CE378227C804300AC49F5 /* KeyboardManagementViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardManagementViewController.swift; sourceTree = "<group>"; };
+		347E3FFB235F28F9000C13AD /* ProfileTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTests.swift; sourceTree = "<group>"; };
+		348C950B2345E97F00BE49E9 /* CountryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryTests.swift; sourceTree = "<group>"; };
+		348C950F2345EB3E00BE49E9 /* Country.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Country.json; sourceTree = "<group>"; };
+		348C95112345EB6400BE49E9 /* FakeResponseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeResponseData.swift; sourceTree = "<group>"; };
+		348C95132345EC7F00BE49E9 /* TravellersTests-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TravellersTests-Bridging-Header.h"; sourceTree = "<group>"; };
+		349FCDE5234F4702003CDA22 /* UserEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEntity.swift; sourceTree = "<group>"; };
+		349FCDE7234F4E3E003CDA22 /* UserServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserServices.swift; sourceTree = "<group>"; };
+		34A016D92339286D002BF101 /* TravelServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TravelServices.swift; sourceTree = "<group>"; };
+		34A016DB23392878002BF101 /* TravelEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TravelEntity.swift; sourceTree = "<group>"; };
+		34A016DD23394165002BF101 /* TravelCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TravelCell.swift; sourceTree = "<group>"; };
+		34C9ACA52357186E00BB4F9D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		34C9ACA72357196000BB4F9D /* AuthUsersTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthUsersTests.swift; sourceTree = "<group>"; };
+		34C9ACA923577AE700BB4F9D /* TravelUsersController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelUsersController.swift; sourceTree = "<group>"; };
+		34ED6679234E9BC6000704F0 /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
+		34F48269235F7B62004F570D /* UserServicesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserServicesTests.swift; sourceTree = "<group>"; };
+		34F4826B235F7B88004F570D /* TravelServicesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelServicesTests.swift; sourceTree = "<group>"; };
+		9217C16316720B1C40DB59DA /* Pods-Travellers.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Travellers.release.xcconfig"; path = "Target Support Files/Pods-Travellers/Pods-Travellers.release.xcconfig"; sourceTree = "<group>"; };
+		D6D7D0ACFAE98FF311FEF614 /* Pods_Travellers.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Travellers.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		34309E4D227AED0100D714EF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				345F2F61249FD6E600E5E47B /* CloudKit.framework in Frameworks */,
+				345F2F5F249FD5D800E5E47B /* HomeKit.framework in Frameworks */,
+				347E3FF8235F2512000C13AD /* Pods_Travellers.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		34309E64227AED0200D714EF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		34309E6F227AED0200D714EF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		34309E47227AED0100D714EF = {
+			isa = PBXGroup;
+			children = (
+				34309E52227AED0100D714EF /* Travellers */,
+				34309E6A227AED0200D714EF /* TravellersTests */,
+				34309E75227AED0200D714EF /* TravellersUITests */,
+				34309E51227AED0100D714EF /* Products */,
+				4D9C60BD7052C03EED161BD2 /* Pods */,
+				F4777510A20D1F12D2686726 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		34309E51227AED0100D714EF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				34309E50227AED0100D714EF /* Travellers.app */,
+				34309E67227AED0200D714EF /* TravellersTests.xctest */,
+				34309E72227AED0200D714EF /* TravellersUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		34309E52227AED0100D714EF /* Travellers */ = {
+			isa = PBXGroup;
+			children = (
+				34309E8F227B5EDA00D714EF /* Travellers.entitlements */,
+				34309E84227AED1B00D714EF /* Model */,
+				34309E86227AED2600D714EF /* Controller */,
+				34309E85227AED2000D714EF /* View */,
+				347E3FF4235F00F0000C13AD /* Firebase */,
+				34309E53227AED0100D714EF /* AppDelegate.swift */,
+				3466348E23382997003FB8E8 /* Assets.xcassets */,
+				34309E5F227AED0200D714EF /* LaunchScreen.storyboard */,
+				34309E62227AED0200D714EF /* Info.plist */,
+				34309E5A227AED0100D714EF /* Travellers.xcdatamodeld */,
+			);
+			path = Travellers;
+			sourceTree = "<group>";
+		};
+		34309E6A227AED0200D714EF /* TravellersTests */ = {
+			isa = PBXGroup;
+			children = (
+				348C95132345EC7F00BE49E9 /* TravellersTests-Bridging-Header.h */,
+				34309E6D227AED0200D714EF /* Info.plist */,
+				348C950B2345E97F00BE49E9 /* CountryTests.swift */,
+				348C950F2345EB3E00BE49E9 /* Country.json */,
+				348C95112345EB6400BE49E9 /* FakeResponseData.swift */,
+				34C9ACA72357196000BB4F9D /* AuthUsersTests.swift */,
+				347E3FFB235F28F9000C13AD /* ProfileTests.swift */,
+				34F48269235F7B62004F570D /* UserServicesTests.swift */,
+				34F4826B235F7B88004F570D /* TravelServicesTests.swift */,
+			);
+			path = TravellersTests;
+			sourceTree = "<group>";
+		};
+		34309E75227AED0200D714EF /* TravellersUITests */ = {
+			isa = PBXGroup;
+			children = (
+				34309E76227AED0200D714EF /* TravellersUITests.swift */,
+				34309E78227AED0200D714EF /* Info.plist */,
+			);
+			path = TravellersUITests;
+			sourceTree = "<group>";
+		};
+		34309E84227AED1B00D714EF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				34309E8B227B5E6800D714EF /* User.swift */,
+				346CE376227C719800AC49F5 /* FirebaseHelper.swift */,
+				3431D6572295BC0800681F45 /* Countries.swift */,
+				3466348C2338280B003FB8E8 /* CountriesServices.swift */,
+				34299E742303FA6F00B445B5 /* ImageEntity.swift */,
+				34299E722303F9A600B445B5 /* imageService.swift */,
+				34A016D92339286D002BF101 /* TravelServices.swift */,
+				349FCDE7234F4E3E003CDA22 /* UserServices.swift */,
+				34A016DB23392878002BF101 /* TravelEntity.swift */,
+				349FCDE5234F4702003CDA22 /* UserEntity.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		34309E85227AED2000D714EF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				343001BF22F754A20042FF60 /* ImageCellCollectionViewCell.swift */,
+				34A016DD23394165002BF101 /* TravelCell.swift */,
+				34ED6679234E9BC6000704F0 /* UserCell.swift */,
+				34309E57227AED0100D714EF /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		34309E86227AED2600D714EF /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				34309E8D227B5EA200D714EF /* LoginViewController.swift */,
+				346CE374227C6B2300AC49F5 /* ProfileViewController.swift */,
+				346CE378227C804300AC49F5 /* KeyboardManagementViewController.swift */,
+				3431D65B2295BC7900681F45 /* CountriesViewController.swift */,
+				34335C7F22F8D91900E7E622 /* MapViewController.swift */,
+				3435603623323A3F004BE960 /* TravelDatesViewController.swift */,
+				34C9ACA923577AE700BB4F9D /* TravelUsersController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		347E3FF4235F00F0000C13AD /* Firebase */ = {
+			isa = PBXGroup;
+			children = (
+				347E3FF6235F0122000C13AD /* Prod */,
+				347E3FF5235F011B000C13AD /* Dev */,
+			);
+			path = Firebase;
+			sourceTree = "<group>";
+		};
+		347E3FF5235F011B000C13AD /* Dev */ = {
+			isa = PBXGroup;
+			children = (
+				34C9ACA52357186E00BB4F9D /* GoogleService-Info.plist */,
+			);
+			path = Dev;
+			sourceTree = "<group>";
+		};
+		347E3FF6235F0122000C13AD /* Prod */ = {
+			isa = PBXGroup;
+			children = (
+				340DA9DD2338232900F3548D /* GoogleService-Info.plist */,
+			);
+			path = Prod;
+			sourceTree = "<group>";
+		};
+		4D9C60BD7052C03EED161BD2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1D6C04B93CD6F5953B21C5B8 /* Pods-Travellers.debug.xcconfig */,
+				9217C16316720B1C40DB59DA /* Pods-Travellers.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		F4777510A20D1F12D2686726 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				345F2F60249FD6E600E5E47B /* CloudKit.framework */,
+				345F2F5E249FD5D800E5E47B /* HomeKit.framework */,
+				D6D7D0ACFAE98FF311FEF614 /* Pods_Travellers.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		34309E4F227AED0100D714EF /* Travellers */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 34309E7B227AED0200D714EF /* Build configuration list for PBXNativeTarget "Travellers" */;
+			buildPhases = (
+				68CEA6FFA8D4C89DEA4C5B36 /* [CP] Check Pods Manifest.lock */,
+				34309E4C227AED0100D714EF /* Sources */,
+				34309E4D227AED0100D714EF /* Frameworks */,
+				34309E4E227AED0100D714EF /* Resources */,
+				347E3FF7235F02B8000C13AD /* Setup Firebase environement GoogleService-info.plist */,
+				4E00D3909742FF03CA3A153E /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Travellers;
+			productName = Travellers;
+			productReference = 34309E50227AED0100D714EF /* Travellers.app */;
+			productType = "com.apple.product-type.application";
+		};
+		34309E66227AED0200D714EF /* TravellersTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 34309E7E227AED0200D714EF /* Build configuration list for PBXNativeTarget "TravellersTests" */;
+			buildPhases = (
+				34309E63227AED0200D714EF /* Sources */,
+				34309E64227AED0200D714EF /* Frameworks */,
+				34309E65227AED0200D714EF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				34309E69227AED0200D714EF /* PBXTargetDependency */,
+			);
+			name = TravellersTests;
+			productName = TravellersTests;
+			productReference = 34309E67227AED0200D714EF /* TravellersTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		34309E71227AED0200D714EF /* TravellersUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 34309E81227AED0200D714EF /* Build configuration list for PBXNativeTarget "TravellersUITests" */;
+			buildPhases = (
+				34309E6E227AED0200D714EF /* Sources */,
+				34309E6F227AED0200D714EF /* Frameworks */,
+				34309E70227AED0200D714EF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				34309E74227AED0200D714EF /* PBXTargetDependency */,
+			);
+			name = TravellersUITests;
+			productName = TravellersUITests;
+			productReference = 34309E72227AED0200D714EF /* TravellersUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		34309E48227AED0100D714EF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1020;
+				LastUpgradeCheck = 1200;
+				ORGANIZATIONNAME = Nasch;
+				TargetAttributes = {
+					34309E4F227AED0100D714EF = {
+						CreatedOnToolsVersion = 10.2.1;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
+					};
+					34309E66227AED0200D714EF = {
+						CreatedOnToolsVersion = 10.2.1;
+						LastSwiftMigration = 1100;
+						TestTargetID = 34309E4F227AED0100D714EF;
+					};
+					34309E71227AED0200D714EF = {
+						CreatedOnToolsVersion = 10.2.1;
+						TestTargetID = 34309E4F227AED0100D714EF;
+					};
+				};
+			};
+			buildConfigurationList = 34309E4B227AED0100D714EF /* Build configuration list for PBXProject "Travellers" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 34309E47227AED0100D714EF;
+			productRefGroup = 34309E51227AED0100D714EF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				34309E4F227AED0100D714EF /* Travellers */,
+				34309E66227AED0200D714EF /* TravellersTests */,
+				34309E71227AED0200D714EF /* TravellersUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		34309E4E227AED0100D714EF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				34309E61227AED0200D714EF /* LaunchScreen.storyboard in Resources */,
+				34309E59227AED0100D714EF /* Main.storyboard in Resources */,
+				3466348F23382997003FB8E8 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		34309E65227AED0200D714EF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				348C95102345EB3E00BE49E9 /* Country.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		34309E70227AED0200D714EF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		347E3FF7235F02B8000C13AD /* Setup Firebase environement GoogleService-info.plist */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Setup Firebase environement GoogleService-info.plist";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Name of the resource we're selectively copying\nGOOGLESERVICE_INFO_PLIST=GoogleService-Info.plist\n\n# Get references to dev and prod versions of the GoogleService-Info.plist\n# NOTE: These should only live on the file system and should NOT be part of the target (since we'll be adding them to the target manually)\nGOOGLESERVICE_INFO_DEV=${PROJECT_DIR}/${TARGET_NAME}/Firebase/Dev/${GOOGLESERVICE_INFO_PLIST}\nGOOGLESERVICE_INFO_PROD=${PROJECT_DIR}/${TARGET_NAME}/Firebase/Prod/${GOOGLESERVICE_INFO_PLIST}\n\n# Make sure the dev version of GoogleService-Info.plist exists\necho \"Looking for ${GOOGLESERVICE_INFO_PLIST} in ${GOOGLESERVICE_INFO_DEV}\"\nif [ ! -f $GOOGLESERVICE_INFO_DEV ]\nthen\n    echo \"No Development GoogleService-Info.plist found. Please ensure it's in the proper directory.\"\n    exit 1\nfi\n\n# Make sure the prod version of GoogleService-Info.plist exists\necho \"Looking for ${GOOGLESERVICE_INFO_PLIST} in ${GOOGLESERVICE_INFO_PROD}\"\nif [ ! -f $GOOGLESERVICE_INFO_PROD ]\nthen\n    echo \"No Production GoogleService-Info.plist found. Please ensure it's in the proper directory.\"\n    exit 1\nfi\n\n# Get a reference to the destination location for the GoogleService-Info.plist\nPLIST_DESTINATION=${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.app\necho \"Will copy ${GOOGLESERVICE_INFO_PLIST} to final destination: ${PLIST_DESTINATION}\"\n\n# Copy over the prod GoogleService-Info.plist for Release builds\nif [ \"${CONFIGURATION}\" == \"Release\" ]\nthen\n    echo \"Using ${GOOGLESERVICE_INFO_PROD}\"\n    cp \"${GOOGLESERVICE_INFO_PROD}\" \"${PLIST_DESTINATION}\"\nelse\n    echo \"Using ${GOOGLESERVICE_INFO_DEV}\"\n    cp \"${GOOGLESERVICE_INFO_DEV}\" \"${PLIST_DESTINATION}\"\nfi\n";
+		};
+		4E00D3909742FF03CA3A153E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Travellers/Pods-Travellers-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Travellers/Pods-Travellers-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Travellers/Pods-Travellers-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		68CEA6FFA8D4C89DEA4C5B36 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Travellers-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		34309E4C227AED0100D714EF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				34A016DC23392878002BF101 /* TravelEntity.swift in Sources */,
+				34A016DE23394165002BF101 /* TravelCell.swift in Sources */,
+				34309E8C227B5E6800D714EF /* User.swift in Sources */,
+				349FCDE6234F4702003CDA22 /* UserEntity.swift in Sources */,
+				34A016DA2339286D002BF101 /* TravelServices.swift in Sources */,
+				34309E54227AED0100D714EF /* AppDelegate.swift in Sources */,
+				3466348D2338280B003FB8E8 /* CountriesServices.swift in Sources */,
+				34ED667A234E9BC6000704F0 /* UserCell.swift in Sources */,
+				34299E752303FA6F00B445B5 /* ImageEntity.swift in Sources */,
+				3435603723323A3F004BE960 /* TravelDatesViewController.swift in Sources */,
+				34C9ACAA23577AE800BB4F9D /* TravelUsersController.swift in Sources */,
+				346CE375227C6B2300AC49F5 /* ProfileViewController.swift in Sources */,
+				3431D65C2295BC7900681F45 /* CountriesViewController.swift in Sources */,
+				34309E8E227B5EA200D714EF /* LoginViewController.swift in Sources */,
+				346CE379227C804300AC49F5 /* KeyboardManagementViewController.swift in Sources */,
+				346CE377227C719800AC49F5 /* FirebaseHelper.swift in Sources */,
+				34335C8022F8D91900E7E622 /* MapViewController.swift in Sources */,
+				349FCDE8234F4E3E003CDA22 /* UserServices.swift in Sources */,
+				34299E732303F9A600B445B5 /* imageService.swift in Sources */,
+				3431D6582295BC0800681F45 /* Countries.swift in Sources */,
+				34309E5C227AED0100D714EF /* Travellers.xcdatamodeld in Sources */,
+				343001C022F754A20042FF60 /* ImageCellCollectionViewCell.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		34309E63227AED0200D714EF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				348C950C2345E97F00BE49E9 /* CountryTests.swift in Sources */,
+				34F4826C235F7B88004F570D /* TravelServicesTests.swift in Sources */,
+				34F4826A235F7B62004F570D /* UserServicesTests.swift in Sources */,
+				347E3FFC235F28F9000C13AD /* ProfileTests.swift in Sources */,
+				34C9ACA82357196000BB4F9D /* AuthUsersTests.swift in Sources */,
+				348C95122345EB6400BE49E9 /* FakeResponseData.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		34309E6E227AED0200D714EF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				34309E77227AED0200D714EF /* TravellersUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		34309E69227AED0200D714EF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 34309E4F227AED0100D714EF /* Travellers */;
+			targetProxy = 34309E68227AED0200D714EF /* PBXContainerItemProxy */;
+		};
+		34309E74227AED0200D714EF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 34309E4F227AED0100D714EF /* Travellers */;
+			targetProxy = 34309E73227AED0200D714EF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		34309E57227AED0100D714EF /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				34309E58227AED0100D714EF /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		34309E5F227AED0200D714EF /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				34309E60227AED0200D714EF /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		34309E79227AED0200D714EF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		34309E7A227AED0200D714EF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		34309E7C227AED0200D714EF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1D6C04B93CD6F5953B21C5B8 /* Pods-Travellers.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Travellers/Travellers.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = HD9FBZBVT8;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Alamofire/Alamofire.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/BoringSSL-GRPC/openssl_grpc.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/CocoaLumberjack/CocoaLumberjack.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseAuth/FirebaseAuth.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseCore/FirebaseCore.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseCoreDiagnostics/FirebaseCoreDiagnostics.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseDatabase/FirebaseDatabase.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseFirestore/FirebaseFirestore.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseInstanceID/FirebaseInstanceID.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseStorage/FirebaseStorage.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/GoogleDataTransport/GoogleDataTransport.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/GoogleDataTransportCCTSupport/GoogleDataTransportCCTSupport.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/GoogleUtilities/GoogleUtilities.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Kingfisher/Kingfisher.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Protobuf/Protobuf.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/SVGKit/SVGKit.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/gRPC-C++/grpcpp.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/gRPC-Core/grpc.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/leveldb-library/leveldb.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/nanopb/nanopb.framework/Headers\"",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/Firebase\"",
+					"\"${PODS_ROOT}/Headers/Public/FirebaseAuthInterop\"",
+					"\"${PODS_ROOT}/Headers/Public/FirebaseCoreDiagnosticsInterop\"",
+					"$(inherited)",
+					"${PODS_ROOT}/Firebase/CoreOnly/Sources",
+					"$(SDKROOT)/usr/include/libxml2",
+				);
+				INFOPLIST_FILE = Travellers/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.nicolaspaschal.Travellers;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		34309E7D227AED0200D714EF /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9217C16316720B1C40DB59DA /* Pods-Travellers.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Travellers/Travellers.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = HD9FBZBVT8;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Alamofire/Alamofire.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/BoringSSL-GRPC/openssl_grpc.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/CocoaLumberjack/CocoaLumberjack.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseAuth/FirebaseAuth.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseCore/FirebaseCore.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseCoreDiagnostics/FirebaseCoreDiagnostics.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseDatabase/FirebaseDatabase.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseFirestore/FirebaseFirestore.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseInstanceID/FirebaseInstanceID.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseStorage/FirebaseStorage.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/GoogleDataTransport/GoogleDataTransport.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/GoogleDataTransportCCTSupport/GoogleDataTransportCCTSupport.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/GoogleUtilities/GoogleUtilities.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Kingfisher/Kingfisher.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Protobuf/Protobuf.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/SVGKit/SVGKit.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/gRPC-C++/grpcpp.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/gRPC-Core/grpc.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/leveldb-library/leveldb.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/nanopb/nanopb.framework/Headers\"",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/Firebase\"",
+					"\"${PODS_ROOT}/Headers/Public/FirebaseAuthInterop\"",
+					"\"${PODS_ROOT}/Headers/Public/FirebaseCoreDiagnosticsInterop\"",
+					"$(inherited)",
+					"${PODS_ROOT}/Firebase/CoreOnly/Sources",
+					"$(SDKROOT)/usr/include/libxml2",
+				);
+				INFOPLIST_FILE = Travellers/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.nicolaspaschal.Travellers;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		34309E7F227AED0200D714EF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = HD9FBZBVT8;
+				"HEADER_SEARCH_PATHS[arch=*]" = "$(SRCROOT)/Pods/**";
+				INFOPLIST_FILE = TravellersTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.nicolaspaschal.TravellersTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "TravellersTests/TravellersTests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Travellers.app/Travellers";
+			};
+			name = Debug;
+		};
+		34309E80227AED0200D714EF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = HD9FBZBVT8;
+				INFOPLIST_FILE = TravellersTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.nicolaspaschal.TravellersTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "TravellersTests/TravellersTests-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Travellers.app/Travellers";
+			};
+			name = Release;
+		};
+		34309E82227AED0200D714EF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = HD9FBZBVT8;
+				INFOPLIST_FILE = TravellersUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.nicolaspaschal.TravellersUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Travellers;
+			};
+			name = Debug;
+		};
+		34309E83227AED0200D714EF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = HD9FBZBVT8;
+				INFOPLIST_FILE = TravellersUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.nicolaspaschal.TravellersUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Travellers;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		34309E4B227AED0100D714EF /* Build configuration list for PBXProject "Travellers" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				34309E79227AED0200D714EF /* Debug */,
+				34309E7A227AED0200D714EF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		34309E7B227AED0200D714EF /* Build configuration list for PBXNativeTarget "Travellers" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				34309E7C227AED0200D714EF /* Debug */,
+				34309E7D227AED0200D714EF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		34309E7E227AED0200D714EF /* Build configuration list for PBXNativeTarget "TravellersTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				34309E7F227AED0200D714EF /* Debug */,
+				34309E80227AED0200D714EF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		34309E81227AED0200D714EF /* Build configuration list for PBXNativeTarget "TravellersUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				34309E82227AED0200D714EF /* Debug */,
+				34309E83227AED0200D714EF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		34309E5A227AED0100D714EF /* Travellers.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				34309E5B227AED0100D714EF /* Travellers.xcdatamodel */,
+			);
+			currentVersion = 34309E5B227AED0100D714EF /* Travellers.xcdatamodel */;
+			path = Travellers.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 34309E48227AED0100D714EF /* Project object */;
+}
